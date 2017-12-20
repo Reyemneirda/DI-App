@@ -50,6 +50,7 @@
 		E958D5A41FEA88D0006F5D7D /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesVC.swift; sourceTree = "<group>"; };
 		E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesVC.xib; sourceTree = "<group>"; };
+		E958D5AB1FEAA14E006F5D7D /*  Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = " Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				851114361FEA50C900924B87 /* LaunchScreen.storyboard */,
 				851114391FEA50C900924B87 /* Info.plist */,
 				850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */,
+				E958D5AB1FEAA14E006F5D7D /*  Di-App_Bridge_Header.h */,
 			);
 			path = "DI-App";
 			sourceTree = "<group>";
@@ -471,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./DI-App/Di-App_Bridge_Header";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./DI-App/Di-App_Bridge_Header";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
