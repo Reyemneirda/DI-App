@@ -15,14 +15,32 @@ class Login: BaseViewController {
 
     @IBOutlet weak var rememberMeButton: UIButton!
     
+    @IBOutlet weak var usertxtField: UITextField!
+    @IBOutlet weak var emailTxtField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func rememberMe(_ sender: UIButton)
     {
     }
     
     
-    
+    func handleRegister()
+    {
+        guard let email = emailTxtField.text, let password = passwordTextField.text else {return}
+        Auth.auth().signIn(withEmail: email, password: password, completion:
+            { (user, error) in
+            if error != nil
+            {
+                print(error)
+                return
+            }
+                
+                //success
+            })
+    }
     @IBAction func SignIN(_ sender: Any) {
-        performSegue(withIdentifier: "FirstSignIN", sender: self)
+        
+        handleRegister()
+//        performSegue(withIdentifier: "FirstSignIN", sender: self)
     }
     
     override func viewDidLoad() {
