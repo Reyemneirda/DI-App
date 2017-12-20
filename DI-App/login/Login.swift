@@ -26,7 +26,7 @@ class Login: BaseViewController {
     func handleRegister()
     {
         guard let email = emailTxtField.text, let password = passwordTextField.text else {return}
-        Auth.auth().signIn(withEmail: email, password: password, completion:
+        Auth.auth().createUser(withEmail: email, password: password, completion:
             { (user, error) in
             if error != nil
             {

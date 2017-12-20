@@ -10,12 +10,7 @@ import UIKit
 
 
 class CalendarVC: BaseViewController {
-    
-init(identifier: Calendar.Identifier)
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
 
     override func viewDidLoad() {
