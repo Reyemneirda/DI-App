@@ -11,16 +11,13 @@ import UIKit
 
 class CalendarVC: BaseViewController {
     
-init(identifier: Calendar.Identifier)
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+fileprivate weak var calendar: FSCalendar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
