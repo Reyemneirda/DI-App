@@ -40,7 +40,7 @@ class Login: BaseViewController {
     @IBAction func SignIN(_ sender: Any) {
         
         handleRegister()
-//        performSegue(withIdentifier: "FirstSignIN", sender: self)
+        performSegue(withIdentifier: "FirstSignIN", sender: self)
     }
     
     override func viewDidLoad() {
