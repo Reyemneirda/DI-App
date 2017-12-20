@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="2414" y="-1438"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar-->
         <scene sceneID="WrV-3c-cXk">
             <objects>
-                <tabBarController id="xNH-ZW-mhg" sceneMemberID="viewController">
+                <tabBarController id="xNH-ZW-mhg" customClass="TabBar" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7wJ-vg-TUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,6 +115,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2he-eQ-e5O"/>
+        <segue reference="M8k-gf-WG6"/>
     </inferredMetricsTieBreakers>
 </document>

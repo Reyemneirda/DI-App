@@ -18,6 +18,9 @@ class Login: BaseViewController {
     
     
     
+    @IBAction func SignIN(_ sender: Any) {
+        performSegue(withIdentifier: "FirstSignIN", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

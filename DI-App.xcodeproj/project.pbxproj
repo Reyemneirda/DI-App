@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C74A31FEA6DBE00E10F0B /* Login.xib */; };
+		850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A61FEA7F7A00E10F0B /* TabBar.swift */; };
 		8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142D1FEA50C900924B87 /* AppDelegate.swift */; };
 		851114301FEA50C900924B87 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142F1FEA50C900924B87 /* Login.swift */; };
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		850C74A31FEA6DBE00E10F0B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		850C74A61FEA7F7A00E10F0B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			path = login;
 			sourceTree = "<group>";
 		};
+		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		851114211FEA50C900924B87 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		8511142C1FEA50C900924B87 /* DI-App */ = {
 			isa = PBXGroup;
 			children = (
+				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
@@ -227,6 +238,7 @@
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5981FEA6CA0006F5D7D /* ProfileTableVC.swift in Sources */,
+				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E958D5931FEA6C61006F5D7D /* AssignmentsTableVC.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 				E958D58E1FEA6C3A006F5D7D /* CalendarTableVC.swift in Sources */,
