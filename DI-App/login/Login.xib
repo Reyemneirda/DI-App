@@ -72,6 +72,13 @@
                         <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CR9-uF-O2v">
+                    <rect key="frame" x="45" y="224" width="285" height="25"/>
+                    <segments>
+                        <segment title="Login"/>
+                        <segment title="Register"/>
+                    </segments>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -79,19 +86,23 @@
                 <constraint firstItem="FzO-7I-syL" firstAttribute="top" secondItem="Fkv-aG-ZL3" secondAttribute="bottom" constant="8" id="DeU-0J-gOx"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="leading" secondItem="FzO-7I-syL" secondAttribute="trailing" constant="8" id="IjM-3P-P3a"/>
                 <constraint firstItem="Zhp-op-0lo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="KXX-ig-4jK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CR9-uF-O2v" secondAttribute="trailing" constant="45" id="Kjs-EM-iwf"/>
                 <constraint firstItem="jyt-Eo-S2u" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="105" id="LTv-Sp-ck1"/>
                 <constraint firstItem="FzO-7I-syL" firstAttribute="top" secondItem="Fkv-aG-ZL3" secondAttribute="bottom" constant="8" id="NXB-Z6-I3P"/>
                 <constraint firstItem="FzO-7I-syL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="QiE-WQ-Twc"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="top" secondItem="Fkv-aG-ZL3" secondAttribute="bottom" constant="8" id="T0Z-yE-GyV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zhp-op-0lo" secondAttribute="trailing" constant="45" id="TgP-Jy-NdD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fkv-aG-ZL3" secondAttribute="trailing" constant="16" id="YaV-Og-Q6c"/>
+                <constraint firstItem="CR9-uF-O2v" firstAttribute="top" secondItem="jyt-Eo-S2u" secondAttribute="bottom" constant="70" id="ZZh-1Y-cIn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jyt-Eo-S2u" secondAttribute="trailing" constant="105" id="aw7-rn-Elw"/>
                 <constraint firstItem="Zhp-op-0lo" firstAttribute="top" secondItem="RLs-TR-hhm" secondAttribute="bottom" constant="59.5" id="bfS-dW-l2r"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RLs-TR-hhm" secondAttribute="trailing" constant="206.5" id="ceR-Hi-0Q8"/>
                 <constraint firstItem="FzO-7I-syL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="cnE-r0-Znq"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="leading" secondItem="FzO-7I-syL" secondAttribute="trailing" constant="8" id="h7c-wA-THQ"/>
+                <constraint firstItem="CR9-uF-O2v" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="hgO-ZF-tBF"/>
                 <constraint firstItem="Fkv-aG-ZL3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="iW3-Vs-Tm1"/>
                 <constraint firstItem="Fkv-aG-ZL3" firstAttribute="top" secondItem="jyt-Eo-S2u" secondAttribute="bottom" constant="104" id="vIO-pk-gFB"/>
+                <constraint firstItem="Fkv-aG-ZL3" firstAttribute="top" secondItem="CR9-uF-O2v" secondAttribute="bottom" constant="10" id="xWQ-DL-ty8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Zhp-op-0lo" secondAttribute="bottom" constant="166" id="yYq-h2-ejV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
