@@ -32,7 +32,7 @@
         <!--Item 2-->
         <scene sceneID="gQ4-Ba-Trg">
             <objects>
-                <viewController id="q8Y-bH-Lbc" customClass="AssignmentsTableVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q8Y-bH-Lbc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BvA-uE-gie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--Item 1-->
         <scene sceneID="mgO-Z9-S7q">
             <objects>
-                <viewController id="ViL-cE-vUz" customClass="CalendarTableVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ViL-cE-vUz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8rf-Az-DdZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--Item-->
         <scene sceneID="yMR-V6-Egl">
             <objects>
-                <viewController id="bpu-l0-hzM" customClass="TodayTableVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bpu-l0-hzM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bO5-KJ-pKH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
         <!--Item-->
         <scene sceneID="K6z-GZ-4eq">
             <objects>
-                <viewController id="BUF-LW-yI5" customClass="ProfileTableVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BUF-LW-yI5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apB-TX-YET">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
