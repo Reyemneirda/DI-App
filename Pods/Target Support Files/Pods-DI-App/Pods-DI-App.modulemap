@@ -1,0 +1,6 @@
+framework module Pods_DI_App {
+  umbrella header "Pods-DI-App-umbrella.h"
+
+  export *
+  module * { export * }
+}
