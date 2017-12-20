@@ -8,10 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Login: BaseViewController {
 
+    @IBOutlet weak var rememberMeButton: UIButton!
+    
+    @IBAction func rememberMe(_ sender: UIButton)
+    {
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rememberMeButton.layer.borderWidth = 1
+        rememberMeButton.layer.borderColor = UIColor.black.cgColor
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
