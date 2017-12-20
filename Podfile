@@ -9,5 +9,8 @@ target 'DI-App' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'FSCalendar'
+
+
 
 end
