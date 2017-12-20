@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Login: BaseViewController {
 
@@ -24,6 +25,8 @@ class Login: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let ref = Firebase
         
         rememberMeButton.layer.borderWidth = 1
         rememberMeButton.layer.borderColor = UIColor.black.cgColor

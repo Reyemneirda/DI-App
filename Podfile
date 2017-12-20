@@ -8,6 +8,6 @@ target 'DI-App' do
   # Pods for DI-App
 
 pod 'Firebase/Core'
-
+pod 'Firebase/Auth'
 
 end
