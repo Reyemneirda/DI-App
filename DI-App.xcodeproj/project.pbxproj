@@ -22,8 +22,8 @@
 		E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */; };
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
 		E958D5A61FEA88D0006F5D7D /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A41FEA88D0006F5D7D /* CalendarVC.xib */; };
-		E958D5A91FEA88E3006F5D7D /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A71FEA88E3006F5D7D /* TodayVC.swift */; };
-		E958D5AA1FEA88E3006F5D7D /* TodayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A81FEA88E3006F5D7D /* TodayVC.xib */; };
+		E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */; };
+		E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,8 @@
 		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
 		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5A41FEA88D0006F5D7D /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
-		E958D5A71FEA88E3006F5D7D /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
-		E958D5A81FEA88E3006F5D7D /* TodayVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayVC.xib; sourceTree = "<group>"; };
+		E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesVC.swift; sourceTree = "<group>"; };
+		E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +98,12 @@
 			children = (
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
-				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
+				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
 				E958D5901FEA6C40006F5D7D /* CalendarVC */,
-				E958D58B1FEA6C00006F5D7D /* TodayVC */,
+				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				851114311FEA50C900924B87 /* Main.storyboard */,
 				851114341FEA50C900924B87 /* Assets.xcassets */,
 				851114361FEA50C900924B87 /* LaunchScreen.storyboard */,
@@ -120,13 +120,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E958D58B1FEA6C00006F5D7D /* TodayVC */ = {
+		E958D58B1FEA6C00006F5D7D /* ClassesVC */ = {
 			isa = PBXGroup;
 			children = (
-				E958D5A71FEA88E3006F5D7D /* TodayVC.swift */,
-				E958D5A81FEA88E3006F5D7D /* TodayVC.xib */,
+				E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */,
+				E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */,
 			);
-			path = TodayVC;
+			path = ClassesVC;
 			sourceTree = "<group>";
 		};
 		E958D5901FEA6C40006F5D7D /* CalendarVC */ = {
@@ -224,7 +224,7 @@
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
 				E958D5A61FEA88D0006F5D7D /* CalendarVC.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
-				E958D5AA1FEA88E3006F5D7D /* TodayVC.xib in Resources */,
+				E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
@@ -241,7 +241,7 @@
 			files = (
 				E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
-				E958D5A91FEA88E3006F5D7D /* TodayVC.swift in Sources */,
+				E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
 				E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */,

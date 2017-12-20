@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentVC: UIViewController {
+class AssignmentVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
