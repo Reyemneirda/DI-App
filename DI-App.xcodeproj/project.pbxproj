@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C74A31FEA6DBE00E10F0B /* Login.xib */; };
 		850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A61FEA7F7A00E10F0B /* TabBar.swift */; };
+		850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */; };
 		8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142D1FEA50C900924B87 /* AppDelegate.swift */; };
 		851114301FEA50C900924B87 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142F1FEA50C900924B87 /* Login.swift */; };
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		850C74A31FEA6DBE00E10F0B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		850C74A61FEA7F7A00E10F0B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				851114341FEA50C900924B87 /* Assets.xcassets */,
 				851114361FEA50C900924B87 /* LaunchScreen.storyboard */,
 				851114391FEA50C900924B87 /* Info.plist */,
+				850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */,
 			);
 			path = "DI-App";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				E958D5991FEA6CA0006F5D7D /* ProfileTableVC.xib in Resources */,
 				E958D5941FEA6C61006F5D7D /* AssignmentsTableVC.xib in Resources */,
+				850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */,
 				E958D58F1FEA6C3A006F5D7D /* CalendarTableVC.xib in Resources */,
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
