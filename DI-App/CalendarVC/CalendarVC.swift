@@ -10,8 +10,7 @@ import UIKit
 
 
 class CalendarVC: BaseViewController {
-    
-fileprivate weak var calendar: FSCalendar!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
