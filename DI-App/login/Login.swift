@@ -163,11 +163,14 @@ class Login: BaseViewController {
     
     func registerFail()
     {
-       registerForm.shake()
-        emailTxtField.text = ""
-        passwordTextField.text = ""
-        youFailHard()
+        let time = DispatchTime(uptimeNanoseconds: 1000000000)
+        self.registerForm.shake()
+        self.emailTxtField.text = ""
+        self.passwordTextField.text = ""
         
+        DispatchQueue.main.asyncAfter(deadline: time) {
+             self.youFailHard()
+        }
     }
 
 }
