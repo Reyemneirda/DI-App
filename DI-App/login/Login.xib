@@ -73,7 +73,7 @@
                             <rect key="frame" x="0.0" y="116" width="343" height="34"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                 </stackView>
@@ -90,6 +90,11 @@
                     <connections>
                         <action selector="rememberMe:" destination="-1" eventType="touchUpInside" id="FzT-d4-4fX"/>
                     </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYL-BC-8ha">
+                    <rect key="frame" x="314" y="454" width="45" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button" image="codable"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,4 +123,7 @@
             <point key="canvasLocation" x="136.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="codable" width="512" height="512"/>
+    </resources>
 </document>

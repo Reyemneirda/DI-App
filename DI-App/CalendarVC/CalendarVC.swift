@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CalendarVC: BaseViewController {
+class CalendarVC: UITableViewController {
 
     
 

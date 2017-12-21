@@ -52,7 +52,6 @@ class Login: BaseViewController {
         
         rememberMeButton.layer.borderWidth = 1
         rememberMeButton.layer.borderColor = UIColor.black.cgColor
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
