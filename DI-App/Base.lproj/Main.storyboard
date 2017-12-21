@@ -48,7 +48,7 @@
         <!--Item 1-->
         <scene sceneID="mgO-Z9-S7q">
             <objects>
-                <viewController id="ViL-cE-vUz" sceneMemberID="viewController">
+                <viewController id="ViL-cE-vUz" customClass="OnsenfoutViewController" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8rf-Az-DdZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

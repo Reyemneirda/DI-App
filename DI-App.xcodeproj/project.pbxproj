@@ -11,6 +11,8 @@
 		850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C74A31FEA6DBE00E10F0B /* Login.xib */; };
 		850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74A61FEA7F7A00E10F0B /* TabBar.swift */; };
 		850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */; };
+		850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */; };
+		850C74AD1FEBD72C00E10F0B /* OnsenfoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */; };
 		8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142D1FEA50C900924B87 /* AppDelegate.swift */; };
 		851114301FEA50C900924B87 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511142F1FEA50C900924B87 /* Login.swift */; };
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		850C74A31FEA6DBE00E10F0B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		850C74A61FEA7F7A00E10F0B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnsenfoutViewController.swift; sourceTree = "<group>"; };
+		850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnsenfoutViewController.xib; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
+				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
+				850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */,
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
@@ -239,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850C74AD1FEBD72C00E10F0B /* OnsenfoutViewController.xib in Resources */,
 				850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */,
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
 				E958D5A61FEA88D0006F5D7D /* CalendarVC.xib in Resources */,
@@ -320,6 +327,7 @@
 			files = (
 				E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
+				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,

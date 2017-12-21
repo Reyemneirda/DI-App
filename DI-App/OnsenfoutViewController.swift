@@ -1,41 +1,33 @@
 //
-//  CalendarVC.swift
+//  OnsenfoutViewController.swift
 //  DI-App
 //
-//  Created by Gabriel Drai on 20/12/2017.
+//  Created by Adrien Meyer on 21/12/2017.
 //  Copyright © 2017 Developer.Institute. All rights reserved.
 //
 
 import UIKit
-import FirebaseAuth
 import FirebaseDatabase
+import FirebaseAuth
 
+class OnsenfoutViewController: BaseViewController {
 
-class CalendarVC: BaseViewController {
-
-    
     @IBOutlet weak var hello: UILabel!
     
     func printHelloUser()
     {
-        
-     let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
-        let user = Auth.auth().currentUser?.displayName
-        hello.text = "Hello\(String(describing: user))"
+//        
+//        let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+//        let user =
+//        hello.text = "Hello\(String(describing: user))"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         printHelloUser()
-
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
