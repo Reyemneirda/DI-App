@@ -4,14 +4,15 @@
 target 'DI-App' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+pod 'FSCalendar'
 
   # Pods for DI-App
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 
-pod 'FSCalendar'
 pod 'Firebase/Database'
+
 
 
 end
