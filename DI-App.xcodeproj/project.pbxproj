@@ -26,6 +26,7 @@
 		E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
 		E9C505331FEBD9660000FF39 /* LessonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* LessonVC.xib */; };
+		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		E9C505321FEBD9660000FF39 /* LessonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonVC.xib; sourceTree = "<group>"; };
+		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		8511142C1FEA50C900924B87 /* DI-App */ = {
 			isa = PBXGroup;
 			children = (
+				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
@@ -175,6 +178,14 @@
 				E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		E9C505361FEBEE260000FF39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9C505371FEBEE400000FF39 /* classCell.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */,
+				E9C505381FEBEE400000FF39 /* classCell.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,

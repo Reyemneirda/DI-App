@@ -9,11 +9,91 @@
 import UIKit
 import Firebase
 import FSCalendar
+import FirebaseDatabase
 
 class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
-    @IBOutlet weak var userCalendar: FSCalendar!
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userCalendar: FSCalendar!
+  
+    
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
+    
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
+    }
+    
+    deinit {
+        print("\(#function)")
+    }
+    
+    // MARK:- UIGestureRecognizerDelegate
+    
+  
+   
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("did select date \(self.dateFormatter.string(from: date))")
+        let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
+        print("selected dates is \(selectedDates)")
+        if monthPosition == .next || monthPosition == .previous {
+            calendar.setCurrentPage(date, animated: true)
+        }
+    }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+    }
+    
+    // MARK:- UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return [2,20][section]
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let identifier = ["cell_month", "cell_week"][indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+            return cell
+        }
+    }
+    
+    
+    // MARK:- UITableViewDelegate
+    
+   
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    // MARK:- Target actions
+    
+   
+    
+//    var classCell: [ClassCell] =
+//        [ClassCell(name: "class1", time: Date.description("2017-12-25 10:00:00")), ClassCell(name: "class2", time: "2017-12-25 12:00:00")
+//    ]
+    
+    
+
     fileprivate var theme: Int = 0 {
         didSet {
             switch (theme) {
@@ -50,14 +130,22 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      
-        
-       
-        // Do any additional setup after loading the view.
-    }
+    
+    
+    
+    
+    
+    
+ 
+    
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return classCell.count
+//    }
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
