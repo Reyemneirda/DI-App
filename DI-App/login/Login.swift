@@ -18,10 +18,26 @@ class Login: BaseViewController {
     @IBOutlet weak var usertxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var seePassword: UIButton!
+    
+    
     @IBAction func rememberMe(_ sender: UIButton)
     {
     }
     
+    
+    @IBAction func IseePass(_ sender: UIButton)
+    {
+        
+        if passwordTextField.isSecureTextEntry == true {
+            seePassword.isSelected = true
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            seePassword.isSelected = false
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     
     func handleRegister()
     {

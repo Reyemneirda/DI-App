@@ -16,6 +16,7 @@
                 <outlet property="mainView" destination="iN0-l3-epB" id="lEt-Oa-yCk"/>
                 <outlet property="passwordTextField" destination="OtO-rL-M6h" id="4wE-pi-RXI"/>
                 <outlet property="rememberMeButton" destination="FzO-7I-syL" id="WQ8-0f-oRk"/>
+                <outlet property="seePassword" destination="mYL-BC-8ha" id="9bc-bW-a4h"/>
                 <outlet property="usertxtField" destination="A5S-Wu-PuD" id="LlX-Kk-fqX"/>
             </connections>
         </placeholder>
@@ -95,6 +96,11 @@
                     <rect key="frame" x="314" y="454" width="45" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="codable"/>
+                    <state key="selected" image="iseeu"/>
+                    <state key="highlighted" image="iseeu"/>
+                    <connections>
+                        <action selector="IseePass:" destination="-1" eventType="touchUpInside" id="wq8-LM-CZq"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,5 +131,6 @@
     </objects>
     <resources>
         <image name="codable" width="512" height="512"/>
+        <image name="iseeu" width="512" height="512"/>
     </resources>
 </document>
