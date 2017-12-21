@@ -18,6 +18,7 @@ class Login: BaseViewController {
     @IBOutlet weak var usertxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var logReg: UISegmentedControl!
     
     @IBOutlet weak var seePassword: UIButton!
     
@@ -41,22 +42,39 @@ class Login: BaseViewController {
     
     func handleRegister()
     {
+        
         guard let email = emailTxtField.text, let password = passwordTextField.text else {return}
-        Auth.auth().createUser(withEmail: email, password: password, completion:
-            { (user, error) in
-            if error != nil
-            {
-                print(error)
-                return
-            }
-                
-                //success
+        if logReg.selectedSegmentIndex == 0 {
+            
+            Auth.auth().createUser(withEmail: email, password: password, completion:
+                { [weak self]  (user, error)   in
+                    if error != nil
+                    {
+                        print(error)
+                        return
+                    }
+                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                    //success
             })
+        } else  if logReg.selectedSegmentIndex == 1 {
+            Auth.auth().signIn(withEmail: email, password: password, completion:
+                { [weak self] (user, error)  in
+                    if error != nil
+                    {
+                        print(error)
+                        return
+                    }
+                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                    
+                    //success
+            })
+        }
+        
     }
     @IBAction func SignIN(_ sender: Any) {
         
         handleRegister()
-//        performSegue(withIdentifier: "FirstSignIN", sender: self)
+        
     }
     
     override func viewDidLoad() {
