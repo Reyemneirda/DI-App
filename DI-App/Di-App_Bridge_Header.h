@@ -9,5 +9,6 @@
 #ifndef _Di_App_Bridge_Header_h
 #define _Di_App_Bridge_Header_h
 
+#import <FSCalendar/FSCalendar.h>
 
 #endif /* _Di_App_Bridge_Header_h */

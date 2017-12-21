@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "463A38CC8CA0F160DF4E736BEE968D71"
-               BuildableName = "Pods_DI_App.framework"
-               BlueprintName = "Pods-DI-App"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "851114291FEA50C900924B87"
+               BuildableName = "DI-App.app"
+               BlueprintName = "DI-App"
+               ReferencedContainer = "container:DI-App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,6 +30,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "851114291FEA50C900924B87"
+            BuildableName = "DI-App.app"
+            BlueprintName = "DI-App"
+            ReferencedContainer = "container:DI-App.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -44,15 +53,26 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463A38CC8CA0F160DF4E736BEE968D71"
-            BuildableName = "Pods_DI_App.framework"
-            BlueprintName = "Pods-DI-App"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "851114291FEA50C900924B87"
+            BuildableName = "DI-App.app"
+            BlueprintName = "DI-App"
+            ReferencedContainer = "container:DI-App.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-v"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-FIRAnalyticsDebugEnabled"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -62,6 +82,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "851114291FEA50C900924B87"
+            BuildableName = "DI-App.app"
+            BlueprintName = "DI-App"
+            ReferencedContainer = "container:DI-App.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

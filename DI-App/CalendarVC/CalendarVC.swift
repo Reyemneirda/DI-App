@@ -8,26 +8,54 @@
 
 import UIKit
 import Firebase
+import FSCalendar
 
-
-
-class CalendarVC: BaseViewController {
+class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
-    fileprivate weak var calendar: FSCalendar!
+    @IBOutlet weak var userCalendar: FSCalendar!
     
-    @IBOutlet weak var viewCalendar: FSCalendar!
+    fileprivate var theme: Int = 0 {
+        didSet {
+            switch (theme) {
+            case 0:
+                self.userCalendar.appearance.weekdayTextColor = UIColor(red: 14/255.0, green: 69/255.0, blue: 221/255.0, alpha: 1.0)
+                self.userCalendar.appearance.headerTitleColor = UIColor(red: 14/255.0, green: 69/255.0, blue: 221/255.0, alpha: 1.0)
+                self.userCalendar.appearance.eventDefaultColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 219/255.0, alpha: 1.0)
+                self.userCalendar.appearance.selectionColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 219/255.0, alpha: 1.0)
+                self.userCalendar.appearance.headerDateFormat = "MMMM yyyy"
+                self.userCalendar.appearance.todayColor = UIColor(red: 198/255.0, green: 51/255.0, blue: 42/255.0, alpha: 1.0)
+                self.userCalendar.appearance.borderRadius = 1.0
+                self.userCalendar.appearance.headerMinimumDissolvedAlpha = 0.2
+            case 1:
+                self.userCalendar.appearance.weekdayTextColor = UIColor.red
+                self.userCalendar.appearance.headerTitleColor = UIColor.darkGray
+                self.userCalendar.appearance.eventDefaultColor = UIColor.green
+                self.userCalendar.appearance.selectionColor = UIColor.blue
+                self.userCalendar.appearance.headerDateFormat = "yyyy-MM";
+                self.userCalendar.appearance.todayColor = UIColor.red
+                self.userCalendar.appearance.borderRadius = 1.0
+                self.userCalendar.appearance.headerMinimumDissolvedAlpha = 0.0
+            case 2:
+                self.userCalendar.appearance.weekdayTextColor = UIColor.red
+                self.userCalendar.appearance.headerTitleColor = UIColor.red
+                self.userCalendar.appearance.eventDefaultColor = UIColor.green
+                self.userCalendar.appearance.selectionColor = UIColor.blue
+                self.userCalendar.appearance.headerDateFormat = "yyyy/MM"
+                self.userCalendar.appearance.todayColor = UIColor.orange
+                self.userCalendar.appearance.borderRadius = 0
+                self.userCalendar.appearance.headerMinimumDissolvedAlpha = 1.0
+            default:
+                break;
+            }
+        }
+    }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
-        calendar.dataSource = self
-        calendar.delegate = self
-        view.addSubview(calendar)
-        self.calendar = calendar
+      
         
-        
+       
         // Do any additional setup after loading the view.
     }
 
