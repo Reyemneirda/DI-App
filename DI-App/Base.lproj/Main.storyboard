@@ -56,15 +56,38 @@
                         <viewLayoutGuide key="safeArea" id="cHH-QB-fK0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="fjj-Dp-8LR"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zOY-Wl-vVa" kind="presentation" id="PZ5-TI-i1j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qw-Ud-Jrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2414" y="-1438"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="xu0-HC-uDs">
+            <objects>
+                <viewController id="zOY-Wl-vVa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="db5-ke-2Dq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ugg-rp-ZoH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Tzy-AH-DdK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwI-s5-K5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="-1439"/>
+        </scene>
         <!--Tab Bar-->
         <scene sceneID="WrV-3c-cXk">
             <objects>
                 <tabBarController id="xNH-ZW-mhg" customClass="TabBar" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7wJ-vg-TUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

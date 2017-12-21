@@ -25,6 +25,7 @@
 		E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */; };
 		E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
+		E9C505331FEBD9660000FF39 /* LessonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* LessonVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesVC.xib; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
+		E9C505321FEBD9660000FF39 /* LessonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
+				E9C505321FEBD9660000FF39 /* LessonVC.xib */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */,
 				E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */,
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
+				E9C505331FEBD9660000FF39 /* LessonVC.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
 				E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,

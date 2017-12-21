@@ -20,20 +20,67 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-wa-Y94" customClass="FSCalendar">
-                    <rect key="frame" x="16" y="29" width="343" height="292"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Lesson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-Ae-qsE">
+                    <rect key="frame" x="101" y="387" width="172" height="32"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="10" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pp6-Wl-mVj">
+                    <rect key="frame" x="16" y="456" width="343" height="191"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="191" id="pEY-3m-UXh"/>
+                    </constraints>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-XX-nzd">
+                    <rect key="frame" x="0.0" y="11" width="375" height="44"/>
+                    <items>
+                        <navigationItem id="t4l-tC-taB">
+                            <barButtonItem key="leftBarButtonItem" title="Item" springLoaded="YES" id="aFD-n9-JEc"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-wa-Y94" customClass="FSCalendar">
+                    <rect key="frame" x="16" y="73" width="343" height="292"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                            <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Pp6-Wl-mVj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="1mI-FT-Nij"/>
+                <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="46y-5H-WXn"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4WN-jj-uBj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ChP-wa-Y94" secondAttribute="bottom" constant="346" id="F12-Gv-wJD"/>
-                <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="9" id="Vgv-xZ-da1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qsh-Ae-qsE" secondAttribute="trailing" constant="102" id="ExO-jt-gSF"/>
+                <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="tRO-XX-nzd" secondAttribute="bottom" constant="18" id="S9V-Hc-2VQ"/>
+                <constraint firstItem="Pp6-Wl-mVj" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="YvZ-8r-2RL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pp6-Wl-mVj" secondAttribute="trailing" constant="16" id="Z8O-pt-dWB"/>
+                <constraint firstItem="qsh-Ae-qsE" firstAttribute="top" secondItem="ChP-wa-Y94" secondAttribute="bottom" constant="22" id="ZQi-E1-Fza"/>
+                <constraint firstItem="ChP-wa-Y94" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="hn0-ah-5iJ"/>
+                <constraint firstItem="qsh-Ae-qsE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="101" id="kXY-a2-Cfg"/>
+                <constraint firstItem="qsh-Ae-qsE" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="lHI-rR-O8z"/>
+                <constraint firstItem="tRO-XX-nzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rbA-Ee-rb9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Pp6-Wl-mVj" secondAttribute="bottom" constant="20" id="saG-77-9Z4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ChP-wa-Y94" secondAttribute="trailing" constant="16" id="t6Q-TX-axS"/>
+                <constraint firstItem="Pp6-Wl-mVj" firstAttribute="top" secondItem="qsh-Ae-qsE" secondAttribute="bottom" constant="37" id="zr8-n8-FLI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-312" y="-187"/>
+            <point key="canvasLocation" x="-217.5" y="-224.5"/>
         </view>
     </objects>
 </document>
