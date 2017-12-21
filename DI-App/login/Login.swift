@@ -11,6 +11,15 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+extension UIStackView {
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+}
 class Login: BaseViewController {
 
     @IBOutlet weak var rememberMeButton: UIButton!
@@ -54,7 +63,7 @@ class Login: BaseViewController {
                 { [weak self]  (user, error)   in
                     if error != nil
                     {
-                        
+                        self?.registerFail()
                         print(error)
                         
                         return
@@ -85,7 +94,7 @@ class Login: BaseViewController {
                 { [weak self] (user, error)  in
                     if error != nil
                     {
-                       
+                        self?.registerFail()
                         print(error)
                         return
                     }
@@ -137,20 +146,28 @@ class Login: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+   func youFailHard()
+   {
+    
+    let alertView = UIAlertController(title: "Error", message: "Invalid Email or Password", preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    
+    alertView.addAction(okAction)
+    
+    
+    self.present(alertView, animated: true, completion: nil)
+    }
 
+    
     func registerFail()
     {
-        self.registerFormLeading.constant = self.registerFormTrailing.constant;
-        self.registerFormTrailing.constant = 0
+       registerForm.shake()
+        emailTxtField.text = ""
+        passwordTextField.text = ""
+        youFailHard()
         
-        UIStackView.animate(withDuration: 2.0) {
-            self.view.layoutIfNeeded() // resets the view rendering; creating the display for the user to look at
-        }
-        
-        var email = emailTxtField.text
-        var password = passwordTextField.text
-        email = ""
-        password = ""
     }
 
 }
