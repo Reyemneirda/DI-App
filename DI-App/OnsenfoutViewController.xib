@@ -34,7 +34,7 @@
                         <navigationItem title="Title" id="zyW-Re-WL5">
                             <barButtonItem key="leftBarButtonItem" title="Logout" id="hSi-Ve-EGh">
                                 <connections>
-                                    <action selector="logMeOut:" destination="-1" id="69Z-9f-hTV"/>
+                                    <action selector="logMeOut:" destination="-1" id="kqu-gj-Ii4"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>

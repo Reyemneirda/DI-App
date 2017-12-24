@@ -19,27 +19,22 @@ class OnsenfoutViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        printHelloUser()
-        
-        if Auth.auth().currentUser?.uid == nil
-        {
-            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
-            
-        }
-        
+        checkIfUserIsin()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func logMeOut(_ sender: Any)
     {
+
+            handleLogOut()
+        
+    }
+    
+    
+    func handleLogOut()
+    {
         if Auth.auth().currentUser?.uid == nil
         {
-            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
-            
-        }
-    }
-    @objc func handleLogOut()
-    {
         do
         {
         try Auth.auth().signOut()
@@ -48,9 +43,9 @@ class OnsenfoutViewController: BaseViewController {
         {
             print(logOutError)
         }
-        
+        }
         self.tabBarController?.dismiss(animated: true, completion: nil)
-        
+
 //        let loginController = Login()
 //       self.present(loginController, animated: true, completion: nil)
     }
@@ -59,16 +54,14 @@ class OnsenfoutViewController: BaseViewController {
     {
         if Auth.auth().currentUser?.uid == nil
         {
-            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
+            handleLogOut()
         } else {
             let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("student").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dictionnary = snapshot.value as? [String : AnyObject] {
-                    
-                    self.hello.text = dictionnary["name"] as String?
+                    self.hello.text = dictionnary["name"] as! String?
                     
                 }
-                
                 
             }, withCancel: nil)
         }
