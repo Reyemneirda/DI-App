@@ -19,6 +19,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
+    @IBOutlet weak var tableViewCell: UITableViewCell!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    
+    
+    
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,7 +35,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
     
-   
+    var events : [Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +58,20 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+        
+        let day: Int! = self.gregorian.component(.day, from: date)
+        let numEvents = day % 5 == 0 ? day/5 : 0
+        
+        
+        self.events.removeAll(keepingCapacity: false)
+        
+        func eventDictionary(); = [date, [events]]  {
+            
+        
+        
+        
+        self.tableView.reloadData()
+        }
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -60,16 +81,20 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     // MARK:- UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2,20][section]
+    func tableView( tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        let cell = "cellIdentifier"
+        
         if indexPath.section == 0 {
             let identifier = ["cell_month", "cell_week"][indexPath.row]
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
             return cell
         } else {
@@ -144,7 +169,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
 //        return classCell.count
 //    }
     
-    
-    
+   
     
 }

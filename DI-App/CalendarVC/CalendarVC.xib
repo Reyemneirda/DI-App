@@ -13,7 +13,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarVC" customModule="DI_App" customModuleProvider="target">
             <connections>
                 <outlet property="SideMenuButton" destination="aFD-n9-JEc" id="HVg-mP-8bN"/>
+                <outlet property="addBarButton" destination="CfP-U1-hNL" id="DjH-yg-Vxe"/>
+                <outlet property="courseLabel" destination="1s2-nL-0Dw" id="sGR-iR-IFF"/>
+                <outlet property="dateTimeLabel" destination="uDW-Aj-dGf" id="x5d-rT-ekW"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="tVy-BE-jZq"/>
+                <outlet property="tableView" destination="Pp6-Wl-mVj" id="dR2-E1-Nle"/>
+                <outlet property="tableViewCell" destination="7lD-CA-c5o" id="lI2-kC-VmC"/>
+                <outlet property="userCalendar" destination="ChP-wa-Y94" id="ZAu-FW-p26"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,6 +39,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="191" id="pEY-3m-UXh"/>
                     </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Odp-pW-1gy"/>
+                        <outlet property="delegate" destination="-1" id="B8L-Qh-Xgu"/>
+                    </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-XX-nzd">
                     <rect key="frame" x="0.0" y="11" width="375" height="44"/>
@@ -88,5 +98,30 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-217.5" y="-224.5"/>
         </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="57" id="ot9-2Z-wiv">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ot9-2Z-wiv" id="7lD-CA-c5o" customClass="UITableViewCell">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-nL-0Dw">
+                        <rect key="frame" x="16" y="5" width="55" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date and Time " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDW-Aj-dGf">
+                        <rect key="frame" x="16" y="34" width="116" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-204.5" y="243.5"/>
+        </tableViewCell>
     </objects>
 </document>

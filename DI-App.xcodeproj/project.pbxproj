@@ -28,6 +28,7 @@
 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
 		E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */; };
+		E9C505611FEF9CC20000FF39 /* CalendarConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
 		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarConfigViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
+				E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */,
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 			);
 			path = CalendarVC;
@@ -352,6 +355,7 @@
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
+				E9C505611FEF9CC20000FF39 /* CalendarConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
