@@ -11,28 +11,20 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-extension UIStackView {
-    func shake() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.duration = 0.6
-        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-        layer.add(animation, forKey: "shake")
-    }
-}
+
 class Login: BaseViewController {
 
     @IBOutlet weak var rememberMeButton: UIButton!
     
     @IBOutlet weak var usertxtField: UITextField!
+    
+    @IBOutlet var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logReg: UISegmentedControl!
     @IBOutlet weak var goIn: UIButton!
     @IBOutlet weak var registerForm: UIStackView!
-    @IBOutlet weak var registerFormLeading: NSLayoutConstraint!
-    
-    @IBOutlet weak var registerFormTrailing: NSLayoutConstraint!
     @IBOutlet weak var seePassword: UIButton!
     
     
@@ -71,6 +63,7 @@ class Login: BaseViewController {
                     guard let uid = user?.uid else {
                         return
                     }
+                    
                     
                  let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
                     let userReference = ref.child("students").child(uid)
@@ -113,12 +106,15 @@ class Login: BaseViewController {
         {
             goIn.setTitle(title, for: .normal)
             usertxtField.isHidden = true
+            emailTxtField.isHidden = false
+            passwordTextField.isHidden = false
             
         } else if logReg.selectedSegmentIndex == 1
         {
-            mainView.backgroundColor = UIColor.white
             goIn.setTitle(title, for: .normal)
             usertxtField.isHidden = false
+            emailTxtField.isHidden = false
+            passwordTextField.isHidden = false
 
         }
     }
@@ -139,6 +135,17 @@ class Login: BaseViewController {
         textFieldAppearing()
         rememberMeButton.layer.borderWidth = 1
         rememberMeButton.layer.borderColor = UIColor.black.cgColor
+        
+        
+        
+        self.containerView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
+        
+        self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.containerView.frame.size.height) // only to scroll up and down
+        
+        self.scrollView.contentSize = self.containerView.frame.size // allows the scrollview to actually scroll
+        
+        self.scrollView.addSubview(self.containerView)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -167,6 +174,7 @@ class Login: BaseViewController {
         self.registerForm.shake()
         self.emailTxtField.text = ""
         self.passwordTextField.text = ""
+        self.usertxtField.text = ""
         
         DispatchQueue.main.asyncAfter(deadline: time) {
              self.youFailHard()

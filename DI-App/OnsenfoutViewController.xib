@@ -28,8 +28,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feb-EC-usm">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="zyW-Re-WL5">
+                            <barButtonItem key="leftBarButtonItem" title="Logout" id="hSi-Ve-EGh">
+                                <connections>
+                                    <action selector="logMeOut:" destination="-1" id="69Z-9f-hTV"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="feb-EC-usm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WRc-uw-pB4"/>
+                <constraint firstItem="feb-EC-usm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aUW-0N-UnA"/>
+                <constraint firstItem="feb-EC-usm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fpL-hu-OVk"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="86.5" y="129.5"/>
         </view>

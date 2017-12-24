@@ -9,26 +9,71 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import Firebase
 
 class OnsenfoutViewController: BaseViewController {
 
     @IBOutlet weak var hello: UILabel!
     
-    func printHelloUser()
-    {
-//        
-//        let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
-//        let user =
-//        hello.text = "Hello\(String(describing: user))"
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         printHelloUser()
         
+        if Auth.auth().currentUser?.uid == nil
+        {
+            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func logMeOut(_ sender: Any)
+    {
+        if Auth.auth().currentUser?.uid == nil
+        {
+            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
+            
+        }
+    }
+    @objc func handleLogOut()
+    {
+        do
+        {
+        try Auth.auth().signOut()
 
+        } catch let logOutError
+        {
+            print(logOutError)
+        }
+        
+        self.tabBarController?.dismiss(animated: true, completion: nil)
+        
+//        let loginController = Login()
+//       self.present(loginController, animated: true, completion: nil)
+    }
+    
+    func checkIfUserIsin()
+    {
+        if Auth.auth().currentUser?.uid == nil
+        {
+            performSelector(onMainThread: (#selector(handleLogOut)), with: nil, waitUntilDone: true)
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("student").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionnary = snapshot.value as? [String : AnyObject] {
+                    
+                    self.hello.text = dictionnary["name"] as String?
+                    
+                }
+                
+                
+            }, withCancel: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
