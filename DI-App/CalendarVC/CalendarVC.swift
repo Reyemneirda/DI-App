@@ -10,19 +10,23 @@ import UIKit
 import Firebase
 import FSCalendar
 import FirebaseDatabase
+import SideMenu
 
 class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
-  
+    @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+    
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
+    
+    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
     
    
     
@@ -38,8 +42,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     // MARK:- UIGestureRecognizerDelegate
     
-  
-   
+    
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
@@ -130,13 +133,12 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
-    
-    
-    
-    
-    
-    
- 
+    //- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
+    {
+        let day: Int! = self.gregorian.component(.day, from: date)
+        return day % 5 == 0 ? day/5 : 0;
+    }
     
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        return classCell.count

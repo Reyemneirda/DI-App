@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarVC" customModule="DI_App" customModuleProvider="target">
             <connections>
+                <outlet property="SideMenuButton" destination="aFD-n9-JEc" id="HVg-mP-8bN"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="tVy-BE-jZq"/>
             </connections>
         </placeholder>
@@ -38,6 +39,7 @@
                     <items>
                         <navigationItem id="t4l-tC-taB">
                             <barButtonItem key="leftBarButtonItem" title="Item" springLoaded="YES" id="aFD-n9-JEc"/>
+                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="CfP-U1-hNL"/>
                         </navigationItem>
                     </items>
                 </navigationBar>
@@ -59,6 +61,10 @@
                             <color key="value" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xOU-K5-9bf"/>
+                        <outlet property="delegate" destination="-1" id="rIX-9B-Fiv"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

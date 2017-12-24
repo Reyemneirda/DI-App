@@ -25,8 +25,9 @@
 		E958D5A91FEA88E3006F5D7D /* ClassesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A71FEA88E3006F5D7D /* ClassesVC.swift */; };
 		E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
-		E9C505331FEBD9660000FF39 /* LessonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* LessonVC.xib */; };
+		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
+		E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +54,9 @@
 		E958D5A81FEA88E3006F5D7D /* ClassesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesVC.xib; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
-		E9C505321FEBD9660000FF39 /* LessonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonVC.xib; sourceTree = "<group>"; };
+		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
+		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,8 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-				E9C505321FEBD9660000FF39 /* LessonVC.xib */,
+				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
+				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -258,7 +261,7 @@
 				850C74A91FEA87B300E10F0B /* GoogleService-Info.plist in Resources */,
 				E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */,
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
-				E9C505331FEBD9660000FF39 /* LessonVC.xib in Resources */,
+				E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
 				E958D5AA1FEA88E3006F5D7D /* ClassesVC.xib in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
@@ -347,6 +350,7 @@
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
 				E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */,
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
+				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
