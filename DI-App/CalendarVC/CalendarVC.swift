@@ -32,8 +32,11 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: CalendarVC)
         
+//      let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: SideMenuViewController)
+//      let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+//      SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+//      SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
     }
     
     deinit {
