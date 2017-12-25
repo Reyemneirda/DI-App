@@ -16,7 +16,8 @@ class Login: BaseViewController {
 
     @IBOutlet weak var rememberMeButton: UIButton!
     
-    @IBOutlet weak var usertxtField: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
     
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -26,7 +27,15 @@ class Login: BaseViewController {
     @IBOutlet weak var goIn: UIButton!
     @IBOutlet weak var registerForm: UIStackView!
     @IBOutlet weak var seePassword: UIButton!
+    @IBOutlet weak var linkedIn: UITextField!
+    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var sessionCity: UITextField!
+    @IBOutlet weak var program: UITextField!
+    @IBOutlet weak var programs: UIPickerView!
+    @IBOutlet weak var projects: UITextView!
+    @IBOutlet weak var hobbies: UITextView!
     
+    @IBOutlet weak var cities: UIPickerView!
     
     @IBAction func rememberMe(_ sender: UIButton)
     {
@@ -48,7 +57,16 @@ class Login: BaseViewController {
     func handleRegister()
     {
         
-        guard let name = usertxtField.text, let email = emailTxtField.text, let password = passwordTextField.text else {return}
+        guard let firstName = firstName.text,
+            let lastName = lastName.text,
+            let linkedIN = linkedIn.text,
+            let email = emailTxtField.text,
+            let phone = phoneNumber.text,
+            let sessionCity = sessionCity.text,
+            let sessionProgram = program.text,
+            let hobbies = hobbies.text,
+            let project = projects.text,
+            let password = passwordTextField.text else {return}
         if logReg.selectedSegmentIndex == 1 {
             
             Auth.auth().createUser(withEmail: email, password: password, completion:
@@ -67,7 +85,13 @@ class Login: BaseViewController {
                     
                  let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
                     let userReference = ref.child("students").child(uid)
-                    let user = ["name": name, "email": email]
+                    let user = ["name": (firstName + lastName),
+                        "email": email,
+                        "linkedIn": linkedIN,
+                        "phone": phone,
+                        "session": sessionCity + sessionProgram,
+                        "hobbie": hobbies,
+                        "projects": project]
                     userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
                         if err != nil
                         {
@@ -105,20 +129,54 @@ class Login: BaseViewController {
         if logReg.selectedSegmentIndex == 0
         {
             goIn.setTitle(title, for: .normal)
-            usertxtField.isHidden = true
+            
+           firstName.isHidden = true
+            lastName.isHidden = true
+            linkedIn.isHidden = true
             emailTxtField.isHidden = false
+//            emailTxtField.frame.size = CGSize(height: 45)
+            phoneNumber.isHidden = true
+            sessionCity.isHidden = true
+            program.isHidden = true
+            hobbies.isHidden = true
+            projects.isHidden = true
             passwordTextField.isHidden = false
+//            passwordTextField.frame.size = CGSize(height: 45)
+            cities.isHidden = true
+            programs.isHidden = true
+            self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.scrollView.frame.size.height)
+            theySeeMeScrolling()
             
         } else if logReg.selectedSegmentIndex == 1
         {
             goIn.setTitle(title, for: .normal)
-            usertxtField.isHidden = false
+            firstName.isHidden = false
+            lastName.isHidden = false
+            linkedIn.isHidden = false
             emailTxtField.isHidden = false
+            phoneNumber.isHidden = false
+            sessionCity.isHidden = false
+            program.isHidden = false
+            hobbies.isHidden = false
+            projects.isHidden = false
             passwordTextField.isHidden = false
+            cities.isHidden = false
+            programs.isHidden = false
+            
+            self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: 756)
+          theySeeMeScrolling()
 
         }
     }
     
+    func theySeeMeScrolling()
+    {
+        self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.containerView.frame.size.height) // only to scroll up and down
+        
+        self.scrollView.contentSize = self.containerView.frame.size // allows the scrollview to actually scroll
+        
+        self.scrollView.addSubview(self.containerView)
+    }
     
     @IBAction func SignIN(_ sender: Any) {
         
@@ -133,6 +191,7 @@ class Login: BaseViewController {
         ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
         
         textFieldAppearing()
+        
         rememberMeButton.layer.borderWidth = 1
         rememberMeButton.layer.borderColor = UIColor.black.cgColor
         
@@ -140,11 +199,7 @@ class Login: BaseViewController {
         
         self.containerView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
         
-        self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.containerView.frame.size.height) // only to scroll up and down
-        
-        self.scrollView.contentSize = self.containerView.frame.size // allows the scrollview to actually scroll
-        
-        self.scrollView.addSubview(self.containerView)
+     theySeeMeScrolling()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -172,10 +227,16 @@ class Login: BaseViewController {
     {
         let time = DispatchTime(uptimeNanoseconds: 1000000000)
         self.registerForm.shake()
-        self.emailTxtField.text = ""
-        self.passwordTextField.text = ""
-        self.usertxtField.text = ""
-        
+        firstName.text = ""
+        lastName.text = ""
+        linkedIn.text = ""
+        emailTxtField.text = ""
+        phoneNumber.text = ""
+        sessionCity.text = ""
+        program.text = ""
+        hobbies.text = ""
+        projects.text = ""
+        passwordTextField.text = ""
         DispatchQueue.main.asyncAfter(deadline: time) {
              self.youFailHard()
         }
