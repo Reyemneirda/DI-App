@@ -159,8 +159,8 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
+				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 863SU8KM77;
+				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
@@ -507,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 863SU8KM77;
+				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";

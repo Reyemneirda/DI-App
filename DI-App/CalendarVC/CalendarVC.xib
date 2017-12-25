@@ -38,7 +38,11 @@
                     <rect key="frame" x="0.0" y="11" width="375" height="44"/>
                     <items>
                         <navigationItem id="t4l-tC-taB">
-                            <barButtonItem key="leftBarButtonItem" title="Item" springLoaded="YES" id="aFD-n9-JEc"/>
+                            <barButtonItem key="leftBarButtonItem" title="Item" springLoaded="YES" id="aFD-n9-JEc">
+                                <connections>
+                                    <action selector="menu:" destination="-1" id="50z-Lc-K1O"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" systemItem="add" id="CfP-U1-hNL"/>
                         </navigationItem>
                     </items>

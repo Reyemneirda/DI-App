@@ -12,7 +12,7 @@ import FSCalendar
 import FirebaseDatabase
 import SideMenu
 
-class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UIGestureRecognizerDelegate, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,8 +32,8 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: CalendarVC)
         
-
     }
     
     deinit {
@@ -42,7 +42,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     // MARK:- UIGestureRecognizerDelegate
     
-    
+   
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
@@ -53,6 +53,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
+  
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.dateFormatter.string(from: calendar.currentPage))")
     }
@@ -80,7 +81,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
     
     
     // MARK:- UITableViewDelegate
-    
+
    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -145,6 +146,9 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
 //    }
     
     
+    @IBAction func menu (_ sender: Any) {
+        self.performSegue(withIdentifier: "menuSegue", sender: nil)
+    }
     
     
 }
