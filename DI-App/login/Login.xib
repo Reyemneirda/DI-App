@@ -148,7 +148,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-Wu-PuD">
                             <rect key="frame" x="0.0" y="60" width="367" height="45"/>
@@ -157,7 +157,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGo-CR-fPY">
                             <rect key="frame" x="0.0" y="120" width="367" height="45"/>
@@ -166,7 +166,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LinkedIn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSP-GN-MmB">
                             <rect key="frame" x="0.0" y="180" width="367" height="45"/>
@@ -174,8 +174,8 @@
                                 <constraint firstAttribute="height" constant="45" id="Gap-3W-x6G"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFf-8R-vr9">
                             <rect key="frame" x="0.0" y="240" width="367" height="45"/>
@@ -183,8 +183,8 @@
                                 <constraint firstAttribute="height" constant="45" id="XC0-gt-ADL"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" textContentType="tel"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Session City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-Fz-r6K">
                             <rect key="frame" x="0.0" y="300" width="367" height="45"/>
@@ -192,8 +192,8 @@
                                 <constraint firstAttribute="height" constant="45" id="WLf-iZ-ITw"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVJ-Mi-YR6">
                             <rect key="frame" x="0.0" y="360" width="367" height="45"/>
@@ -205,30 +205,30 @@
                                 <constraint firstAttribute="height" constant="45" id="EbO-hk-7yP"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-Dn-8Ob">
                             <rect key="frame" x="0.0" y="480" width="367" height="45"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </pickerView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-ZZ-48I">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write here/Paste projects you've done in the pasts (coding, games and so on)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-ZZ-48I">
                             <rect key="frame" x="0.0" y="540" width="367" height="45"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="1hp-fe-GT0"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-hZ-oS4">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write your hobbies here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-hZ-oS4">
                             <rect key="frame" x="0.0" y="600" width="367" height="45"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="aVP-e8-cTG"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                         </textView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-N9-URM">
                             <rect key="frame" x="0.0" y="660" width="367" height="45"/>
@@ -236,7 +236,7 @@
                                 <constraint firstAttribute="height" constant="45" id="NUn-dA-mbA"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                     </subviews>

@@ -13,6 +13,8 @@ import FirebaseDatabase
 
 
 class Login: BaseViewController {
+    
+
 
     @IBOutlet weak var rememberMeButton: UIButton!
     
@@ -32,10 +34,14 @@ class Login: BaseViewController {
     @IBOutlet weak var sessionCity: UITextField!
     @IBOutlet weak var program: UITextField!
     @IBOutlet weak var programs: UIPickerView!
+    
+    var ListPrograms = ["Mobile Development","Web Development"]
+    
     @IBOutlet weak var projects: UITextView!
     @IBOutlet weak var hobbies: UITextView!
     
     @IBOutlet weak var cities: UIPickerView!
+    var listCities = ["Jerusalem","Tel-Aviv"]
     
     @IBAction func rememberMe(_ sender: UIButton)
     {
@@ -74,6 +80,7 @@ class Login: BaseViewController {
                     if error != nil
                     {
                         self?.registerFail()
+                        
                         print(error)
                         
                         return
@@ -85,12 +92,12 @@ class Login: BaseViewController {
                     
                  let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
                     let userReference = ref.child("students").child(uid)
-                    let user = ["name": (firstName + lastName),
+                    let user = ["name": "\(firstName) \(lastName)",
                         "email": email,
                         "linkedIn": linkedIN,
                         "phone": phone,
-                        "session": sessionCity + sessionProgram,
-                        "hobbie": hobbies,
+                        "session": "\(sessionCity): \(sessionProgram)",
+                        "hobby": hobbies,
                         "projects": project]
                     userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
                         if err != nil
@@ -144,7 +151,9 @@ class Login: BaseViewController {
 //            passwordTextField.frame.size = CGSize(height: 45)
             cities.isHidden = true
             programs.isHidden = true
+            
             self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.scrollView.frame.size.height)
+            
             theySeeMeScrolling()
             
         } else if logReg.selectedSegmentIndex == 1
@@ -160,8 +169,8 @@ class Login: BaseViewController {
             hobbies.isHidden = false
             projects.isHidden = false
             passwordTextField.isHidden = false
-            cities.isHidden = false
-            programs.isHidden = false
+            cities.isHidden = true
+            programs.isHidden = true
             
             self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: 756)
           theySeeMeScrolling()
@@ -241,6 +250,6 @@ class Login: BaseViewController {
              self.youFailHard()
         }
     }
-
+ 
 }
 
