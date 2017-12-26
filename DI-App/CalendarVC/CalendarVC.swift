@@ -24,12 +24,35 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         var menuPresentMode: MenuPresentMode = .viewSlideOut
 }
     
+    var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
+    
+    var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
+    
+//    var eventDictionary : [Date : [Any] ] = Dictionary()
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
+    
+    @IBAction func addEvent(_ sender: UIBarButtonItem) {
+        func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+
+            let dateString = self.dateFormatter.string(from: date)
+
+            if self.datesWithEvent.contains(dateString) {
+                return 1
+            }
+
+            if self.datesWithMultipleEvents.contains(dateString) {
+                return 3
+            }
+
+            return 0
+        }
+    }
+    
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
     
@@ -66,6 +89,8 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+        
+//        self.tableView.reloadData()
     }
     
   
@@ -76,15 +101,20 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     // MARK:- UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        //return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return [2,20][section]
+//        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 0
+        {
+//            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]
+            
             let identifier = ["cell_month", "cell_week"][indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
             return cell
@@ -154,11 +184,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     {
         let day: Int! = self.gregorian.component(.day, from: date)
         return day % 5 == 0 ? day/5 : 0;
+        
+        
+        
+//        return self.eventDictionary[date]!.count
     }
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return classCell.count
-//    }
+
+   
     
     
     @IBAction func menu (_ sender: Any) {
@@ -167,8 +199,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }
     
     
-//    func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
-//    }
+
     
     @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
