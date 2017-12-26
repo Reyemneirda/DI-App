@@ -31,16 +31,21 @@ class Login: BaseViewController {
     @IBOutlet weak var seePassword: UIButton!
     @IBOutlet weak var linkedIn: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var sessionCity: UITextField!
-    @IBOutlet weak var program: UITextField!
-    @IBOutlet weak var programs: UIPickerView!
+    @IBOutlet weak var sessionCity: UIButton!
+    @IBOutlet weak var selectProgram: UIButton!
+    @IBOutlet var CitiesButton: [UIButton]!
+    
+    @IBOutlet var programsButtons: [UIButton]!
+    
+    @IBOutlet weak var chooseYourCity: UIStackView!
+    
+    @IBOutlet weak var chooseDiProgram: UIStackView!
     
     var ListPrograms = ["Mobile Development","Web Development"]
     
     @IBOutlet weak var projects: UITextView!
     @IBOutlet weak var hobbies: UITextView!
     
-    @IBOutlet weak var cities: UIPickerView!
     var listCities = ["Jerusalem","Tel-Aviv"]
     
     @IBAction func rememberMe(_ sender: UIButton)
@@ -68,8 +73,8 @@ class Login: BaseViewController {
             let linkedIN = linkedIn.text,
             let email = emailTxtField.text,
             let phone = phoneNumber.text,
-            let sessionCity = sessionCity.text,
-            let sessionProgram = program.text,
+            let sessionCity = sessionCity.titleLabel?.text,
+            let sessionProgram = selectProgram.titleLabel?.text,
             let hobbies = hobbies.text,
             let project = projects.text,
             let password = passwordTextField.text else {return}
@@ -143,14 +148,14 @@ class Login: BaseViewController {
             emailTxtField.isHidden = false
 //            emailTxtField.frame.size = CGSize(height: 45)
             phoneNumber.isHidden = true
-            sessionCity.isHidden = true
-            program.isHidden = true
+            chooseYourCity.isHidden = true
+            chooseDiProgram.isHidden = true
             hobbies.isHidden = true
             projects.isHidden = true
             passwordTextField.isHidden = false
 //            passwordTextField.frame.size = CGSize(height: 45)
-            cities.isHidden = true
-            programs.isHidden = true
+
+            
             
             self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.scrollView.frame.size.height)
             
@@ -164,13 +169,12 @@ class Login: BaseViewController {
             linkedIn.isHidden = false
             emailTxtField.isHidden = false
             phoneNumber.isHidden = false
-            sessionCity.isHidden = false
-            program.isHidden = false
+            chooseYourCity.isHidden = false
+            chooseDiProgram.isHidden = false
             hobbies.isHidden = false
             projects.isHidden = false
             passwordTextField.isHidden = false
-            cities.isHidden = true
-            programs.isHidden = true
+
             
             self.containerView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: 756)
           theySeeMeScrolling()
@@ -241,8 +245,8 @@ class Login: BaseViewController {
         linkedIn.text = ""
         emailTxtField.text = ""
         phoneNumber.text = ""
-        sessionCity.text = ""
-        program.text = ""
+        sessionCity.titleLabel?.text = "Select A City"
+        selectProgram.titleLabel?.text = "Select Your Progam"
         hobbies.text = ""
         projects.text = ""
         passwordTextField.text = ""
@@ -250,6 +254,135 @@ class Login: BaseViewController {
              self.youFailHard()
         }
     }
- 
-}
+    @IBAction func handeProgramSelection(_ sender: UIButton)
+    {
+         guard let title = sender.currentTitle else {return}
+        programsButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                
+        button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+            
+        }
+    }
+    
+    enum DICourses: String
+    {
+        case webDev = "Web Development"
+        case mobileDev = "Mobile Development"
+    }
+    
+    
+    @IBAction func selectProgram(_ sender: UIButton)
+    {
+        guard let title = sender.currentTitle,
+            let progList = DICourses(rawValue: title)  else {
+                return
+        }
+        
+        switch progList{
+        case .webDev:
+            guard sessionCity.currentTitle != "Web Development" else {return}
+            programsButtons.forEach { (button) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    button.isHidden = !button.isHidden
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+            selectProgram.setTitle(title, for: .normal)
+        case .mobileDev:
+            guard sessionCity.currentTitle != "Mobile Development" else {return}
+            programsButtons.forEach { (button) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    button.isHidden = !button.isHidden
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+            selectProgram.setTitle(title, for: .normal)
+        default:
+            selectProgram.titleLabel?.text = title
+        }
+    }
+    
+    
+    @IBAction func handleSelection(_ sender: UIButton)
+    {
+        guard let title = sender.currentTitle else {return}
+        CitiesButton.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                button.isHidden = !button.isHidden
+                
+                self.view.layoutIfNeeded()
+            })
+            
+        }
+        
+    }
+    
+    
+    enum citys: String
+    {
+        case telAviv = "Tel-Aviv"
+        case jerusalem = "Jerusalem"
+    }
+    
+    
+    
+    @IBAction func cityTapped(_ sender: UIButton)
+    {
+        guard let title = sender.currentTitle,
+            let citiesList = citys(rawValue: title)  else {
+            return
+        }
+        
+        switch citiesList{
+        case .telAviv:
+            
+            
+            guard sessionCity.currentTitle != "Tel-Aviv" else {return}
+            CitiesButton.forEach { (button) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    button.isHidden = !button.isHidden
+                    self.view.layoutIfNeeded()
+                })
+            }
+            sessionCity.setTitle(title, for: .normal)
 
+        case.jerusalem:
+            
+          
+            guard sessionCity.currentTitle != "Jerusalem" else {return}
+            CitiesButton.forEach { (button) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    button.isHidden = !button.isHidden
+                    self.view.layoutIfNeeded()
+                })
+            }
+              sessionCity.setTitle(title, for: .normal)
+
+        default:
+                
+            guard sender.currentTitle != nil else {return}
+            CitiesButton.forEach { (button) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    button.isHidden = !button.isHidden
+                    
+                    self.view.layoutIfNeeded()
+                })
+        }
+        
+    }
+    
+ 
+               
+}
+}
