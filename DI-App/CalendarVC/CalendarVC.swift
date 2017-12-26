@@ -18,6 +18,11 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+    @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer) {
+        print("right")
+        var direction: UISwipeGestureRecognizerDirection
+        var menuPresentMode: MenuPresentMode = .viewSlideOut
+}
     
     
     fileprivate lazy var dateFormatter: DateFormatter = {
@@ -33,11 +38,18 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//      let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: SideMenuViewController)
-//      let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-//      SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-//      SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        
+//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: self)
+//    SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//    SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        
+        
     }
+    
+   
+    
     
     deinit {
         print("\(#function)")
@@ -150,8 +162,25 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     
     @IBAction func menu (_ sender: Any) {
-        self.performSegue(withIdentifier: "menuSegue", sender: nil)
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+     
     }
+    
+    
+//    func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
+//    }
+    
+    @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
+    
+    
+    
     
     
 }
