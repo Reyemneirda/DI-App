@@ -1,1 +1,5 @@
-DI-App.xcworkspace/xcuserdata/gabrieldrai.xcuserdatad/UserInterfaceState.xcuserstate
+
+
+*.xcuserdatad
+*.swp
+
