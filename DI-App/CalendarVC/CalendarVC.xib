@@ -61,9 +61,10 @@
                     <rect key="frame" x="0.0" y="11" width="375" height="44"/>
                     <items>
                         <navigationItem id="t4l-tC-taB">
-                            <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger-icon" landscapeImage="Image" largeContentSizeImage="hamburger-icon" springLoaded="YES" style="plain" id="aFD-n9-JEc">
+                            <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger-icon" landscapeImage="Image" largeContentSizeImage="hamburger-icon" springLoaded="YES" id="aFD-n9-JEc">
                                 <inset key="imageInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="largeContentSizeImageInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="menu:" destination="-1" id="50z-Lc-K1O"/>
                                 </connections>

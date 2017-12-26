@@ -25,7 +25,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 }
     
     var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
-    
+
     var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
     
 //    var eventDictionary : [Date : [Any] ] = Dictionary()
