@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    @IBOutlet weak var mainView:UIView!
+    @IBOutlet weak var mainView: UIView!
 
     override func viewDidLoad()
     {
