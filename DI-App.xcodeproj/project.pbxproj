@@ -19,6 +19,7 @@
 		851114351FEA50C900924B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851114341FEA50C900924B87 /* Assets.xcassets */; };
 		851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114361FEA50C900924B87 /* LaunchScreen.storyboard */; };
 		858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */; };
+		85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */; };
 		E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5811FEA5A05006F5D7D /* BaseViewController.swift */; };
 		E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */; };
 		E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */; };
@@ -49,6 +50,7 @@
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851114391FEA50C900924B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+StackExtension.swift"; sourceTree = "<group>"; };
+		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -168,12 +170,6 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-
-
-				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
-			 	E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */,
-
-
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
@@ -202,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C505371FEBEE400000FF39 /* classCell.swift */,
+				85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,6 +365,7 @@
 				E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */,
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
+				85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */,
 				858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 			);
