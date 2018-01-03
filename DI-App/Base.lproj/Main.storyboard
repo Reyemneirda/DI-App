@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-887" y="134"/>
         </scene>
-        <!--Item 2-->
+        <!--HandBook-->
         <scene sceneID="gQ4-Ba-Trg">
             <objects>
                 <viewController id="q8Y-bH-Lbc" sceneMemberID="viewController">
@@ -39,13 +39,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="E0s-JB-XKn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="taD-cx-1wx"/>
+                    <tabBarItem key="tabBarItem" title="HandBook" image="icons8-ereader-100" id="taD-cx-1wx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5A-tD-2m0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2414" y="-555"/>
         </scene>
-        <!--Item 1-->
+        <!--Calendar-->
         <scene sceneID="mgO-Z9-S7q">
             <objects>
                 <viewController id="ViL-cE-vUz" customClass="CalendarVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outletCollection property="gestureRecognizers" destination="mvl-IR-s7l" appends="YES" id="buV-br-zn4"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="fjj-Dp-8LR"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="icons8-calendar-26-100" id="fjj-Dp-8LR"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -144,12 +144,13 @@
         <scene sceneID="WrV-3c-cXk">
             <objects>
                 <tabBarController id="xNH-ZW-mhg" customClass="TabBar" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7wJ-vg-TUJ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7wJ-vg-TUJ" customClass="TabBarVC" customModule="DI_App" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ViL-cE-vUz" kind="relationship" relationship="viewControllers" id="jJI-xv-ZTK"/>
@@ -162,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="286" y="134"/>
         </scene>
-        <!--Item-->
+        <!--Assignments-->
         <scene sceneID="yMR-V6-Egl">
             <objects>
                 <viewController id="bpu-l0-hzM" sceneMemberID="viewController">
@@ -172,13 +173,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GXO-1u-Zp6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Pek-lN-Fyl"/>
+                    <tabBarItem key="tabBarItem" title="Assignments" image="icons8-course-assign-100" id="Pek-lN-Fyl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYV-74-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2414" y="330"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="K6z-GZ-4eq">
             <objects>
                 <viewController id="BUF-LW-yI5" sceneMemberID="viewController">
@@ -188,13 +189,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pap-b6-yvv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9vF-tf-Gje"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-customer-100" id="9vF-tf-Gje"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caY-j9-bwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2414" y="1100"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-calendar-26-100" width="33" height="33"/>
+        <image name="icons8-course-assign-100" width="33" height="33"/>
+        <image name="icons8-customer-100" width="33" height="33"/>
+        <image name="icons8-ereader-100" width="33" height="33"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="M8k-gf-WG6"/>
     </inferredMetricsTieBreakers>

@@ -18,12 +18,19 @@ class TabBar: UITabBarController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(Logout))//Supposed to give the user the option to logOut from page
     }
 
+    
+    
+    
+    
+    
     @objc func Logout()
     {
         let login = Login()
         present(login, animated: true, completion: nil)
     }
 
+    
+    @IBOutlet var buttons: [UIButton]!
     /*
     // MARK: - Navigation
 

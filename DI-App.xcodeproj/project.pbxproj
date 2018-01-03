@@ -16,6 +16,7 @@
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
 		851114351FEA50C900924B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851114341FEA50C900924B87 /* Assets.xcassets */; };
 		851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114361FEA50C900924B87 /* LaunchScreen.storyboard */; };
+		E9296F4B1FF4E9B40084C7A9 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */; };
 		E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5811FEA5A05006F5D7D /* BaseViewController.swift */; };
 		E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */; };
 		E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */; };
@@ -44,6 +45,7 @@
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851114391FEA50C900924B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
+		E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		850C74A21FEA6D8E00E10F0B /* login */ = {
 			isa = PBXGroup;
 			children = (
+				E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */,
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
@@ -159,12 +162,6 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-
-
-				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
-			 	E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */,
-
-
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
@@ -355,6 +352,7 @@
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
 				E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */,
+				E9296F4B1FF4E9B40084C7A9 /* CustomSegmentedControl.swift in Sources */,
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,

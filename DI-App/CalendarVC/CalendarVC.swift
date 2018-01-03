@@ -198,9 +198,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
      
     }
     
-    
-
-    
     @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
