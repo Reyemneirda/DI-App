@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import Firebase
+
+class Courses: NSObject {
+    var name: String
+    var time: Date
+    
+    init(snap: DataSnapshot) {
+        
+        let userDict = snap.value as! [String: Any]
+        
+        self.name = userDict["name"] as! String
+        self.time = userDict["time"] as! Date
+        
+        
+    }
+}
