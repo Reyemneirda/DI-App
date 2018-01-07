@@ -9,8 +9,9 @@ import UIKit
 
 @IBDesignable
 class CustomSegmentedControl: UIView {
-    var buttons = [UIButton]()
     
+    var buttons = [UIButton]()
+    var selector: UIView!
     
     @IBInspectable
     var borderWidth: CGFloat = 0 {
@@ -34,10 +35,25 @@ class CustomSegmentedControl: UIView {
     }
    
     @IBInspectable
-    var textColor: UIColor = .red
+    var textColor: UIColor = .red {
+        didSet {
+            updateView()
+        }
+    }
     
+    @IBInspectable
+    var selectorColor: UIColor = .darkGray {
+        didSet {
+            updateView()
+        }
+    }
     
-    
+    @IBInspectable
+    var selectorTextColor: UIColor = .red {
+        didSet {
+            updateView()
+        }
+    }
     
     func updateView() {
         
@@ -50,14 +66,25 @@ class CustomSegmentedControl: UIView {
         let buttonTitles = commaSeperatedButtonTitles.components(separatedBy: ",")
         for buttonTitle in buttonTitles {
             let button = UIButton(type: .system)
+            button.setTitleColor(textColor, for: .normal)
             button.setTitle(buttonTitle, for: .normal)
+            button.addTarget(self, action: #selector(buttonTapped(button: )), for: .touchUpInside)
+            
             buttons.append(button)
         }
         
+        let selectorWidth = frame.width / CGFloat(buttonTitles.count)
+        
+        selector = UIView(frame: CGRect(x: 0, y: 0, width: selectorWidth, height: frame.height))
+        selector.layer.cornerRadius = frame.height/2
+        selector.backgroundColor = selectorColor
+        addSubview(selector)
+        
         let sv = UIStackView (arrangedSubviews: buttons)
+        
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
+        sv.distribution = .fillEqually
         addSubview(sv)
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -75,6 +102,20 @@ class CustomSegmentedControl: UIView {
         layer.cornerRadius = frame.height/2
     }
     
+    @objc func buttonTapped(button: UIButton) {
+        for (buttonIndex, btn) in buttons.enumerated() {
+            btn.setTitleColor(textColor, for: .normal)
+        
+        if btn == button {
+            let selctorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.selector.frame.origin.x = selctorStartPosition
+            })
+            
+            btn.setTitleColor(selectorTextColor, for: .normal)
+        }
+        }
+    }
     
 
 }
