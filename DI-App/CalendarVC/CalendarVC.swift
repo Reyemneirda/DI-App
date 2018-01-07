@@ -21,9 +21,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer?) {
         print("right")
         var direction: UISwipeGestureRecognizerDirection
-        
-        
-        
 }
     
     
@@ -58,27 +55,25 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-    
+   
+    func sideMenuManager() {
+        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.default.menuPresentMode = .menuSlideIn
+        SideMenuManager.default.menuFadeStatusBar = false
+    }
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuPresentMode = .menuDissolveIn
-        SideMenuManager.default.menuFadeStatusBar = false
+        sideMenuManager()
         rightGesture(nil)
-        
-        
-//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: self)
-//    SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-//    SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
         
     }
     
-   
+    
     
     
     deinit {
@@ -197,8 +192,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        return self.eventDictionary[date]!.count
     }
 
-   
-    
     
     @IBAction func menu (_ sender: Any) {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
@@ -211,11 +204,5 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
             
         }
     }
-    
-    
-    
-    
-    
-    
-    
+  
 }

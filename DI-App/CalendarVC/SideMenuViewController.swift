@@ -12,8 +12,6 @@ class SideMenuViewController: BaseViewController {
 
   
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

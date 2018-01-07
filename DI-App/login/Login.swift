@@ -59,6 +59,7 @@ class Login: BaseViewController {
         
         handleRegister()
         performSegue(withIdentifier: "FirstSignIN", sender: self)
+        
     }
     
     override func viewDidLoad() {
