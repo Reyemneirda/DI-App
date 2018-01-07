@@ -20,6 +20,7 @@ class Courses: NSObject {
         
         self.name = userDict["name"] as! String
         self.time = userDict["time"] as! Date
+        self.teacher = userDict["teacher"] as! String
         
         
     }
