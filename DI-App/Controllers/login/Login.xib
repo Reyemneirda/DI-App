@@ -73,16 +73,13 @@
                         <action selector="textFieldAppearing" destination="-1" eventType="valueChanged" id="WMd-Qj-q0j"/>
                     </connections>
                 </segmentedControl>
-                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-7I-syL">
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-7I-syL">
                     <rect key="frame" x="16" y="465" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="6in-DA-UzC"/>
                         <constraint firstAttribute="height" constant="25" id="Ibg-aU-rww"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="selected" title="X">
-                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
+                    <state key="selected" image="checked-checkbox"/>
                     <connections>
                         <action selector="rememberMe:" destination="-1" eventType="touchUpInside" id="FzT-d4-4fX"/>
                     </connections>
@@ -335,6 +332,7 @@
         </view>
     </objects>
     <resources>
+        <image name="checked-checkbox" width="25" height="25"/>
         <image name="codable" width="512" height="512"/>
         <image name="icon-1" width="1506" height="1500"/>
         <image name="iseeu" width="512" height="512"/>
