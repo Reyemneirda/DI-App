@@ -1,0 +1,250 @@
+diff --git a/DI-App.xcodeproj/project.pbxproj b/DI-App.xcodeproj/project.pbxproj
+index 4b8cc01..185001e 100644
+--- a/DI-App.xcodeproj/project.pbxproj
++++ b/DI-App.xcodeproj/project.pbxproj
+@@ -28,6 +28,7 @@
+ 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
+ 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
+ 		E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */; };
++		E9C505611FEF9CC20000FF39 /* CalendarConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */; };
+ /* End PBXBuildFile section */
+ 
+ /* Begin PBXFileReference section */
+@@ -57,6 +58,7 @@
+ 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+ 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
+ 		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
++		E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarConfigViewController.swift; sourceTree = "<group>"; };
+ /* End PBXFileReference section */
+ 
+ /* Begin PBXFrameworksBuildPhase section */
+@@ -160,6 +162,7 @@
+ 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
+ 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
+ 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
++				E9C505601FEF9CC20000FF39 /* CalendarConfigViewController.swift */,
+ 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
+ 			);
+ 			path = CalendarVC;
+@@ -352,6 +355,7 @@
+ 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
+ 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
+ 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
++				E9C505611FEF9CC20000FF39 /* CalendarConfigViewController.swift in Sources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+diff --git a/DI-App.xcworkspace/xcuserdata/gabrieldrai.xcuserdatad/UserInterfaceState.xcuserstate b/DI-App.xcworkspace/xcuserdata/gabrieldrai.xcuserdatad/UserInterfaceState.xcuserstate
+index 4423fea..c3632db 100644
+Binary files a/DI-App.xcworkspace/xcuserdata/gabrieldrai.xcuserdatad/UserInterfaceState.xcuserstate and b/DI-App.xcworkspace/xcuserdata/gabrieldrai.xcuserdatad/UserInterfaceState.xcuserstate differ
+diff --git a/DI-App/CalendarVC/CalendarConfigViewController.swift b/DI-App/CalendarVC/CalendarConfigViewController.swift
+new file mode 100644
+index 0000000..29e6c07
+--- /dev/null
++++ b/DI-App/CalendarVC/CalendarConfigViewController.swift
+@@ -0,0 +1,64 @@
++//
++//  CalendarConfigViewController.swift
++//  DI-App
++//
++//  Created by Gabriel Drai on 24/12/2017.
++//  Copyright © 2017 Developer.Institute. All rights reserved.
++//
++
++
++import UIKit
++
++class CalendarConfigViewController: UITableViewController {
++    
++    var theme: Int = 0
++    var lunar: Bool = false
++    var firstWeekday: UInt = 1
++//    var scrollDirection: FSCalendarScrollDirection = .horizontal
++    var selectedDate: Date?
++    
++    @IBOutlet
++    weak var datePicker: UIDatePicker!
++    
++    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
++        let cell = super.tableView(tableView, cellForRowAt: indexPath)
++        switch indexPath.section {
++        case 0:
++            cell.accessoryType = self.theme == indexPath.row ? .checkmark : .none;
++        case 1:
++            cell.accessoryType = self.lunar ? .checkmark : .none;
++//        case 2:
++//            cell.accessoryType = indexPath.row == 1 - Int(self.scrollDirection.rawValue) ? .checkmark : .none;
++        case 4:
++            cell.accessoryType = indexPath.row == Int(self.firstWeekday-1) ? .checkmark : .none;
++        default:
++            break
++        }
++        return cell
++    }
++    
++    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
++        tableView.deselectRow(at: indexPath, animated: true)
++        switch indexPath.section {
++        case 0:
++            self.theme = indexPath.row
++        case 1:
++            self.lunar = !self.lunar
++//        case 2:
++//            self.scrollDirection = FSCalendarScrollDirection(rawValue: UInt(1-indexPath.row))!
++        case 3:
++            self.selectedDate = self.datePicker.date;
++        case 4:
++            self.firstWeekday = UInt(indexPath.row + 1)
++        default:
++            break
++        }
++        tableView.reloadSections([indexPath.section] as IndexSet, with: .none)
++        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.2) {
++            self.performSegue(withIdentifier: "unwind2InterfaceBuilder", sender: self)
++        }
++        
++    }
++    
++}
++
+diff --git a/DI-App/CalendarVC/CalendarVC.swift b/DI-App/CalendarVC/CalendarVC.swift
+index a0c3570..ed85560 100644
+--- a/DI-App/CalendarVC/CalendarVC.swift
++++ b/DI-App/CalendarVC/CalendarVC.swift
+@@ -19,6 +19,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+     @IBOutlet weak var userCalendar: FSCalendar!
+     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+     
++    @IBOutlet weak var addBarButton: UIBarButtonItem!
++    @IBOutlet weak var tableViewCell: UITableViewCell!
++    @IBOutlet weak var courseLabel: UILabel!
++    @IBOutlet weak var dateTimeLabel: UILabel!
++    
++    
++    
+     
+     fileprivate lazy var dateFormatter: DateFormatter = {
+         let formatter = DateFormatter()
+@@ -28,7 +35,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+     
+     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
+     
+-   
++    var events : [Any] = []
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
+@@ -51,7 +58,19 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+         if monthPosition == .next || monthPosition == .previous {
+             calendar.setCurrentPage(date, animated: true)
+         }
+-    }
++        
++        let day: Int! = self.gregorian.component(.day, from: date)
++        let numEvents = day % 5 == 0 ? day/5 : 0
++        
++        
++//        self.events.removeAll(keepingCapacity: false)
++//        
++//        
++//    
++//        
++//        self.tableView.reloadData()
++        }
++    
+     
+     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+         print("\(self.dateFormatter.string(from: calendar.currentPage))")
+@@ -60,16 +79,20 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+     // MARK:- UITableViewDataSource
+     
+     func numberOfSections(in tableView: UITableView) -> Int {
+-        return 2
++        return 1
+     }
+     
+-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+-        return [2,20][section]
++    func tableView( tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
++        return self.events.count
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
++    
++        let cell = "cellIdentifier"
++        
+         if indexPath.section == 0 {
+             let identifier = ["cell_month", "cell_week"][indexPath.row]
++            
+             let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
+             return cell
+         } else {
+@@ -144,7 +167,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource {
+ //        return classCell.count
+ //    }
+     
+-    
+-    
++   
+     
+ }
+diff --git a/DI-App/CalendarVC/CalendarVC.xib b/DI-App/CalendarVC/CalendarVC.xib
+index fa70870..b48d24c 100644
+--- a/DI-App/CalendarVC/CalendarVC.xib
++++ b/DI-App/CalendarVC/CalendarVC.xib
+@@ -13,7 +13,13 @@
+         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarVC" customModule="DI_App" customModuleProvider="target">
+             <connections>
+                 <outlet property="SideMenuButton" destination="aFD-n9-JEc" id="HVg-mP-8bN"/>
++                <outlet property="addBarButton" destination="CfP-U1-hNL" id="DjH-yg-Vxe"/>
++                <outlet property="courseLabel" destination="1s2-nL-0Dw" id="sGR-iR-IFF"/>
++                <outlet property="dateTimeLabel" destination="uDW-Aj-dGf" id="x5d-rT-ekW"/>
+                 <outlet property="mainView" destination="iN0-l3-epB" id="tVy-BE-jZq"/>
++                <outlet property="tableView" destination="Pp6-Wl-mVj" id="dR2-E1-Nle"/>
++                <outlet property="tableViewCell" destination="7lD-CA-c5o" id="lI2-kC-VmC"/>
++                <outlet property="userCalendar" destination="ChP-wa-Y94" id="ZAu-FW-p26"/>
+             </connections>
+         </placeholder>
+         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+@@ -33,6 +39,10 @@
+                     <constraints>
+                         <constraint firstAttribute="height" constant="191" id="pEY-3m-UXh"/>
+                     </constraints>
++                    <connections>
++                        <outlet property="dataSource" destination="-1" id="Odp-pW-1gy"/>
++                        <outlet property="delegate" destination="-1" id="B8L-Qh-Xgu"/>
++                    </connections>
+                 </tableView>
+                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-XX-nzd">
+                     <rect key="frame" x="0.0" y="11" width="375" height="44"/>
+@@ -88,5 +98,30 @@
+             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+             <point key="canvasLocation" x="-217.5" y="-224.5"/>
+         </view>
++        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="57" id="ot9-2Z-wiv">
++            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
++            <autoresizingMask key="autoresizingMask"/>
++            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ot9-2Z-wiv" id="7lD-CA-c5o" customClass="UITableViewCell">
++                <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
++                <autoresizingMask key="autoresizingMask"/>
++                <subviews>
++                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-nL-0Dw">
++                        <rect key="frame" x="16" y="5" width="55" height="21"/>
++                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
++                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
++                        <nil key="textColor"/>
++                        <nil key="highlightedColor"/>
++                    </label>
++                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date and Time " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDW-Aj-dGf">
++                        <rect key="frame" x="16" y="34" width="116" height="21"/>
++                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
++                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
++                        <nil key="textColor"/>
++                        <nil key="highlightedColor"/>
++                    </label>
++                </subviews>
++            </tableViewCellContentView>
++            <point key="canvasLocation" x="-204.5" y="243.5"/>
++        </tableViewCell>
+     </objects>
+ </document>
