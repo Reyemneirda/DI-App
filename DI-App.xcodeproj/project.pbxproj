@@ -43,7 +43,7 @@
 		850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnsenfoutViewController.xib; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Controllers/login/Login.swift; sourceTree = "<group>"; };
 		851114321FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		851114341FEA50C900924B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,16 +55,16 @@
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
 		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
-		E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentVC.swift; sourceTree = "<group>"; };
-		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
-		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ../Controllers/ProfileVC/ProfileVC.swift; sourceTree = "<group>"; };
+		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = ../Controllers/ProfileVC/ProfileVC.xib; sourceTree = "<group>"; };
+		E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssignmentVC.swift; path = ../Controllers/AssignmentsVC/AssignmentVC.swift; sourceTree = "<group>"; };
+		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssignmentVC.xib; path = ../Controllers/AssignmentsVC/AssignmentVC.xib; sourceTree = "<group>"; };
+		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarVC.swift; path = ../Controllers/CalendarVC/CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
-		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
+		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalendarVC.xib; path = ../Controllers/CalendarVC/CalendarVC.xib; sourceTree = "<group>"; };
 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
-		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Controllers/CalendarVC/SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 			);
@@ -128,10 +129,9 @@
 		8511142C1FEA50C900924B87 /* DI-App */ = {
 			isa = PBXGroup;
 			children = (
+				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
-				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
-				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,

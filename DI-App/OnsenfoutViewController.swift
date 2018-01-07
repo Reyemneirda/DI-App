@@ -13,13 +13,6 @@ import Firebase
 
 class OnsenfoutViewController: BaseViewController {
 
-<<<<<<< HEAD:DI-App/OnsenfoutViewController.swift
-    @IBOutlet weak var hello: UILabel!
-    
-
-=======
-  
->>>>>>> SideMenu:DI-App/CalendarVC/SideMenuViewController.swift
     
     override func viewDidLoad() {
         super.viewDidLoad()
