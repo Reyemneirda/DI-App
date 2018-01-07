@@ -254,7 +254,9 @@ class Login: BaseViewController {
     func registerFail()
     {
         let time = DispatchTime(uptimeNanoseconds: 1000000000)
+        
         self.registerForm.shake()
+        
         firstName.text = ""
         lastName.text = ""
         linkedIn.text = ""
@@ -398,4 +400,18 @@ class Login: BaseViewController {
         
     }
     }
+    
+}
+
+extension UIStackView
+{
+    
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
 }

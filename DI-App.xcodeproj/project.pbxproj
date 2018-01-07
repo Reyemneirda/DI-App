@@ -59,12 +59,12 @@
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentVC.swift; sourceTree = "<group>"; };
 		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
-		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarVC.swift; path = ../Controllers/CalendarVC/CalendarVC.swift; sourceTree = "<group>"; };
+		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
-		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalendarVC.xib; path = ../Controllers/CalendarVC/CalendarVC.xib; sourceTree = "<group>"; };
+		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
-		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Controllers/CalendarVC/SideMenuViewController.swift; sourceTree = "<group>"; };
+		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +103,12 @@
 			children = (
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
-				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
 				E958D5901FEA6C40006F5D7D /* CalendarVC */,
 				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
+				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = ClassesVC;
+			name = ClassesVC;
+			path = ../ClassesVC;
 			sourceTree = "<group>";
 		};
 		E958D5901FEA6C40006F5D7D /* CalendarVC */ = {
