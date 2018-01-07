@@ -38,7 +38,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="logMeOut:" destination="-1" eventType="touchUpInside" id="Kdu-9f-Kpl"/>
+                                <action selector="logMeOut:" destination="-1" eventType="touchUpInside" id="rzW-vT-fMx"/>
                             </connections>
                         </button>
                     </subviews>

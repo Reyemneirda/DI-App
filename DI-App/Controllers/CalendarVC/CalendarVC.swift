@@ -61,6 +61,8 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkIfUserIsin()
+        
         let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
         
@@ -110,7 +112,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0
         {
 //            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]

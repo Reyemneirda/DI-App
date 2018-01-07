@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class BaseViewController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
-
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,31 +39,59 @@ class BaseViewController: UIViewController {
                 self.view.addSubview(self.mainView)
             }
         }
-        
-        
-        
-//        [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
-//
-//
-//        if( self.mainView )
-//        {
-//            self.mainView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//            self.mainView.frame = self.view.bounds;
-//
-//            [self.view addSubview:self.mainView];
-//
-//        }
-
-        // Do any additional setup after loading the view.
     }
-//    
-//    func shake()
-//    {
-//        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-//        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-//        animation.duration = 0.6
-//        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-//        layer.add(animation, forKey: "shake")
-//    }
+    
+    func handleLogOut()
+    {
+        if Auth.auth().currentUser?.uid == nil
+        {
+            do
+            {
+                try Auth.auth().signOut()
+                
+            } catch let logOutError
+            {
+                print(logOutError)
+            }
+        }
+        self.tabBarController?.dismiss(animated: true, completion: nil)
+        
+        //        let loginController = Login()
+        //       self.present(loginController, animated: true, completion: nil)
+    }
+    
+    func checkIfUserIsin()
+    {
+        if Auth.auth().currentUser?.uid == nil
+        {
+            handleLogOut()
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionnary = snapshot.value as? [String : AnyObject] {
+                }
+                
+            }, withCancel: nil)
+        }
+    }
+    
+    @IBAction func logMeOut(_ sender: Any)
+    {
+        
+        handleLogOut()
+        
+    }
+    
+    
 
+    
+    //    func shake()
+    //    {
+    //        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+    //        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    //        animation.duration = 0.6
+    //        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+    //        layer.add(animation, forKey: "shake")
+    //    }
+    
 }
