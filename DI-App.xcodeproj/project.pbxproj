@@ -43,7 +43,7 @@
 		850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnsenfoutViewController.xib; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Controllers/login/Login.swift; sourceTree = "<group>"; };
+		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		851114321FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		851114341FEA50C900924B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,8 +95,7 @@
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
-			name = login;
-			path = ../login;
+			path = login;
 			sourceTree = "<group>";
 		};
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
