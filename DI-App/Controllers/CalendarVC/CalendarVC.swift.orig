@@ -67,8 +67,19 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD:DI-App/Controllers/CalendarVC/CalendarVC.swift
+        checkIfUserIsin()
+        
+        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        
+//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: self)
+//    SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//    SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+=======
         sideMenuManager()
         rightGesture(nil)
+>>>>>>> SideMenu:DI-App/CalendarVC/CalendarVC.swift
         
         
     }
@@ -112,7 +123,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0
         {
 //            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]

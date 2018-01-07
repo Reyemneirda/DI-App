@@ -49,15 +49,17 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhp-op-0lo">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhp-op-0lo">
                     <rect key="frame" x="45" y="569" width="285" height="64"/>
-                    <color key="backgroundColor" red="0.0" green="0.17346887143782383" blue="0.69387548575129532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="285" id="rRU-Tp-fvc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="43"/>
+                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="SIGN-IN">
                         <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="SignIN:" destination="-1" eventType="touchUpInside" id="xbP-lK-LsC"/>
@@ -73,16 +75,13 @@
                         <action selector="textFieldAppearing" destination="-1" eventType="valueChanged" id="WMd-Qj-q0j"/>
                     </connections>
                 </segmentedControl>
-                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-7I-syL">
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-7I-syL">
                     <rect key="frame" x="16" y="465" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="6in-DA-UzC"/>
                         <constraint firstAttribute="height" constant="25" id="Ibg-aU-rww"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="selected" title="X">
-                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
+                    <state key="selected" image="checked-checkbox"/>
                     <connections>
                         <action selector="rememberMe:" destination="-1" eventType="touchUpInside" id="FzT-d4-4fX"/>
                     </connections>
@@ -335,6 +334,7 @@
         </view>
     </objects>
     <resources>
+        <image name="checked-checkbox" width="25" height="25"/>
         <image name="codable" width="512" height="512"/>
         <image name="icon-1" width="1506" height="1500"/>
         <image name="iseeu" width="512" height="512"/>

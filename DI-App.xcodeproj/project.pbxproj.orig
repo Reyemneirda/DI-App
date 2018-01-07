@@ -18,15 +18,20 @@
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
 		851114351FEA50C900924B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851114341FEA50C900924B87 /* Assets.xcassets */; };
 		851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114361FEA50C900924B87 /* LaunchScreen.storyboard */; };
-		E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */; };
+<<<<<<< HEAD
+		856BBD711FFCD1BA008CD86A /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BBD701FFCD1BA008CD86A /* Courses.swift */; };
+		856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BBD721FFCD1C8008CD86A /* Sessions.swift */; };
+		858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */; };
+		85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */; };
+=======
+		E9296F4B1FF4E9B40084C7A9 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */; };
+>>>>>>> SideMenu
 		E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5811FEA5A05006F5D7D /* BaseViewController.swift */; };
 		E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */; };
 		E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */; };
 		E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */; };
 		E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */; };
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
-		E958D5A91FEA88E3006F5D7D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		E958D5AA1FEA88E3006F5D7D /* (null) in Resources */ = {isa = PBXBuildFile; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
@@ -43,7 +48,7 @@
 		850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnsenfoutViewController.xib; sourceTree = "<group>"; };
 		8511142A1FEA50C900924B87 /* DI-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DI-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511142D1FEA50C900924B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Controllers/login/Login.swift; sourceTree = "<group>"; };
+		8511142F1FEA50C900924B87 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		851114321FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		851114341FEA50C900924B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,7 +58,7 @@
 		858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+StackExtension.swift"; sourceTree = "<group>"; };
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
-		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+		E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -91,12 +96,11 @@
 		850C74A21FEA6D8E00E10F0B /* login */ = {
 			isa = PBXGroup;
 			children = (
-				E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */,
+				E9296F4A1FF4E9B40084C7A9 /* CustomSegmentedControl.swift */,
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
-			name = login;
-			path = ../login;
+			path = login;
 			sourceTree = "<group>";
 		};
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
@@ -108,7 +112,6 @@
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
 				E958D5901FEA6C40006F5D7D /* CalendarVC */,
-				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 			);
 			path = Controllers;
@@ -140,8 +143,8 @@
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
 				850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */,
-				851114311FEA50C900924B87 /* Main.storyboard */,
 				851114341FEA50C900924B87 /* Assets.xcassets */,
+				851114311FEA50C900924B87 /* Main.storyboard */,
 				851114361FEA50C900924B87 /* LaunchScreen.storyboard */,
 				851114391FEA50C900924B87 /* Info.plist */,
 				850C74A81FEA87B200E10F0B /* GoogleService-Info.plist */,
@@ -156,14 +159,6 @@
 				25A17E3C07FCAF6517325103 /* Pods_DI_App.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E958D58B1FEA6C00006F5D7D /* ClassesVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ClassesVC;
-			path = ../ClassesVC;
 			sourceTree = "<group>";
 		};
 		E958D5901FEA6C40006F5D7D /* CalendarVC */ = {
@@ -279,7 +274,6 @@
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
 				E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
-				E958D5AA1FEA88E3006F5D7D /* (null) in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
@@ -360,15 +354,18 @@
 			files = (
 				E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */,
 				E9C505381FEBEE400000FF39 /* classCell.swift in Sources */,
+				856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */,
+				856BBD711FFCD1BA008CD86A /* Courses.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
-				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
 				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
 				E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */,
-				E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */,
+				E9296F4B1FF4E9B40084C7A9 /* CustomSegmentedControl.swift in Sources */,
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
+				85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */,
+				858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

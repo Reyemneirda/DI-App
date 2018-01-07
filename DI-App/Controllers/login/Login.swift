@@ -14,6 +14,8 @@ import FirebaseDatabase
 
 class Login: BaseViewController {
     
+    let setting = FirebaseConfiguration()
+
 
 
     @IBOutlet weak var rememberMeButton: UIButton!
@@ -50,6 +52,11 @@ class Login: BaseViewController {
     
     @IBAction func rememberMe(_ sender: UIButton)
     {
+        if rememberMeButton.isSelected  == true{
+            rememberMeButton.isSelected = false
+        } else {
+            rememberMeButton.isSelected = true
+        }
     }
     
     
@@ -127,6 +134,15 @@ class Login: BaseViewController {
                         print(error as Any)
                         return
                     }
+                    
+                    if self?.rememberMeButton.isSelected == true {
+                        
+                        
+                
+                    } else {
+                        
+                        
+                    }
                     self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
                     
                     //success
@@ -200,8 +216,7 @@ class Login: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var ref: DatabaseReference!
-        ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+        var ref: DatabaseReference! = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
         
         textFieldAppearing()
         
@@ -254,6 +269,7 @@ class Login: BaseViewController {
              self.youFailHard()
         }
     }
+    
     @IBAction func handeProgramSelection(_ sender: UIButton)
     {
          guard let title = sender.currentTitle else {return}
