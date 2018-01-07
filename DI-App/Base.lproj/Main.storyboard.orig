@@ -75,6 +75,21 @@
             </objects>
             <point key="canvasLocation" x="2414" y="-1438"/>
         </scene>
+<<<<<<< HEAD
+        <!--Side Menu View Controller-->
+        <scene sceneID="Vti-Hr-5Bo">
+            <objects>
+                <viewController id="jxX-bC-wqO" customClass="SideMenuViewController" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sWl-pO-xOt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ao5-wJ-3WL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3n1-0B-pG5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUf-bA-MvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
         <!--Menu-->
         <scene sceneID="GpW-FQ-wLI">
             <objects>
@@ -121,8 +136,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3X-8Q-a8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> SideMenu
             </objects>
-            <point key="canvasLocation" x="4186" y="-1439"/>
+            <point key="canvasLocation" x="4153" y="-1440"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="hsp-iq-E3O">
@@ -137,7 +153,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="xoy-js-ybP" kind="relationship" relationship="rootViewController" id="Iaq-G5-gTQ"/>
+                        <segue destination="jxX-bC-wqO" kind="relationship" relationship="rootViewController" id="8qw-m7-RFv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phy-KD-A2F" userLabel="First Responder" sceneMemberID="firstResponder"/>

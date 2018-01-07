@@ -18,14 +18,15 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
-    @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer?) {
+    @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer) {
         print("right")
         var direction: UISwipeGestureRecognizerDirection
+        var menuPresentMode: MenuPresentMode = .viewSlideOut
 }
-    
     
     var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
 
+<<<<<<< HEAD
     var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
     
 //    var eventDictionary : [Date : [Any] ] = Dictionary()
@@ -35,6 +36,10 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
+=======
+class CalendarVC: UITableViewController {
+
+>>>>>>> Set the password to SecurtyText
     
     @IBAction func addEvent(_ sender: UIBarButtonItem) {
         func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
@@ -55,25 +60,23 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-   
-    func sideMenuManager() {
-        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-    }
+    
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sideMenuManager()
-        rightGesture(nil)
+        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        
+//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: self)
+//    SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//    SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
         
     }
     
-    
+   
     
     
     deinit {
@@ -192,11 +195,16 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        return self.eventDictionary[date]!.count
     }
 
+   
+    
     
     @IBAction func menu (_ sender: Any) {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
      
     }
+    
+    
+
     
     @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
@@ -204,5 +212,11 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
             
         }
     }
-  
+    
+    
+    
+    
+    
+    
+    
 }
