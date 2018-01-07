@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/gabrieldrai/projects/AppDI/DI-App/login/CustomSegmentedControl.swift">
+   </FileRef>
+   <FileRef
       location = "group:DI-App.xcodeproj">
    </FileRef>
    <FileRef
