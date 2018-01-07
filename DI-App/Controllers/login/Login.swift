@@ -86,7 +86,7 @@ class Login: BaseViewController {
                     {
                         self?.registerFail()
                         
-                        print(error)
+                        print(error as Any)
                         
                         return
                     }
@@ -107,7 +107,7 @@ class Login: BaseViewController {
                     userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
                         if err != nil
                         {
-                            print(err)
+                            print(err as Any)
                             
                             return
                         }
@@ -124,7 +124,7 @@ class Login: BaseViewController {
                     if error != nil
                     {
                         self?.registerFail()
-                        print(error)
+                        print(error as Any)
                         return
                     }
                     self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
@@ -381,8 +381,5 @@ class Login: BaseViewController {
         }
         
     }
-    
- 
-               
-}
+    }
 }

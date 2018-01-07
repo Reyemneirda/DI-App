@@ -75,51 +75,21 @@
             </objects>
             <point key="canvasLocation" x="2414" y="-1438"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="GpW-FQ-wLI">
+        <!--Side Menu View Controller-->
+        <scene sceneID="Vti-Hr-5Bo">
             <objects>
-                <tableViewController id="xoy-js-ybP" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xT4-ki-BZM">
+                <viewController id="jxX-bC-wqO" customClass="SideMenuViewController" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sWl-pO-xOt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SDD-Rg-i3h">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SDD-Rg-i3h" id="NX0-9b-yAh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Lh-q7-26W">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Lh-q7-26W" id="u32-ho-Ieb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qu2-3e-dmK">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qu2-3e-dmK" id="jlR-RN-r4w">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="xoy-js-ybP" id="dRb-xx-Zih"/>
-                            <outlet property="delegate" destination="xoy-js-ybP" id="wW1-V5-Ny2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="AnS-OZ-CTa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X3X-8Q-a8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="Ao5-wJ-3WL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3n1-0B-pG5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUf-bA-MvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4186" y="-1439"/>
+            <point key="canvasLocation" x="4153" y="-1440"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="hsp-iq-E3O">
@@ -133,7 +103,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="xoy-js-ybP" kind="relationship" relationship="rootViewController" id="Iaq-G5-gTQ"/>
+                        <segue destination="jxX-bC-wqO" kind="relationship" relationship="rootViewController" id="8qw-m7-RFv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phy-KD-A2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
