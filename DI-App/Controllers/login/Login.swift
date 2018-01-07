@@ -254,7 +254,9 @@ class Login: BaseViewController {
     func registerFail()
     {
         let time = DispatchTime(uptimeNanoseconds: 1000000000)
+        
         self.registerForm.shake()
+        
         firstName.text = ""
         lastName.text = ""
         linkedIn.text = ""
