@@ -95,7 +95,8 @@
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
-			path = login;
+			name = login;
+			path = ../login;
 			sourceTree = "<group>";
 		};
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
@@ -104,6 +105,11 @@
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
+				850C74A21FEA6D8E00E10F0B /* login */,
+				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
+				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
+				E958D5901FEA6C40006F5D7D /* CalendarVC */,
+				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -132,11 +138,6 @@
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
-				850C74A21FEA6D8E00E10F0B /* login */,
-				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
-				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
-				E958D5901FEA6C40006F5D7D /* CalendarVC */,
-				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
 				850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */,
 				851114311FEA50C900924B87 /* Main.storyboard */,
@@ -172,7 +173,8 @@
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
-			path = CalendarVC;
+			name = CalendarVC;
+			path = ../CalendarVC;
 			sourceTree = "<group>";
 		};
 		E958D5951FEA6C69006F5D7D /* AssignmentsVC */ = {
@@ -181,7 +183,8 @@
 				E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */,
 				E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */,
 			);
-			path = AssignmentsVC;
+			name = AssignmentsVC;
+			path = ../AssignmentsVC;
 			sourceTree = "<group>";
 		};
 		E958D59A1FEA6CA8006F5D7D /* ProfileVC */ = {
@@ -190,7 +193,8 @@
 				E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */,
 				E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */,
 			);
-			path = ProfileVC;
+			name = ProfileVC;
+			path = ../ProfileVC;
 			sourceTree = "<group>";
 		};
 		E9C505361FEBEE260000FF39 /* Models */ = {
