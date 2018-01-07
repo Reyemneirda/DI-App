@@ -53,18 +53,18 @@
 		858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+StackExtension.swift"; sourceTree = "<group>"; };
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
-		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ../Controllers/ProfileVC/ProfileVC.swift; sourceTree = "<group>"; };
-		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = ../Controllers/ProfileVC/ProfileVC.xib; sourceTree = "<group>"; };
-		E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssignmentVC.swift; path = ../Controllers/AssignmentsVC/AssignmentVC.swift; sourceTree = "<group>"; };
-		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssignmentVC.xib; path = ../Controllers/AssignmentsVC/AssignmentVC.xib; sourceTree = "<group>"; };
-		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarVC.swift; path = ../Controllers/CalendarVC/CalendarVC.swift; sourceTree = "<group>"; };
+		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentVC.swift; sourceTree = "<group>"; };
+		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
+		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
-		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalendarVC.xib; path = ../Controllers/CalendarVC/CalendarVC.xib; sourceTree = "<group>"; };
+		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
-		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Controllers/CalendarVC/SideMenuViewController.swift; sourceTree = "<group>"; };
+		E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,8 @@
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
-			path = login;
+			name = login;
+			path = ../login;
 			sourceTree = "<group>";
 		};
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
@@ -103,6 +104,11 @@
 			children = (
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
+				850C74A21FEA6D8E00E10F0B /* login */,
+				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
+				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
+				E958D5901FEA6C40006F5D7D /* CalendarVC */,
+				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 			);
 			path = Controllers;
@@ -132,11 +138,6 @@
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
-				850C74A21FEA6D8E00E10F0B /* login */,
-				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
-				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
-				E958D5901FEA6C40006F5D7D /* CalendarVC */,
-				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
 				850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */,
 				851114311FEA50C900924B87 /* Main.storyboard */,
@@ -161,7 +162,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = ClassesVC;
+			name = ClassesVC;
+			path = ../ClassesVC;
 			sourceTree = "<group>";
 		};
 		E958D5901FEA6C40006F5D7D /* CalendarVC */ = {
