@@ -95,7 +95,8 @@
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
 			);
-			path = login;
+			name = login;
+			path = ../login;
 			sourceTree = "<group>";
 		};
 		850C74A51FEA7F4D00E10F0B /* Controllers */ = {
@@ -172,7 +173,8 @@
 				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
 				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
-			path = CalendarVC;
+			name = CalendarVC;
+			path = ../CalendarVC;
 			sourceTree = "<group>";
 		};
 		E958D5951FEA6C69006F5D7D /* AssignmentsVC */ = {
@@ -181,7 +183,8 @@
 				E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */,
 				E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */,
 			);
-			path = AssignmentsVC;
+			name = AssignmentsVC;
+			path = ../AssignmentsVC;
 			sourceTree = "<group>";
 		};
 		E958D59A1FEA6CA8006F5D7D /* ProfileVC */ = {
@@ -190,7 +193,8 @@
 				E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */,
 				E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */,
 			);
-			path = ProfileVC;
+			name = ProfileVC;
+			path = ../ProfileVC;
 			sourceTree = "<group>";
 		};
 		E9C505361FEBEE260000FF39 /* Models */ = {
