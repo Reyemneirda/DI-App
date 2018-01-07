@@ -11,16 +11,18 @@ import Firebase
 
 class Courses: NSObject {
     var name: String
-    var time: Date
+    var date: Date
     var teacher: String
+    var content : String
     
     init(snap: DataSnapshot) {
         
         let userDict = snap.value as! [String: Any]
         
         self.name = userDict["name"] as! String
-        self.time = userDict["time"] as! Date
+        self.date = userDict["date"] as! Date
         self.teacher = userDict["teacher"] as! String
+        self.content = userDict["content"] as! String
         
         
     }
