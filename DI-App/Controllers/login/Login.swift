@@ -14,6 +14,10 @@ import FirebaseDatabase
 
 class Login: BaseViewController {
     
+    
+    
+    
+    
     let setting = FirebaseConfiguration()
 
 
@@ -74,7 +78,15 @@ class Login: BaseViewController {
     }
     
     
-        
+    //picker view config
+    
+
+    
+  
+    
+    
+    
+    
         func handleRegister()
         {
             
@@ -221,6 +233,8 @@ class Login: BaseViewController {
     }
     
     override func viewDidLoad() {
+        
+      
         super.viewDidLoad()
         
         var ref: DatabaseReference! = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
@@ -301,6 +315,12 @@ class Login: BaseViewController {
     
     @IBAction func selectProgram(_ sender: UIButton)
     {
+        
+        
+        
+        
+        
+        
         guard let title = sender.currentTitle,
             let progList = DICourses(rawValue: title)  else {
                 return
@@ -360,20 +380,21 @@ class Login: BaseViewController {
     
     
     @IBAction func cityTapped(_ sender: UIButton)
+    
     {
         guard let title = sender.currentTitle,
             let citiesList = citys(rawValue: title)  else {
             return
         }
-        
+
         switch citiesList{
         case .telAviv:
-            
-            
+
+
             guard sessionCity.currentTitle != "Tel-Aviv" else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
                 })
@@ -381,12 +402,12 @@ class Login: BaseViewController {
             sessionCity.setTitle(title, for: .normal)
 
         case.jerusalem:
-            
-          
+
+
             guard sessionCity.currentTitle != "Jerusalem" else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
                 })
@@ -394,17 +415,17 @@ class Login: BaseViewController {
               sessionCity.setTitle(title, for: .normal)
 
         default:
-                
+
             guard sender.currentTitle != nil else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
-                    
+
                     self.view.layoutIfNeeded()
                 })
         }
-        
+
     }
     }
     

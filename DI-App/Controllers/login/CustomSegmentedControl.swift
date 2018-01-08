@@ -45,7 +45,7 @@ class CustomSegmentedControl: UIControl {
     }
     
     @IBInspectable
-    var selectorColor: UIColor = .darkGray {
+    var selectorColor: UIColor = .lightGray {
         didSet {
             updateView()
         }
@@ -103,6 +103,7 @@ class CustomSegmentedControl: UIControl {
     
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = frame.height/2
+        updateView()
     }
     
     @objc func buttonTapped(button: UIButton) {
@@ -115,8 +116,6 @@ class CustomSegmentedControl: UIControl {
             let selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
             UIView.animate(withDuration: 0.3, animations: {
                 self.selector.frame.origin.x = selectorStartPosition
-                
-                
             })
           
             btn.setTitleColor(selectorTextColor, for: .normal)
