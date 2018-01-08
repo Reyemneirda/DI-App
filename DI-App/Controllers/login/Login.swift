@@ -18,6 +18,8 @@ class Login: BaseViewController {
 
 
 
+    @IBOutlet weak var logRegister: CustomSegmentedControl!
+    
     @IBOutlet weak var rememberMeButton: UIButton!
     
     @IBOutlet weak var firstName: UITextField!
@@ -27,7 +29,6 @@ class Login: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var logReg: UISegmentedControl!
     @IBOutlet weak var goIn: UIButton!
     @IBOutlet weak var registerForm: UIStackView!
     @IBOutlet weak var seePassword: UIButton!
@@ -72,92 +73,97 @@ class Login: BaseViewController {
         }
     }
     
-    func handleRegister()
-    {
+    
         
-        guard let firstName = firstName.text,
-            let lastName = lastName.text,
-            let linkedIN = linkedIn.text,
-            let email = emailTxtField.text,
-            let phone = phoneNumber.text,
-            let sessionCity = sessionCity.titleLabel?.text,
-            let sessionProgram = selectProgram.titleLabel?.text,
-            let hobbies = hobbies.text,
-            let project = projects.text,
-            let password = passwordTextField.text else {return}
-        if logReg.selectedSegmentIndex == 1 {
+        func handleRegister()
+        {
             
-            Auth.auth().createUser(withEmail: email, password: password, completion:
-                { [weak self]  (user, error)   in
-                    if error != nil
-                    {
-                        self?.registerFail()
-                        
-                        print(error as Any)
-                        
-                        return
-                    }
-                    guard let uid = user?.uid else {
-                        return
-                    }
-                    
-                    
-                 let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
-                    let userReference = ref.child("students").child(uid)
-                    let user = ["name": "\(firstName) \(lastName)",
-                        "email": email,
-                        "linkedIn": linkedIN,
-                        "phone": phone,
-                        "session": "\(sessionCity): \(sessionProgram)",
-                        "hobby": hobbies,
-                        "projects": project]
-                    userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
-                        if err != nil
+            guard let firstName = firstName.text,
+                let lastName = lastName.text,
+                let linkedIN = linkedIn.text,
+                let email = emailTxtField.text,
+                let phone = phoneNumber.text,
+                let sessionCity = sessionCity.titleLabel?.text,
+                let sessionProgram = selectProgram.titleLabel?.text,
+                let hobbies = hobbies.text,
+                let project = projects.text,
+                let password = passwordTextField.text else {return}
+            if logRegister.selectedSegmentIndex == 1 {
+                
+                Auth.auth().createUser(withEmail: email, password: password, completion:
+                    { [weak self]  (user, error)   in
+                        if error != nil
                         {
-                            print(err as Any)
+                            self?.registerFail()
+                            
+                            print(error as Any)
                             
                             return
                         }
-                        print("\n User Saved Succesfully \n")
-
-                    })
-
-                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
-                    //success
-            })
-        } else  if logReg.selectedSegmentIndex == 0 {
-            Auth.auth().signIn(withEmail: email, password: password, completion:
-                { [weak self] (user, error)  in
-                    if error != nil
-                    {
-                        self?.registerFail()
-                        print(error as Any)
-                        return
-                    }
-                    
-                    if self?.rememberMeButton.isSelected == true {
+                        guard let uid = user?.uid else {
+                            return
+                        }
                         
                         
-                
-                    } else {
+                        let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+                        let userReference = ref.child("students").child(uid)
+                        let user = ["name": "\(firstName) \(lastName)",
+                            "email": email,
+                            "linkedIn": linkedIN,
+                            "phone": phone,
+                            "session": "\(sessionCity): \(sessionProgram)",
+                            "hobby": hobbies,
+                            "projects": project]
+                        userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
+                            if err != nil
+                            {
+                                print(err as Any)
+                                
+                                return
+                            }
+                            print("\n User Saved Succesfully \n")
+                            
+                        })
                         
+                        self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                        //success
+                })
+            } else  if logRegister.selectedSegmentIndex == 0 {
+                Auth.auth().signIn(withEmail: email, password: password, completion:
+                    { [weak self] (user, error)  in
+                        if error != nil
+                        {
+                            self?.registerFail()
+                            print(error as Any)
+                            return
+                        }
                         
-                    }
-                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
-                    
-                    //success
-            })
+                        if self?.rememberMeButton.isSelected == true {
+                            
+                            
+                            
+                        } else {
+                            
+                            
+                        }
+                        self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                        
+                        //success
+                })
+            }
+            
         }
-        
-    }
     
-   @IBAction func textFieldAppearing()
+ 
+    
+    @IBAction func textFieldAppearing()
     {
-        let title = logReg.titleForSegment(at: logReg.selectedSegmentIndex)
-        if logReg.selectedSegmentIndex == 0
+        let title = logRegister.titleForSegment
+        
+        if logRegister.selectedSegmentIndex == 0
         {
             goIn.setTitle(title, for: .normal)
-            
+            print(goIn.titleLabel?.text)
            firstName.isHidden = true
             lastName.isHidden = true
             linkedIn.isHidden = true
@@ -177,9 +183,10 @@ class Login: BaseViewController {
             
             theySeeMeScrolling()
             
-        } else if logReg.selectedSegmentIndex == 1
+        } else if logRegister.selectedSegmentIndex == 1
         {
             goIn.setTitle(title, for: .normal)
+            print(goIn.titleLabel?.text)
             firstName.isHidden = false
             lastName.isHidden = false
             linkedIn.isHidden = false
@@ -254,7 +261,9 @@ class Login: BaseViewController {
     func registerFail()
     {
         let time = DispatchTime(uptimeNanoseconds: 1000000000)
+        
         self.registerForm.shake()
+        
         firstName.text = ""
         lastName.text = ""
         linkedIn.text = ""
@@ -398,4 +407,18 @@ class Login: BaseViewController {
         
     }
     }
+    
+}
+
+extension UIStackView
+{
+    
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
 }

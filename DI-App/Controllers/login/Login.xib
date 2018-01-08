@@ -21,7 +21,7 @@
                 <outlet property="hobbies" destination="zlf-hZ-oS4" id="hPS-5K-rtY"/>
                 <outlet property="lastName" destination="bGo-CR-fPY" id="3dW-8M-24a"/>
                 <outlet property="linkedIn" destination="dSP-GN-MmB" id="uh6-ua-5Kl"/>
-                <outlet property="logReg" destination="CR9-uF-O2v" id="w00-DS-Wnh"/>
+                <outlet property="logRegister" destination="WbC-nW-4CJ" id="5ks-Bz-VQg"/>
                 <outlet property="passwordTextField" destination="9Zo-N9-URM" id="s24-5m-GXM"/>
                 <outlet property="phoneNumber" destination="bFf-8R-vr9" id="UR1-If-vKC"/>
                 <outlet property="projects" destination="2GY-ZZ-48I" id="2eQ-6P-BCE"/>
@@ -51,30 +51,19 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhp-op-0lo">
                     <rect key="frame" x="45" y="569" width="285" height="64"/>
-                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.1734688714" blue="0.69387548580000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="285" id="rRU-Tp-fvc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="43"/>
-                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.1734688714" blue="0.69387548580000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="SIGN-IN">
                         <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="titleShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="SignIN:" destination="-1" eventType="touchUpInside" id="xbP-lK-LsC"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CR9-uF-O2v">
-                    <rect key="frame" x="16" y="170" width="343" height="29"/>
-                    <segments>
-                        <segment title="Login"/>
-                        <segment title="Register"/>
-                    </segments>
-                    <connections>
-                        <action selector="textFieldAppearing" destination="-1" eventType="valueChanged" id="WMd-Qj-q0j"/>
-                    </connections>
-                </segmentedControl>
                 <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-7I-syL">
                     <rect key="frame" x="16" y="465" width="25" height="25"/>
                     <constraints>
@@ -102,37 +91,43 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-4U-isZ">
                     <rect key="frame" x="0.0" y="206" width="375" height="244"/>
                 </scrollView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Lo-Wn-YEw">
-                    <rect key="frame" x="121" y="34" width="132" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="cKn-SM-lhx"/>
-                        <constraint firstAttribute="width" constant="132" id="yyU-P5-bv6"/>
-                    </constraints>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbC-nW-4CJ" customClass="CustomSegmentedControl" customModule="DI_App">
+                    <rect key="frame" x="39" y="145" width="296" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="commaSeperatedButtonTitles" value="Login, Register"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="textFieldAppearing" destination="-1" eventType="valueChanged" id="4Zj-7W-3Ws"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6Lo-Wn-YEw" secondAttribute="trailing" constant="122" id="120-Mz-LbS"/>
                 <constraint firstItem="FzO-7I-syL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="1bi-EF-2gI"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="leading" secondItem="FzO-7I-syL" secondAttribute="trailing" constant="12" id="62w-lR-gW5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mYL-BC-8ha" secondAttribute="trailing" constant="16" id="8T4-77-x2e"/>
+                <constraint firstItem="WbC-nW-4CJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="125" id="AyF-iX-D9M"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WbC-nW-4CJ" secondAttribute="trailing" constant="40" id="FKB-4z-tcg"/>
                 <constraint firstItem="Zhp-op-0lo" firstAttribute="top" secondItem="RLs-TR-hhm" secondAttribute="bottom" constant="78" id="IE0-Nb-poH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MY8-4U-isZ" secondAttribute="trailing" id="PVL-hR-v3n"/>
                 <constraint firstItem="Zhp-op-0lo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="Pca-dx-E9M"/>
-                <constraint firstItem="CR9-uF-O2v" firstAttribute="top" secondItem="6Lo-Wn-YEw" secondAttribute="bottom" constant="8" id="QeR-F3-7PQ"/>
-                <constraint firstItem="6Lo-Wn-YEw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="14" id="TA7-wH-foO"/>
                 <constraint firstItem="mYL-BC-8ha" firstAttribute="leading" secondItem="RLs-TR-hhm" secondAttribute="trailing" constant="106" id="XqR-Oy-XqD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zhp-op-0lo" secondAttribute="trailing" constant="45" id="aJ6-tf-aSS"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="top" secondItem="MY8-4U-isZ" secondAttribute="bottom" constant="13" id="ado-D5-Kgw"/>
                 <constraint firstItem="RLs-TR-hhm" firstAttribute="leading" secondItem="FzO-7I-syL" secondAttribute="trailing" constant="12" id="bKc-cG-vF2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Zhp-op-0lo" secondAttribute="bottom" constant="34" id="bzP-Fx-aia"/>
                 <constraint firstItem="mYL-BC-8ha" firstAttribute="top" secondItem="MY8-4U-isZ" secondAttribute="bottom" constant="14" id="dzt-tz-PKQ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CR9-uF-O2v" secondAttribute="trailing" constant="16" id="eR7-wa-8zS"/>
-                <constraint firstItem="CR9-uF-O2v" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="fv1-R5-XOH"/>
                 <constraint firstItem="MY8-4U-isZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="h4T-xc-6Wx"/>
-                <constraint firstItem="MY8-4U-isZ" firstAttribute="top" secondItem="CR9-uF-O2v" secondAttribute="bottom" constant="8" id="orB-c7-f7j"/>
+                <constraint firstItem="WbC-nW-4CJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="39" id="iO5-ks-Gar"/>
                 <constraint firstItem="FzO-7I-syL" firstAttribute="top" secondItem="MY8-4U-isZ" secondAttribute="bottom" constant="15" id="rCt-VM-djy"/>
-                <constraint firstItem="6Lo-Wn-YEw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="121" id="s87-KZ-TUS"/>
+                <constraint firstItem="MY8-4U-isZ" firstAttribute="top" secondItem="WbC-nW-4CJ" secondAttribute="bottom" constant="31" id="t7i-ep-5dH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="136.5" y="54.5"/>
@@ -332,6 +327,14 @@
             <viewLayoutGuide key="safeArea" id="Vwn-aQ-uTB"/>
             <point key="canvasLocation" x="-310.5" y="157.5"/>
         </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Lo-Wn-YEw">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="128"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="128" id="cKn-SM-lhx"/>
+                <constraint firstAttribute="width" constant="132" id="yyU-P5-bv6"/>
+            </constraints>
+            <point key="canvasLocation" x="411" y="-316"/>
+        </imageView>
     </objects>
     <resources>
         <image name="checked-checkbox" width="25" height="25"/>
