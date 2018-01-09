@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ClassesCell: UITableViewCell {
 
@@ -14,21 +15,16 @@ class ClassesCell: UITableViewCell {
     
     @IBOutlet weak var teacher: UILabel!
     
-    @IBOutlet weak var classDescription: UITextView!
+    @IBOutlet weak var coursesDescription: UILabel!
     
     
     func updateCourses(classes: Courses)
     {
+
         self.title.text = classes.name
         self.teacher.text = classes.teacher
-        self.classDescription.text = classes.descritpion
+        self.coursesDescription.text = classes.descritpion
       
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

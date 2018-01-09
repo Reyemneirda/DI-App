@@ -21,10 +21,8 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
- self.tableView.register(UINib(nibName: "ClassesCell", bundle: Bundle.main), forCellReuseIdentifier: "Cell")
-        
-     loadClasses()
+        self.tableView.register(UINib(nibName: "ClassesCell", bundle: Bundle.main), forCellReuseIdentifier: "ClassesCell")
+        loadClasses()
         
         // Do any additional setup after loading the view.
     }
@@ -38,7 +36,7 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell : ClassesCell = (tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ClassesCell)!
+        let cell : ClassesCell = (tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as? ClassesCell)!
         
         let classe : Courses = self.classes[indexPath.row]
         
@@ -62,15 +60,13 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
                     print(ref)
                     ref.observe(.childAdded, with: { snapshot in
                         if let dict = snapshot.value as? [String:AnyObject] {
+                            
                             let classes = Courses(dict: dict)
                             self.classes.append(classes)
-                            print(classes)
-                            print(classes)
-                            print(dict)
-                           
+                            self.tableView.reloadData()
                             }
                     })
-                         self.tableView.reloadData()
+                    
                 
                 } else if (dictionnary["Courses"]!) == "Web Development" {
                     
@@ -80,11 +76,11 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
                             let classes = Courses(dict: dict)
                             self.classes.append(classes)
                             print(classes)
-                          
+                          self.tableView.reloadData()
                         }
                     })
                 }
-                  self.tableView.reloadData()
+                
                 }
             }, withCancel: nil)
     }

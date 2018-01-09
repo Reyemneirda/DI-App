@@ -29,7 +29,7 @@ class Courses: NSObject
             self.teacher = teacher
         }
         
-        if let descritpion = dict["descritpion"] as? String
+        if let descritpion = dict["description"] as? String
         {
             self.descritpion = descritpion
         }
