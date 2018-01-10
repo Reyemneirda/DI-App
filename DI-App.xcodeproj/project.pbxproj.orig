@@ -18,7 +18,18 @@
 		851114331FEA50C900924B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114311FEA50C900924B87 /* Main.storyboard */; };
 		851114351FEA50C900924B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851114341FEA50C900924B87 /* Assets.xcassets */; };
 		851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114361FEA50C900924B87 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
+		856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BBD721FFCD1C8008CD86A /* Sessions.swift */; };
+		858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */; };
+		85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */; };
+		B425AB9D20037BB7008EB236 /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B425AB9B20037BB7008EB236 /* CoursesTableViewCell.swift */; };
+		B425AB9E20037BB7008EB236 /* CoursesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B425AB9C20037BB7008EB236 /* CoursesTableViewCell.xib */; };
+		B4F080C1200252B300C34A48 /* CoursesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F080C0200252B300C34A48 /* CoursesTVC.swift */; };
+		B4F080C3200252EA00C34A48 /* CoursesTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F080C2200252EA00C34A48 /* CoursesTVC.xib */; };
+		B4F080C5200259D500C34A48 /* CoursesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F080C4200259D500C34A48 /* CoursesCell.swift */; };
+=======
 		E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */; };
+>>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
 		E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5811FEA5A05006F5D7D /* BaseViewController.swift */; };
 		E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */; };
 		E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */; };
@@ -48,12 +59,19 @@
 		851114341FEA50C900924B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851114371FEA50C900924B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851114391FEA50C900924B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		856BBD701FFCD1BA008CD86A /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		856BBD721FFCD1C8008CD86A /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+StackExtension.swift"; sourceTree = "<group>"; };
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		B425AB9B20037BB7008EB236 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
+		B425AB9C20037BB7008EB236 /* CoursesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesTableViewCell.xib; sourceTree = "<group>"; };
+		B4F080C0200252B300C34A48 /* CoursesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTVC.swift; sourceTree = "<group>"; };
+		B4F080C2200252EA00C34A48 /* CoursesTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesTVC.xib; sourceTree = "<group>"; };
+		B4F080C4200259D500C34A48 /* CoursesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoursesCell.swift; path = "../Controllers/New Group/CoursesCell.swift"; sourceTree = "<group>"; };
+=======
 		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+>>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -104,11 +122,15 @@
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
 				850C74A21FEA6D8E00E10F0B /* login */,
-				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
+				E958D59A1FEA6CA8006F5D7D /* ProfilVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
 				E958D5901FEA6C40006F5D7D /* CalendarVC */,
+<<<<<<< HEAD
+				B4F080BF2002526800C34A48 /* CoursesVC */,
+=======
 				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
+>>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -137,6 +159,7 @@
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
+				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
 				850C74AB1FEBD72C00E10F0B /* OnsenfoutViewController.xib */,
 				851114311FEA50C900924B87 /* Main.storyboard */,
@@ -147,6 +170,18 @@
 				E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */,
 			);
 			path = "DI-App";
+			sourceTree = "<group>";
+		};
+		B4F080BF2002526800C34A48 /* CoursesVC */ = {
+			isa = PBXGroup;
+			children = (
+				B4F080C0200252B300C34A48 /* CoursesTVC.swift */,
+				B4F080C2200252EA00C34A48 /* CoursesTVC.xib */,
+				B425AB9B20037BB7008EB236 /* CoursesTableViewCell.swift */,
+				B425AB9C20037BB7008EB236 /* CoursesTableViewCell.xib */,
+			);
+			name = CoursesVC;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E958D5841FEA5FDE006F5D7D /* Frameworks */ = {
@@ -185,21 +220,21 @@
 			path = AssignmentsVC;
 			sourceTree = "<group>";
 		};
-		E958D59A1FEA6CA8006F5D7D /* ProfileVC */ = {
+		E958D59A1FEA6CA8006F5D7D /* ProfilVC */ = {
 			isa = PBXGroup;
 			children = (
 				E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */,
 				E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */,
 			);
-			path = ProfileVC;
+			path = ProfilVC;
 			sourceTree = "<group>";
 		};
 		E9C505361FEBEE260000FF39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B4F080C4200259D500C34A48 /* CoursesCell.swift */,
 				E9C505371FEBEE400000FF39 /* classCell.swift */,
 				85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */,
-				856BBD701FFCD1BA008CD86A /* Courses.swift */,
 				856BBD721FFCD1C8008CD86A /* Sessions.swift */,
 			);
 			path = Models;
@@ -277,9 +312,11 @@
 				E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */,
 				850C74A41FEA6DBE00E10F0B /* Login.xib in Resources */,
 				E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */,
+				B4F080C3200252EA00C34A48 /* CoursesTVC.xib in Resources */,
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
 				E958D5AA1FEA88E3006F5D7D /* (null) in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
+				B425AB9E20037BB7008EB236 /* CoursesTableViewCell.xib in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
 				851114331FEA50C900924B87 /* Main.storyboard in Resources */,
@@ -358,9 +395,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */,
+				B425AB9D20037BB7008EB236 /* CoursesTableViewCell.swift in Sources */,
 				E9C505381FEBEE400000FF39 /* classCell.swift in Sources */,
+<<<<<<< HEAD
+				856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */,
+				851114301FEA50C900924B87 /* Login.swift in Sources */,
+				B4F080C1200252B300C34A48 /* CoursesTVC.swift in Sources */,
+=======
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
+>>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
 				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
@@ -368,6 +412,12 @@
 				E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */,
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
+<<<<<<< HEAD
+				B4F080C5200259D500C34A48 /* CoursesCell.swift in Sources */,
+				85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */,
+				858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */,
+=======
+>>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
