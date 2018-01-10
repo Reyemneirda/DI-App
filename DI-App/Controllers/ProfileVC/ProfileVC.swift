@@ -8,18 +8,31 @@
 
 import UIKit
 
+
 class ProfileVC: BaseViewController {
 
+    @IBOutlet weak var profilePic: UIImageView!
+    
+    @IBOutlet weak var profileTableView: UITableView!
+    
+    
+    
+   
+    var items = [[String:String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        profilePic.layer.cornerRadius = profilePic.frame.size.width / 2
+        
+        
         // Do any additional setup after loading the view.
+      
+            
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
+    
     
 
     /*

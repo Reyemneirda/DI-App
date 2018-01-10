@@ -13,6 +13,7 @@ pod 'Firebase/Auth'
 
 pod 'Firebase/Database'
 pod 'SideMenu'
+pod 'SwiftGifOrigin'
 
 
 end

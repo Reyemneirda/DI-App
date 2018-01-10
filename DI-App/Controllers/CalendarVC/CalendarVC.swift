@@ -23,6 +23,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         var direction: UISwipeGestureRecognizerDirection
 }
     
+    var EventsData = [Date]()
     
     var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
 
@@ -95,7 +96,31 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        self.tableView.reloadData()
     }
     
-  
+    internal func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateString = self.dateFormatter.string(from: date)
+        print("this count first ",self.EventsData.count)
+        for d in EventsData{
+            
+            let date = d.eventDate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            let dateFromString : NSDate = dateFormatter.date(from: date!)! as NSDate
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            let datenew = dateFormatter.string(from: dateFromString as Date)
+            if datenew.contains(dateString) {
+                return 3
+            }
+        }
+        return 0
+    
+    
+    }
+    
+    
+    
+    
+    
+    
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.dateFormatter.string(from: calendar.currentPage))")
     }

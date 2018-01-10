@@ -43,6 +43,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SideMenu (3.1.5)
+  - SwiftGifOrigin (1.6.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FSCalendar
   - SideMenu
+  - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
@@ -64,7 +66,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
-PODFILE CHECKSUM: cd6d1fdaeaaba8a73c1b531af6633d421d66dd51
+PODFILE CHECKSUM: 4db63405587d70e196b29954f8c98f9d495e0f6d
 
 COCOAPODS: 1.3.1
