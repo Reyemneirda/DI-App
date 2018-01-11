@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SideMenu
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var mainView: UIView!
@@ -19,6 +20,10 @@ class BaseViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        
+        sideMenuManager()
+        
         
         // loading xib file of the subclass's name and then adding it to self.view from self.mainView
         
@@ -83,58 +88,26 @@ class BaseViewController: UIViewController {
         
     }
     
-
+    func sideMenuManager() {
+        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.default.menuPresentMode = .menuSlideIn
+        SideMenuManager.default.menuFadeStatusBar = false
+    }
+    
+    
+    @IBAction func menu (_ sender: Any) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
 }
-//
-//    let uid = Auth.auth().currentUser?.uid
-//    var ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
-//
-//    let userReference = ref.child("students").child(uid!)
-//
-//    if userReference.value(forKey: "Courses") as? String == "Mobile Development" {
-//
-//    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Mobile Development")
-//
-//    ref.observe(.childAdded, with: { snapshot in
-//    print(snapshot.value(forKey: "name"))
-//    print(snapshot.value(forKey:"name"))
-//    print(snapshot.value(forKey:"teacher"))
-//    print(snapshot.value(forKey:"description"))
-//    })
-//    } else if userReference.value(forKey: "Courses") as? String == "Web Development" {
-//
-//    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Web Development")
-//    ref.observe(.childAdded, with: { snapshot in
-//    print(snapshot.value(forKey: "name"))
-//    print(snapshot.value(forKey:"name"))
-//    print(snapshot.value(forKey:"teacher"))
-//    print(snapshot.value(forKey:"description"))
-//    })
-//
-//    }
-    
-//
-//        if Auth.auth().currentUser?.uid. == nil
-//        {
-//            handleLogOut()
-//        } else {
-//            let uid = Auth.auth().currentUser?.uid
-//            Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-//                if let dictionnary = snapshot.value as? [String : AnyObject] {
-//                }
-//
-//            }, withCancel: nil)
-//        }
-    
-    
-
-    
-    //    func shake()
-    //    {
-    //        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-    //        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-    //        animation.duration = 0.6
-    //        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-    //        layer.add(animation, forKey: "shake")
-    //    }
 

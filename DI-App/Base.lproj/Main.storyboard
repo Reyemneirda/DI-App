@@ -71,13 +71,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="iYq-ZJ-pvb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HZH-Lw-Z4P" appends="YES" id="zZ1-cm-eh0"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Classes" image="icons8-ereader-100" id="4Dy-4V-y9z"/>
+                    <connections>
+                        <segue destination="ozP-7n-d1X" kind="modal" customClass="Menu" customModule="DI_App" customModuleProvider="target" id="ayf-8W-0Ck"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8B-50-2EY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="HZH-Lw-Z4P">
+                    <connections>
+                        <action selector="swipeHandler:" destination="U4q-vh-qTn" id="kz4-Xi-9B6"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2371" y="-2141"/>
+            <point key="canvasLocation" x="2414" y="-2246"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="mgO-Z9-S7q">
@@ -97,7 +109,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="ozP-7n-d1X" kind="presentation" identifier="menuSegue" id="zxf-gF-eOR"/>
+                        <segue destination="ozP-7n-d1X" kind="presentation" identifier="menuSegue" customClass="Menu" customModule="DI_App" customModuleProvider="target" id="zxf-gF-eOR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qw-Ud-Jrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +119,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2414" y="-1438"/>
+            <point key="canvasLocation" x="2414" y="-1440"/>
         </scene>
         <!--Menu-->
         <scene sceneID="GpW-FQ-wLI">
@@ -156,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3X-8Q-a8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4186" y="-1439"/>
+            <point key="canvasLocation" x="5561" y="-409"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="hsp-iq-E3O">
@@ -171,12 +183,12 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="xoy-js-ybP" kind="relationship" relationship="rootViewController" id="Iaq-G5-gTQ"/>
+                        <segue destination="xoy-js-ybP" kind="relationship" relationship="rootViewController" id="D5a-ar-3XG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phy-KD-A2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3274" y="-1439"/>
+            <point key="canvasLocation" x="4318" y="-409"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="WrV-3c-cXk">
@@ -209,9 +221,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="GXO-1u-Zp6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Assignments" image="icons8-course-assign-100" id="Pek-lN-Fyl"/>
+                    <connections>
+                        <segue destination="ozP-7n-d1X" kind="modal" customClass="Menu" customModule="DI_App" customModuleProvider="target" id="olp-AW-vZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYV-74-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,9 +241,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Pap-b6-yvv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="icons8-customer-100" id="9vF-tf-Gje"/>
+                    <connections>
+                        <segue destination="ozP-7n-d1X" kind="modal" customClass="Menu" customModule="DI_App" customModuleProvider="target" id="460-sG-AbV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caY-j9-bwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,5 +262,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Du0-oG-tFI"/>
+        <segue reference="ayf-8W-0Ck"/>
     </inferredMetricsTieBreakers>
 </document>

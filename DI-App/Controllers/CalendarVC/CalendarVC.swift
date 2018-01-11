@@ -12,7 +12,7 @@ import FSCalendar
 import FirebaseDatabase
 import SideMenu
 
-class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UIGestureRecognizerDelegate, UITableViewDelegate {
+class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate {
     
     @IBOutlet weak var classesView: UIScrollView!
     
@@ -23,12 +23,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     var databaeHandler: DatabaseHandle?
     
     var courses : [Courses] = []
-    
-    
-    @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer?) {
-        print("right")
-        var direction: UISwipeGestureRecognizerDirection
-}
     
     
     var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
@@ -63,20 +57,10 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
    
-    func sideMenuManager() {
-        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-    }
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsin()
-        sideMenuManager()
-        
-        rightGesture(nil)
 //        tableView.delegate = self
 //        tableView.dataSource = self as! UITableViewDataSource
 //        ref = Database.database().reference()
@@ -89,10 +73,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     deinit {
         print("\(#function)")
     }
-    
-    // MARK:- UIGestureRecognizerDelegate
-    
-   
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
@@ -137,17 +117,12 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }
     
     
-    // MARK:- UITableViewDelegate
-
    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     
-    // MARK:- Target actions
-    
-   
     
 //    var classCell: [ClassCell] =
 //        [ClassCell(name: "class1", time: Date.description("2017-12-25 10:00:00")), ClassCell(name: "class2", time: "2017-12-25 12:00:00")
@@ -202,17 +177,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        return self.eventDictionary[date]!.count
     }
 
-    
-    @IBAction func menu (_ sender: Any) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
-     
-    }
-    
-    @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
-        if gestureRecognizer.state == .ended {
-            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
-            
-        }
-    }
+ 
   
 }
