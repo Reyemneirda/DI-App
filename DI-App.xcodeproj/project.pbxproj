@@ -122,6 +122,7 @@
 			children = (
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
+				85E69DB020076A130042AAA8 /* SideMenu */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
@@ -169,6 +170,15 @@
 			path = "DI-App";
 			sourceTree = "<group>";
 		};
+		85E69DB020076A130042AAA8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
+				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		E958D5841FEA5FDE006F5D7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +203,6 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
-				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";

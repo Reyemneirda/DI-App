@@ -10,26 +10,21 @@ import UIKit
 import SideMenu
 import Firebase
 
-class SideMenuViewController: BaseViewController
+class SideMenuViewController: BaseViewController, UISideMenuNavigationControllerDelegate
 {
-    let sideMenu = SideMenuManager()
+    var sideMenu = SideMenuManager()
     let customSideMenuManager = SideMenuManager()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        sideMenu = customSideMenuManager
 
         // Do any additional setup after loading the view.
 
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
  
 
 }
