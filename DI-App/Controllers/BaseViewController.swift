@@ -21,7 +21,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     {
         super.viewDidLoad()
         
-        
         sideMenuManager()
         
         
