@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="SideMenuButton" destination="aFD-n9-JEc" id="HVg-mP-8bN"/>
                 <outlet property="classesView" destination="1sl-3r-AGN" id="rTD-zz-u0T"/>
+                <outlet property="daysLabel" destination="qsh-Ae-qsE" id="b9I-KH-70C"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="tVy-BE-jZq"/>
                 <outlet property="userCalendar" destination="ChP-wa-Y94" id="u18-ur-Iu1"/>
             </connections>
@@ -23,8 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Lesson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-Ae-qsE">
-                    <rect key="frame" x="101" y="387" width="172" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Lesson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-Ae-qsE">
+                    <rect key="frame" x="52" y="387" width="270" height="32"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -79,14 +80,14 @@
             <constraints>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="46y-5H-WXn"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4WN-jj-uBj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qsh-Ae-qsE" secondAttribute="trailing" constant="102" id="ExO-jt-gSF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qsh-Ae-qsE" secondAttribute="trailing" constant="53" id="ExO-jt-gSF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1sl-3r-AGN" secondAttribute="bottom" constant="20" id="GSB-jF-Niu"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="tRO-XX-nzd" secondAttribute="bottom" constant="18" id="S9V-Hc-2VQ"/>
                 <constraint firstAttribute="bottom" secondItem="qsh-Ae-qsE" secondAttribute="bottom" constant="248" id="X7M-dA-uVn"/>
                 <constraint firstItem="1sl-3r-AGN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ZFo-Q0-lLA"/>
                 <constraint firstItem="qsh-Ae-qsE" firstAttribute="top" secondItem="ChP-wa-Y94" secondAttribute="bottom" constant="22" id="ZQi-E1-Fza"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="hn0-ah-5iJ"/>
-                <constraint firstItem="qsh-Ae-qsE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="101" id="kXY-a2-Cfg"/>
+                <constraint firstItem="qsh-Ae-qsE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="52" id="kXY-a2-Cfg"/>
                 <constraint firstItem="qsh-Ae-qsE" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="lHI-rR-O8z"/>
                 <constraint firstItem="1sl-3r-AGN" firstAttribute="top" secondItem="qsh-Ae-qsE" secondAttribute="bottom" constant="8" id="m3b-q7-0eN"/>
                 <constraint firstItem="tRO-XX-nzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rbA-Ee-rb9"/>

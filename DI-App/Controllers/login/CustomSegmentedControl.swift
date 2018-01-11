@@ -8,10 +8,13 @@
 import UIKit
 
 @IBDesignable
-class CustomSegmentedControl: UIView {
+class CustomSegmentedControl: UIControl {
     
     var buttons = [UIButton]()
     var selector: UIView!
+    var selectedSegmentIndex = 0
+    var titleForSegment = "Login"
+
     
     @IBInspectable
     var borderWidth: CGFloat = 0 {
@@ -42,7 +45,7 @@ class CustomSegmentedControl: UIView {
     }
     
     @IBInspectable
-    var selectorColor: UIColor = .darkGray {
+    var selectorColor: UIColor = .lightGray {
         didSet {
             updateView()
         }
@@ -100,6 +103,7 @@ class CustomSegmentedControl: UIView {
     
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = frame.height/2
+        updateView()
     }
     
     @objc func buttonTapped(button: UIButton) {
@@ -107,14 +111,18 @@ class CustomSegmentedControl: UIView {
             btn.setTitleColor(textColor, for: .normal)
         
         if btn == button {
-            let selctorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
+            self.selectedSegmentIndex = buttonIndex
+            self.titleForSegment = (btn.titleLabel?.text)!
+            let selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
             UIView.animate(withDuration: 0.3, animations: {
-                self.selector.frame.origin.x = selctorStartPosition
+                self.selector.frame.origin.x = selectorStartPosition
             })
-            
+          
             btn.setTitleColor(selectorTextColor, for: .normal)
         }
         }
+        
+        sendActions(for: .valueChanged)
     }
     
 
