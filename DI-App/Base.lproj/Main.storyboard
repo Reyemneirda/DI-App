@@ -236,7 +236,7 @@
         <!--Profile-->
         <scene sceneID="K6z-GZ-4eq">
             <objects>
-                <viewController id="BUF-LW-yI5" sceneMemberID="viewController">
+                <viewController id="BUF-LW-yI5" customClass="ProfileVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apB-TX-YET">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,6 +262,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Du0-oG-tFI"/>
-        <segue reference="ayf-8W-0Ck"/>
+        <segue reference="460-sG-AbV"/>
     </inferredMetricsTieBreakers>
 </document>
