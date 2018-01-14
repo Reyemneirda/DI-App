@@ -24,6 +24,7 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.register(UINib(nibName: "ClassesCell", bundle: Bundle.main), forCellReuseIdentifier: "ClassesCell")
         loadClasses()
         
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
 

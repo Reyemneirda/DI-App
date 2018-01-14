@@ -10,14 +10,13 @@ import UIKit
 import Firebase
 
 class Landpage: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userIsConnected()
-        checkIfUserIsin()
         // Do any additional setup after loading the view.
     }
-
+    
     func userIsConnected()
     {
         if Auth.auth().currentUser?.uid != nil
@@ -31,10 +30,25 @@ class Landpage: BaseViewController {
             
             
         } else {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "IsNotConnected", sender: self)
+            }
             
-            self.performSegue(withIdentifier: "IsNotConnected", sender: self)
+            
         }
     }
+    
+    func goToLogin(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(
+            withIdentifier: "Login")
+        
+        
+        self.present(loginVC, animated: true) {
+        }
+    }
+    
+    
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
     }

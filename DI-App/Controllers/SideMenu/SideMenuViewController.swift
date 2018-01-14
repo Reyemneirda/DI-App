@@ -18,6 +18,7 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
     {
         super.viewDidLoad()
         
+        
         // loading xib file of the subclass's name and then adding it to self.view from self.mainView
         
         let mainBundle = Bundle.main // the packet of all of the information inside the application such as the storyboard, xibs, pictures, and other multimedia.
@@ -43,7 +44,7 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
     
     func handleLogOut()
     {
-        if Auth.auth().currentUser?.uid == nil
+        if Auth.auth().currentUser?.uid != nil
         {
             do
             {
@@ -53,13 +54,24 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
             {
                 print(logOutError)
             }
+            
+            guard let presenter : UIViewController = self.presentingViewController
+            else
+            {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            
             self.dismiss(animated: true, completion: {
-                 self.performSegue(withIdentifier: "logoutSeg", sender: self)
+                presenter.dismiss(animated: true, completion: nil)
             })
            
 
         }
-       
+        else
+        {
+            print("doodooo head")
+        }
     }
     
 
@@ -85,5 +97,10 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
         
     }
     
-
+    @IBAction func goToMyClandar(_ sender: UIButton)
+    {
+        print("fffff")
+        
+    }
+    
 }
