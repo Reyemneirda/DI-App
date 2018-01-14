@@ -11,9 +11,11 @@ import Firebase
 import FirebaseDatabase
 
 
+
 class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
+    let storageRef = stor
+
     @IBOutlet weak var fullNameTxt: UITextView!
     @IBOutlet weak var phoneNumberTxt: UITextView!
     @IBOutlet weak var emailTxt: UITextView!
@@ -58,6 +60,8 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
             (action) in
             
             self.takePhoto(nil)
+          
+
         })
         
         actionSheet.addAction(cameraOpt)
@@ -75,7 +79,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         self.present(actionSheet, animated: true, completion: nil)
         
     }
-    
     
     
     
@@ -109,7 +112,10 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
             
     }
     
-   
+ 
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
