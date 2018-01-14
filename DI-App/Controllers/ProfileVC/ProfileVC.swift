@@ -14,7 +14,8 @@ import FirebaseDatabase
 
 class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    let storageRef = stor
+    let storageRef = Storage.storage().reference(forURL: "gs://di-app-14896.appspot.com/")
+    
 
     @IBOutlet weak var fullNameTxt: UITextView!
     @IBOutlet weak var phoneNumberTxt: UITextView!
@@ -49,6 +50,32 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         guard let selectedImage = info [UIImagePickerControllerOriginalImage] as? UIImage else { return }
         self.profilePic.image = selectedImage
         
+//        guard let userId = Auth.auth().currentUser?.uid else {return}
+//        let uid = Auth.auth().currentUser?.uid
+//        let key = Database.database().reference().child("students").childByAutoId().key
+//        if let uploadData = UIImagePNGRepresentation(self.profilePic.image!)
+//        {
+//            DispatchQueue.main.async {
+//
+//                self.storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+//                if error != nil
+//                {
+//                    print(error as Any)
+//                    
+//                    return
+//                }
+////                let imageURL = metadata?.downloadURL()
+////                let childUpdate = ["/profilPic/\(key)":imageURL]
+////                 Database.database().reference().updateChildValues(childUpdate)
+//
+//                print(metadata)
+//
+//
+//
+//            })
+//            }
+//        }
+
         picker.dismiss(animated: true, completion: nil)
     }
     
