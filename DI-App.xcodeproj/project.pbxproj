@@ -35,8 +35,8 @@
 		E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59F1FEA88C0006F5D7D /* AssignmentVC.swift */; };
 		E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */; };
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
-		E958D5A91FEA88E3006F5D7D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		E958D5AA1FEA88E3006F5D7D /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E958D5A91FEA88E3006F5D7D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		E958D5AA1FEA88E3006F5D7D /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
@@ -303,7 +303,7 @@
 				851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */,
 				85C08B312003A89A00C8671D /* Classes.xib in Resources */,
 				85C08B372003A91700C8671D /* ClassesCell.xib in Resources */,
-				E958D5AA1FEA88E3006F5D7D /* (null) in Resources */,
+				E958D5AA1FEA88E3006F5D7D /* BuildFile in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
@@ -391,7 +391,7 @@
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				85C08B302003A89A00C8671D /* Classes.swift in Sources */,
 				85C08B362003A91700C8671D /* ClassesCell.swift in Sources */,
-				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
+				E958D5A91FEA88E3006F5D7D /* BuildFile in Sources */,
 				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				85A67477200610140064ED2E /* Menu.swift in Sources */,

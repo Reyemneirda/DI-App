@@ -7,25 +7,37 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class ProfileVC: BaseViewController {
+
+class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    
+    @IBOutlet weak var fullNameTxt: UITextView!
+    @IBOutlet weak var phoneNumberTxt: UITextView!
+    @IBOutlet weak var emailTxt: UITextView!
+    @IBOutlet weak var linkedinTxt: UITextView!
+    @IBOutlet weak var sessionTxt: UITextView!
+    
 
     @IBOutlet weak var profilePic: UIImageView!
     
-    @IBOutlet var tapImage: UITapGestureRecognizer!
     
-    @IBAction func takePhoto(_ sender: Any) {
+    
+    @IBOutlet weak var actionSheetButton: UIButton!
+    
+    @IBAction func takePhoto(_ sender: Any?) {
         let picker : UIImagePickerController = UIImagePickerController()
-        picker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self
         picker.sourceType = .camera
         self.present(picker, animated: true, completion: nil)
-        
     }
     
-    @IBAction func getPhotoFromLibrary(_ sender: Any) {
+    @IBAction func getPhotoFromLibrary(_ sender: Any?) {
         
         let picker : UIImagePickerController = UIImagePickerController()
-        picker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self 
         picker.sourceType = .photoLibrary
         
         self.present(picker, animated: true, completion: nil)
@@ -39,49 +51,79 @@ class ProfileVC: BaseViewController {
     }
     
     
+    @IBAction func getActionSheet(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Profile Picture", message: "Pick an option", preferredStyle: .actionSheet)
+        
+        let cameraOpt = UIAlertAction(title: "Camera", style: .default, handler: {
+            (action) in
+            
+            self.takePhoto(nil)
+        })
+        
+        actionSheet.addAction(cameraOpt)
+        
+        let libraryOpt = UIAlertAction(title: "From Library", style: .default, handler: {
+            (action) in
+            
+            self.getPhotoFromLibrary(nil)
+        })
+        
+        actionSheet.addAction(libraryOpt)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
-        profilePic.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
-        singleTap.numberOfTapsRequired = 1;
-        profilePic.addGestureRecognizer(singleTap)
+        self.actionSheetButton.layer.cornerRadius = self.actionSheetButton.frame.size.width / 2
+        
+        displayProfile()
+        
         
         // Do any additional setup after loading the view.
     }
-
     
-    @objc func handleTap(sender: UITapGestureRecognizer) {
-        print("tap")
-        let alertView = UIAlertController(title: "Profile Picture", message: "Pick an Option", preferredStyle: .actionSheet)
-        
-        let cameraOpt = UIAlertAction(title: "From Camera", style: .default, handler: nil)
-        
-        alertView.addAction(cameraOpt)
-        
-        let libraryOpt = UIAlertAction(title: "From the Library", style: .default, handler: nil)
-        
-        alertView.addAction(libraryOpt)
-   
-        self.present(alertView, animated: true, completion: nil)
-        
+    
+    func displayProfile()
+    {
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+          if let dict = snapshot.value as? [String:AnyObject]
+            {
+                self.fullNameTxt.text = dict["name"] as! String
+                self.emailTxt.text = dict["email"] as! String
+                self.phoneNumberTxt.text = dict["phone"] as! String
+                self.sessionTxt.text = dict["session"] as! String
+                self.linkedinTxt.text = dict["linkedIn"] as! String
+                
+            }
+        }, withCancel: nil)
+            
     }
     
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
