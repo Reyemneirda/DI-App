@@ -31,6 +31,7 @@ class Landpage: BaseViewController {
             
         } else {
             DispatchQueue.main.async {
+                print("Not connected")
                 self.performSegue(withIdentifier: "IsNotConnected", sender: self)
             }
             
@@ -38,18 +39,6 @@ class Landpage: BaseViewController {
         }
     }
     
-    func goToLogin(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = storyboard.instantiateViewController(
-            withIdentifier: "Login")
-        
-        
-        self.present(loginVC, animated: true) {
-        }
-    }
     
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        
-    }
 }
