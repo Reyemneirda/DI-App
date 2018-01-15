@@ -40,7 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="xNH-ZW-mhg" kind="show" identifier="firstSignIn" id="QW4-je-6gZ"/>
+                        <segue destination="xNH-ZW-mhg" kind="show" identifier="FirstSignIN" id="QW4-je-6gZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -198,7 +198,7 @@
         <!--Profile-->
         <scene sceneID="K6z-GZ-4eq">
             <objects>
-                <viewController id="BUF-LW-yI5" sceneMemberID="viewController">
+                <viewController id="BUF-LW-yI5" customClass="ProfileVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apB-TX-YET">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
