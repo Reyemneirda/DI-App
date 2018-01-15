@@ -16,6 +16,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     @IBOutlet weak var classesView: UIScrollView!
     
+    @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
@@ -33,7 +34,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "dd/MM/yyyy"
         return formatter
     }()
     
@@ -53,6 +54,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
             return 0
         }
     }
+    
     
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
@@ -76,14 +78,30 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
+        
+        let actualDate = calendar.selectedDate
+        let fomatter = DateFormatter()
+        fomatter.dateFormat = "EEEE, MMM d"
+        let stringDate = fomatter.string(from: actualDate!)
+        
+        
         let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
         print("selected dates is \(selectedDates)")
+        
+        
+        
+        self.daysLabel.text = "\(stringDate)"
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+       
+      
+//      wanna set yesterday, today and tomorrow's lessons !
         
-//        self.tableView.reloadData()
+        
     }
+    
+    
     
   
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {

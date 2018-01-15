@@ -112,9 +112,30 @@ class Login: BaseViewController {
                             
                             return
                         }
+<<<<<<< HEAD
+                        print("\n User Saved Succesfully \n")
+
+                    })
+
+                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
+                    //success
+            })
+        } else  if logReg.selectedSegmentIndex == 0 {
+            Auth.auth().signIn(withEmail: email, password: password, completion:
+                { [weak self] (user, error)  in
+                    if error != nil
+                    {
+                        self?.registerFail()
+                        print(error as Any)
+                        return
+                    }
+                    
+                    if self?.rememberMeButton.isSelected == true {
+=======
                         guard let uid = user?.uid else {
                             return
                         }
+>>>>>>> RememberMe2
                         
                         
                         let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
@@ -150,6 +171,13 @@ class Login: BaseViewController {
                             return
                         }
                         
+<<<<<<< HEAD
+                    }
+                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
+                    
+                    //success
+            })
+=======
                         if self?.rememberMeButton.isSelected == true {
                             
                             
@@ -164,6 +192,7 @@ class Login: BaseViewController {
                 })
             }
             
+>>>>>>> RememberMe2
         }
     
  
