@@ -14,10 +14,17 @@ import SideMenu
 
 class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UIGestureRecognizerDelegate, UITableViewDelegate {
     
+    @IBOutlet weak var classesView: UIScrollView!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+    var ref: DatabaseReference?
+    var databaeHandler: DatabaseHandle?
+    
+    var courses : [Courses] = []
+    
+    
     @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer?) {
         print("right")
         var direction: UISwipeGestureRecognizerDirection
@@ -66,13 +73,16 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkIfUserIsin()
         sideMenuManager()
+        
         rightGesture(nil)
-        
-        
+//        tableView.delegate = self
+//        tableView.dataSource = self as! UITableViewDataSource
+//        ref = Database.database().reference()
     }
     
+
     
     
     

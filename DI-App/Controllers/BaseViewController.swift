@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class BaseViewController: UIViewController {
     
@@ -69,8 +70,7 @@ class BaseViewController: UIViewController {
         } else {
             let uid = Auth.auth().currentUser?.uid
             Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dictionnary = snapshot.value as? [String : AnyObject] {
-                }
+              print(snapshot)
                 
             }, withCancel: nil)
         }
@@ -83,6 +83,48 @@ class BaseViewController: UIViewController {
         
     }
     
+
+}
+//
+//    let uid = Auth.auth().currentUser?.uid
+//    var ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+//
+//    let userReference = ref.child("students").child(uid!)
+//
+//    if userReference.value(forKey: "Courses") as? String == "Mobile Development" {
+//
+//    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Mobile Development")
+//
+//    ref.observe(.childAdded, with: { snapshot in
+//    print(snapshot.value(forKey: "name"))
+//    print(snapshot.value(forKey:"name"))
+//    print(snapshot.value(forKey:"teacher"))
+//    print(snapshot.value(forKey:"description"))
+//    })
+//    } else if userReference.value(forKey: "Courses") as? String == "Web Development" {
+//
+//    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Web Development")
+//    ref.observe(.childAdded, with: { snapshot in
+//    print(snapshot.value(forKey: "name"))
+//    print(snapshot.value(forKey:"name"))
+//    print(snapshot.value(forKey:"teacher"))
+//    print(snapshot.value(forKey:"description"))
+//    })
+//
+//    }
+    
+//
+//        if Auth.auth().currentUser?.uid. == nil
+//        {
+//            handleLogOut()
+//        } else {
+//            let uid = Auth.auth().currentUser?.uid
+//            Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                if let dictionnary = snapshot.value as? [String : AnyObject] {
+//                }
+//
+//            }, withCancel: nil)
+//        }
     
     
 
@@ -95,5 +137,4 @@ class BaseViewController: UIViewController {
     //        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
     //        layer.add(animation, forKey: "shake")
     //    }
-    
-}
+

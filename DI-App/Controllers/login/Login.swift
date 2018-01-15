@@ -122,7 +122,7 @@ class Login: BaseViewController {
 
                     })
 
-                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
                     //success
             })
         } else  if logReg.selectedSegmentIndex == 0 {
@@ -143,7 +143,7 @@ class Login: BaseViewController {
                         
                         
                     }
-                    self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
                     
                     //success
             })
@@ -222,14 +222,12 @@ class Login: BaseViewController {
         
         rememberMeButton.layer.borderWidth = 1
         rememberMeButton.layer.borderColor = UIColor.black.cgColor
-        
-        
-        
         self.containerView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
         
      theySeeMeScrolling()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -254,7 +252,9 @@ class Login: BaseViewController {
     func registerFail()
     {
         let time = DispatchTime(uptimeNanoseconds: 1000000000)
+        
         self.registerForm.shake()
+        
         firstName.text = ""
         lastName.text = ""
         linkedIn.text = ""
@@ -398,4 +398,22 @@ class Login: BaseViewController {
         
     }
     }
+    
+
+}
+
+
+
+
+extension UIStackView
+{
+    
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
 }
