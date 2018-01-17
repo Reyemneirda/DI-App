@@ -14,6 +14,7 @@ import FirebaseStorage
 
 
 class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var uploadindicator: UIActivityIndicatorView!
     
     let storageRef = Storage.storage().reference(forURL: "gs://di-app-14896.appspot.com/")
     
@@ -55,6 +56,7 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
     func imagePickerController (_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         guard let selectedImage = info [UIImagePickerControllerOriginalImage] as? UIImage else { return }
         self.profilePic.image = selectedImage
+        uploadPic(profilePic.image!)
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -92,13 +94,13 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         super.viewDidLoad()
         
         self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
-        tapTheImage.delegate = self
         
+        tapTheImage.delegate = self
+        self.uploadindicator.isHidden = true
         self.profilePic.isUserInteractionEnabled = true
         self.profilePic.addGestureRecognizer(tapTheImage)
         displayProfile()
-        
-        
+//        defaultImage()
         // Do any additional setup after loading the view.
     }
     
@@ -114,6 +116,9 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                 self.phoneNumberTxt.text = dict["phone"] as! String
                 self.sessionTxt.text = dict["session"] as! String
                 self.linkedinTxt.text = dict["linkedIn"] as! String
+                if let imageUrl = dict["profilePic"] as? String {
+                    self.downloadImage(url: URL(fileURLWithPath: imageUrl))
+                }
                 
             }
         }, withCancel: nil)
@@ -121,50 +126,73 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
     }
     
     
-    func uploadPic()
+    func uploadPic(_ image: UIImage)
     {
-        let picker = UIImagePickerController()
+        let imageName = NSUUID().uuidString
+        let storage = Storage.storage().reference(forURL: "gs://di-app-14896.appspot.com/").child("ProfilePics").child("\(imageName)")
+        DispatchQueue.main.async {
+        if let uploadImage = UIImagePNGRepresentation(image) {
+            storage.putData(uploadImage, metadata: nil, completion: { (metadata, error) in
+                if error != nil
+                {
+                    print(error as Any)
+                    return
+                    
+                }
+                self.uploadindicator.isHidden = false
+                 self.uploadindicator.startAnimating()
+                let profileURL = metadata?.downloadURL()
+                if let profileImage = metadata?.downloadURL()?.absoluteString {
+                    let uid = Auth.auth().currentUser?.uid
+                    print(uid)
+                    let ref = Database.database().reference()
+                    let key = ref.child("students").child(uid!)
+                    print(key)
+
+                    let profilUpdate = ["profilePic": profileImage]
+
+                    key.updateChildValues(profilUpdate)
+
+                    
+                    self.downloadImage(url: profileURL!)
+                    
+                }
+                self.uploadindicator.stopAnimating()
+            })
+        }
+            
         
-        
-        
+        }
+    }
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.profilePic.image = UIImage(data: data)
+            }
+        }
     }
     
-//    XXX
-//    guard let userId = Auth.auth().currentUser?.uid else {return}
-//    let uid = Auth.auth().currentUser?.uid
-//    let key = Database.database().reference().child("students").childByAutoId().key
-//    if let uploadData = UIImagePNGRepresentation(self.profilePic.image!)
-//    {
-//        DispatchQueue.main.async {
-//
-//            self.storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-//                if error != nil
-//                {
-//                    print(error as Any)
-//
-//                    return
+   
+//    func defaultImage() {
+//        let uid = Auth.auth().currentUser?.uid
+//        let ref = Database.database().reference()
+//        
+//        ref.child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let dictionnary = snapshot.value as? [String:String] {
+//                if let imageUrl = dictionnary["profilePic"]{
+//                    self.downloadImage(url: URL(fileURLWithPath: imageUrl))
 //                }
-//                let imageURL = metadata?.downloadURL()
-//                let childUpdate = ["/profilPic/\(key)":imageURL]
-//                Database.database().reference().updateChildValues(childUpdate)
-//
-//                print(metadata)
-//
-//
-//
-//            })
-//        }
+//            }
+//        })
 //    }
-//    XXX
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

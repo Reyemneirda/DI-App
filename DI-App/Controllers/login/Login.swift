@@ -109,6 +109,7 @@ class Login: BaseViewController {
                         
                         
                         let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+                        let profileURL = "https://firebasestorage.googleapis.com/v0/b/di-app-14896.appspot.com/o/instagram-icon3.png"
                         let userReference = ref.child("students").child(uid)
                         let user = ["name": "\(firstName) \(lastName)",
                             "email": email,
@@ -116,7 +117,9 @@ class Login: BaseViewController {
                             "phone": phone,
                             "session": "\(sessionCity): \(sessionProgram)",
                             "hobby": hobbies,
-                            "projects": project]
+                            "projects": project,
+                            "Courses" : sessionProgram,
+                            "profilePic": profileURL]
                         userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
                             if err != nil
                             {
