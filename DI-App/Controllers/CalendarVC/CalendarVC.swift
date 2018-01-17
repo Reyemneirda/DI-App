@@ -20,17 +20,22 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+    
     var ref: DatabaseReference?
     var databaeHandler: DatabaseHandle?
     
-    var courses : [Courses] = []
+    var classes : [Courses] = [Courses(),Courses()]
     
+    lazy var datesWithEvent : [Event] = {
+        
+        return [Event(date: "2018-01-08", course: self.classes[0]), Event(date: "2018-01-18", course: self.classes[1])]
+    }()
     
-    var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
-
     var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
     
-//    var eventDictionary : [Date : [Any] ] = Dictionary()
+    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
+    
+    var eventDictionary : [Date : [Event] ] = Dictionary()
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -39,25 +44,16 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }()
     
     @IBAction func addEvent(_ sender: UIBarButtonItem) {
-        func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-
-            let dateString = self.dateFormatter.string(from: date)
-
-            if self.datesWithEvent.contains(dateString) {
-                return 1
-            }
-
-            if self.datesWithMultipleEvents.contains(dateString) {
-                return 3
-            }
-
-            return 0
-        }
+        
     }
     
     
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+//    {
+//        return self.classes.count
+//    }
     
-    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
+    
    
     
     override func viewDidLoad() {
@@ -66,12 +62,11 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 //        tableView.delegate = self
 //        tableView.dataSource = self as! UITableViewDataSource
 //        ref = Database.database().reference()
+        self.tableView.register(UINib(nibName: "ClassesCell", bundle: Bundle.main), forCellReuseIdentifier: "ClassesCell")
+        loadClasses()
     }
     
 
-    
-    
-    
     deinit {
         print("\(#function)")
     }
@@ -97,13 +92,9 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
        
       
 //      wanna set yesterday, today and tomorrow's lessons !
-        
-        
     }
+
     
-    
-    
-  
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.dateFormatter.string(from: calendar.currentPage))")
     }
@@ -115,27 +106,42 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2,20][section]
-//        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0
+//        if indexPath.section == 0
+//        {
+//            let obj : [Event] = [self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]]
+//
+//            let identifier = ["cell_month", "cell_week"][indexPath.row]
+//            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
+//            return cell
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+//            return cell
+//        }
+        
+        let cell : ClassesCell = (tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as? ClassesCell)!
+        
+        if let events : [Event] = self.eventDictionary[self.userCalendar.selectedDate!]
         {
-//            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]
+            let event : Event = events[indexPath.row]
             
-            let identifier = ["cell_month", "cell_week"][indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-            return cell
+            cell.textLabel?.text = event.course.name
+            
+            let classe : Courses = self.classes[indexPath.row]
+            
+            cell.updateCourses(classes: classe)
+            
         }
+        
+        
+        return cell
     }
-    
-    
-   
+ 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
@@ -184,15 +190,76 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         }
     }
     
-    //- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
+//    //- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
+//    {
+//        let day: Int! = self.gregorian.component(.day, from: date)
+//        return day % 5 == 0 ? day/5 : 0;
+//
+////        return self.eventDictionary[date]!.count
+//    }
+
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
     {
-        let day: Int! = self.gregorian.component(.day, from: date)
-        return day % 5 == 0 ? day/5 : 0;
+        if let events : [Event] = self.eventDictionary[date]
+        {
+            return events.count
+        }
+        
+        return 0
+        
+//        let dateString = self.dateFormatter.string(from: date)
+//
+//        if self.datesWithEvent.contains(dateString) {
+//            return 1
+//
+//        }
+//
+//        if self.datesWithMultipleEvents.contains(dateString) {
+//            return 4
+//        }
+//
+//        return 0
+    }
+    
+    func loadClasses() {
         
         
+        let uid = Auth.auth().currentUser?.uid
+        var ref = Database.database().reference()
         
-//        return self.eventDictionary[date]!.count
+        ref.child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionnary = snapshot.value as? [String:String] {
+                
+                if (dictionnary["Courses"]!)  == "Mobile Development" {
+                    
+                    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Mobile Development")
+                    print(ref)
+                    ref.observe(.childAdded, with: { snapshot in
+                        if let dict = snapshot.value as? [String:AnyObject] {
+                            
+                            let classes = Courses(dict: dict)
+                            self.classes.append(classes)
+                            self.tableView.reloadData()
+                        }
+                    })
+                    
+                    
+                } else if (dictionnary["Courses"]!) == "Web Development" {
+                    
+                    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Web Development")
+                    ref.observe(.childAdded, with: { snapshot in
+                        if let dict = snapshot.value as? [String:AnyObject] {
+                            let classes = Courses(dict: dict)
+                            self.classes.append(classes)
+                            print(classes)
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+                
+            }
+        }, withCancel: nil)
     }
 
  

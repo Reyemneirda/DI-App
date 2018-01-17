@@ -35,6 +35,10 @@ class Courses: NSObject
         }
         
     }
+    
+    override init() {
+        super.init()
+    }
 
    
 }
