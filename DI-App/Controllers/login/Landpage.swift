@@ -10,14 +10,13 @@ import UIKit
 import Firebase
 
 class Landpage: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userIsConnected()
-        checkIfUserIsin()
         // Do any additional setup after loading the view.
     }
-
+    
     func userIsConnected()
     {
         if Auth.auth().currentUser?.uid != nil
@@ -31,19 +30,15 @@ class Landpage: BaseViewController {
             
             
         } else {
+            DispatchQueue.main.async {
+                print("Not connected")
+                self.performSegue(withIdentifier: "IsNotConnected", sender: self)
+            }
             
-            self.performSegue(withIdentifier: "IsNotConnected", sender: self)
+            
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }

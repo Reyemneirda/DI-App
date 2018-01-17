@@ -1,27 +1,22 @@
 //
-//  BaseViewController.swift
-//  CaseStudy
+//  SideMenuViewController.swift
+//  DI-App
 //
-//  Created by Eric Shorr on 22/11/2017.
-//  Copyright © 2017 Developer Institute. All rights reserved.
+//  Created by Gabriel Drai on 24/12/2017.
+//  Copyright © 2017 Developer.Institute. All rights reserved.
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
 import SideMenu
+import Firebase
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
-    
-    
+class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDelegate
+{
     @IBOutlet weak var mainView: UIView!
-    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        sideMenuManager()
         
         
         // loading xib file of the subclass's name and then adding it to self.view from self.mainView
@@ -49,7 +44,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func handleLogOut()
     {
-        if Auth.auth().currentUser?.uid == nil
+        if Auth.auth().currentUser?.uid != nil
         {
             do
             {
@@ -59,12 +54,27 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             {
                 print(logOutError)
             }
+            
+            guard let presenter : UIViewController = self.presentingViewController
+            else
+            {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            self.dismiss(animated: true, completion: {
+                presenter.dismiss(animated: true, completion: nil)
+            })
+           
+
         }
-        self.tabBarController?.dismiss(animated: true, completion: nil)
-        
-        //        let loginController = Login()
-        //       self.present(loginController, animated: true, completion: nil)
+        else
+        {
+            print("doodooo head")
+        }
     }
+    
+
     
     func checkIfUserIsin()
     {
@@ -74,7 +84,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         } else {
             let uid = Auth.auth().currentUser?.uid
             Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-              print(snapshot)
+                print(snapshot)
                 
             }, withCancel: nil)
         }
@@ -87,26 +97,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    func sideMenuManager() {
-        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-    }
-    
-    
-    @IBAction func menu (_ sender: Any) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    @IBAction func goToMyClandar(_ sender: UIButton)
+    {
+        print("fffff")
         
     }
     
-    @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
-        if gestureRecognizer.state == .ended {
-            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
-            
-        }
-    }
-    
-    
 }
-

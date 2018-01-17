@@ -23,8 +23,7 @@ class Login: BaseViewController {
 
     @IBOutlet weak var logRegister: CustomSegmentedControl!
     
-    @IBOutlet weak var rememberMeButton: UIButton!
-    
+    @IBOutlet weak var passwordForgotten: UIButton!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     
@@ -54,14 +53,6 @@ class Login: BaseViewController {
     
     var listCities = ["Jerusalem","Tel-Aviv"]
     
-    @IBAction func rememberMe(_ sender: UIButton)
-    {
-        if rememberMeButton.isSelected  == true{
-            rememberMeButton.isSelected = false
-        } else {
-            rememberMeButton.isSelected = true
-        }
-    }
     
     
     @IBAction func IseePass(_ sender: UIButton)
@@ -117,6 +108,7 @@ class Login: BaseViewController {
                         
                         
                         let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+                        let profileURL = "https://firebasestorage.googleapis.com/v0/b/di-app-14896.appspot.com/o/instagram-icon3.png"
                         let userReference = ref.child("students").child(uid)
                         let user = ["name": "\(firstName) \(lastName)",
                             "email": email,
@@ -124,7 +116,9 @@ class Login: BaseViewController {
                             "phone": phone,
                             "session": "\(sessionCity): \(sessionProgram)",
                             "hobby": hobbies,
-                            "projects": project]
+                            "projects": project,
+                            "Courses" : sessionProgram,
+                            "profilePic": profileURL]
                         userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
                             if err != nil
                             {
@@ -149,14 +143,6 @@ class Login: BaseViewController {
                             return
                         }
                         
-                        if self?.rememberMeButton.isSelected == true {
-                            
-                            
-                            
-                        } else {
-                            
-                            
-                        }
                         self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
                         
                         //success
@@ -240,8 +226,6 @@ class Login: BaseViewController {
         
         textFieldAppearing()
         
-        rememberMeButton.layer.borderWidth = 1
-        rememberMeButton.layer.borderColor = UIColor.black.cgColor
         self.containerView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
         
      theySeeMeScrolling()
@@ -285,6 +269,7 @@ class Login: BaseViewController {
         hobbies.text = ""
         projects.text = ""
         passwordTextField.text = ""
+        passwordForgotten.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: time) {
              self.youFailHard()
         }
@@ -302,6 +287,26 @@ class Login: BaseViewController {
             
         }
     }
+    
+    @IBAction func iForgotMyPassword(_ sender: UIButton)
+    {
+        guard let email = emailTxtField.text else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error != nil {
+            let alertView = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alertView.addAction(okAction)
+            
+            
+            self.present(alertView, animated: true, completion: nil)
+            }
+            }
+    }
+    
+    
+    
     
     enum DICourses: String
     {
@@ -425,6 +430,10 @@ class Login: BaseViewController {
 
     }
     }
+    
+    
+    
+    
     
 
 }

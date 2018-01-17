@@ -37,7 +37,10 @@
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
 		E958D5A91FEA88E3006F5D7D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E958D5AA1FEA88E3006F5D7D /* (null) in Resources */ = {isa = PBXBuildFile; };
+<<<<<<< HEAD
 		E98A8CFF200CE82100B9EBED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A8CFE200CE82100B9EBED /* Event.swift */; };
+=======
+>>>>>>> 4346c4b0c9cc634054141966ba958705ef9537ae
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
@@ -71,7 +74,7 @@
 		85C08B352003A91700C8671D /* ClassesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesCell.xib; sourceTree = "<group>"; };
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
-		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 			children = (
 				E958D5811FEA5A05006F5D7D /* BaseViewController.swift */,
 				858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */,
+				85E69DB020076A130042AAA8 /* SideMenu */,
 				850C74A21FEA6D8E00E10F0B /* login */,
 				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
@@ -171,6 +175,15 @@
 			path = "DI-App";
 			sourceTree = "<group>";
 		};
+		85E69DB020076A130042AAA8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
+				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		E958D5841FEA5FDE006F5D7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,8 +208,6 @@
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
-				E9C5055E1FEF93240000FF39 /* SideMenuViewController.swift */,
-				E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -395,7 +406,10 @@
 				85C08B302003A89A00C8671D /* Classes.swift in Sources */,
 				85C08B362003A91700C8671D /* ClassesCell.swift in Sources */,
 				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
+<<<<<<< HEAD
 				E98A8CFF200CE82100B9EBED /* Event.swift in Sources */,
+=======
+>>>>>>> 4346c4b0c9cc634054141966ba958705ef9537ae
 				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				85A67477200610140064ED2E /* Menu.swift in Sources */,
