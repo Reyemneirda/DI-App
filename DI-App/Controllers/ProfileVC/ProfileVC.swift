@@ -49,18 +49,27 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-        
+       
         self.present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController (_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         guard let selectedImage = info [UIImagePickerControllerOriginalImage] as? UIImage else { return }
         self.profilePic.image = selectedImage
-        uploadPic(profilePic.image!)
+        let newImage = scaleDown(image: selectedImage, withSize: CGSize(width: 150, height: 150))
+        uploadPic(newImage)
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+    func scaleDown(image: UIImage, withSize: CGSize) -> UIImage {
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(withSize, false, scale)
+        image.draw(in: CGRect(x: 0, y: 0, width: withSize.width, height: withSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
     
     @IBAction func tapHere(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Profile Picture", message: "Pick an option", preferredStyle: .actionSheet)
