@@ -149,7 +149,8 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                     let key = ref.child("students").child(uid!)
                     print(key)
 
-                    let profilUpdate = ["profilePic": profileImage]
+                    let profilUpdate = ["profilePic": profileImage,
+                                        "OUIOUI": "Stephaaaaane"]
 
                     key.updateChildValues(profilUpdate)
 
