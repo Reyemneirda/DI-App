@@ -117,6 +117,19 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                 self.phoneNumberTxt.text = user.phone
                 self.sessionTxt.text = user.session
                 self.linkedinTxt.text = user.linkedIn
+                if let profileImageUrl = user.profilePic {
+                    let url = URL(string: profileImageUrl)
+                    URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if error != nil {
+                            print(error)
+                        }
+                        DispatchQueue.main.async {
+                            self.profilePic.image = UIImage(data: data!)
+
+                        }
+                        
+                    }).resume()
+                }
 //                
 //                if let imageUrl = dict["profilePic"] as? String {
 //                    self.downloadImage(url: URL(fileURLWithPath: imageUrl))
@@ -150,8 +163,7 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                     let key = ref.child("students").child(uid!)
                     print(key)
 
-                    let profilUpdate = ["profilePic": profileImage,
-                                        "OUIOUI": "Stephaaaaane"]
+                    let profilUpdate = ["profilePic": profileImage]
 
                     key.updateChildValues(profilUpdate)
 
@@ -183,7 +195,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         }
     }
     
-   
 //    func defaultImage() {
 //        let uid = Auth.auth().currentUser?.uid
 //        let ref = Database.database().reference()
