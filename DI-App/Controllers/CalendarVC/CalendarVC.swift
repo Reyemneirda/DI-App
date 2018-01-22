@@ -16,6 +16,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     @IBOutlet weak var classesView: UIScrollView!
     
+ 
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
@@ -25,6 +26,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     var courses : [Courses] = []
     
+//    {
+//        "2018-01-22": [c1, c2, ...],
+//        "2018-01-23": [c3, c2, ...],
+//
+//    }
+    
+    var eventDictionary = [Date: [Courses]].self
     
     var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
 
@@ -38,13 +46,14 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         return formatter
     }()
     
-    @IBAction func addEvent(_ sender: UIBarButtonItem) {
-        func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+  
+
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
 
             let dateString = self.dateFormatter.string(from: date)
 
             if self.datesWithEvent.contains(dateString) {
-                return 1
+                return courses.count
             }
 
             if self.datesWithMultipleEvents.contains(dateString) {
@@ -53,8 +62,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 
             return 0
         }
-    }
     
+//    func addEvents() {
+//        if self.eventDictionary[events.date] == nil {
+//            self.eventDictionary[events.date] = []
+//        }
+//        self.eventDictionary[events.date].append(events)
+//    }
     
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
@@ -63,13 +77,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsin()
-//        tableView.delegate = self
-//        tableView.dataSource = self as! UITableViewDataSource
-//        ref = Database.database().reference()
+        userCalendar.dataSource = self
+        userCalendar.delegate = self
+        
+
     }
     
 
-    
     
     
     deinit {
@@ -86,27 +100,61 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         
         
         let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
-        print("selected dates is \(selectedDates)")
-        
-        
+//        print("selected dates is \(selectedDates)")
         
         self.daysLabel.text = "\(stringDate)"
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
-       
-      
-//      wanna set yesterday, today and tomorrow's lessons !
+    }
+    
+    func loadClasses() {
         
         
+        let uid = Auth.auth().currentUser?.uid
+        var ref = Database.database().reference()
+        
+        ref.child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionnary = snapshot.value as? [String:String] {
+                
+                if (dictionnary["Courses"]!)  == "Mobile Development" {
+                    
+                    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Mobile Development")
+                    print(ref)
+                    ref.observe(.childAdded, with: { snapshot in
+                        if let dict = snapshot.value as? [String:AnyObject] {
+                            
+                            let classes = Courses(dict: dict)
+                            self.courses.append(classes)
+                            self.tableView.reloadData()
+                        }
+                    })
+                    
+                    
+                } else if (dictionnary["Courses"]!) == "Web Development" {
+                    
+                    ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Web Development")
+                    ref.observe(.childAdded, with: { snapshot in
+                        if let dict = snapshot.value as? [String:AnyObject] {
+                            let classes = Courses(dict: dict)
+                            self.courses.append(classes)
+                            print(classes)
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+                
+            }
+        }, withCancel: nil)
     }
     
     
     
-  
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("\(self.dateFormatter.string(from: calendar.currentPage))")
-    }
+
+//    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+//        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+//    }
+
     
     // MARK:- UITableViewDataSource
     
@@ -184,16 +232,16 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         }
     }
     
-    //- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
-    {
-        let day: Int! = self.gregorian.component(.day, from: date)
-        return day % 5 == 0 ? day/5 : 0;
-        
-        
-        
-//        return self.eventDictionary[date]!.count
-    }
+    
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
+//    {
+//        let day: Int! = self.gregorian.component(.day, from: date)
+//        return day % 5 == 0 ? day/5 : 0;
+//        
+//        
+//        
+////        return self.eventDictionary[date]!.count
+//    }
 
  
   

@@ -11,10 +11,16 @@ import Firebase
 
 class Landpage: BaseViewController {
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getEventsForCalendar()
+
         userIsConnected()
         // Do any additional setup after loading the view.
+        
     }
     
     func userIsConnected()
@@ -39,6 +45,18 @@ class Landpage: BaseViewController {
         }
     }
     
-    
-    
+    func getEventsForCalendar() {
+        
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        let useruid = Auth.auth().currentUser?.uid
+        let coursesDBref = ref.child("Courses")
+        
+        coursesDBref.observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+        }
+        
+        
+    }
 }
