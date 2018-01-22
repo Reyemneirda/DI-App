@@ -21,7 +21,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     {
         super.viewDidLoad()
         
-        
         sideMenuManager()
         
         
@@ -50,7 +49,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func handleLogOut()
     {
-        if Auth.auth().currentUser?.uid == nil
+        if Auth.auth().currentUser?.uid != nil
         {
             do
             {

@@ -15,8 +15,7 @@ class SideMenuViewController: BaseViewController
     let sideMenu = SideMenuManager()
     let customSideMenuManager = SideMenuManager()
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
 

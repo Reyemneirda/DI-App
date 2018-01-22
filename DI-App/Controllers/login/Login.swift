@@ -14,12 +14,17 @@ import FirebaseDatabase
 
 class Login: BaseViewController {
     
+    
+    
+    
+    
     let setting = FirebaseConfiguration()
 
 
 
-    @IBOutlet weak var rememberMeButton: UIButton!
+    @IBOutlet weak var logRegister: CustomSegmentedControl!
     
+    @IBOutlet weak var passwordForgotten: UIButton!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     
@@ -27,7 +32,6 @@ class Login: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var logReg: UISegmentedControl!
     @IBOutlet weak var goIn: UIButton!
     @IBOutlet weak var registerForm: UIStackView!
     @IBOutlet weak var seePassword: UIButton!
@@ -50,14 +54,6 @@ class Login: BaseViewController {
     
     var listCities = ["Jerusalem","Tel-Aviv"]
     
-    @IBAction func rememberMe(_ sender: UIButton)
-    {
-        if rememberMeButton.isSelected  == true{
-            rememberMeButton.isSelected = false
-        } else {
-            rememberMeButton.isSelected = true
-        }
-    }
     
     
     @IBAction func IseePass(_ sender: UIButton)
@@ -72,92 +68,100 @@ class Login: BaseViewController {
         }
     }
     
-    func handleRegister()
-    {
-        
-        guard let firstName = firstName.text,
-            let lastName = lastName.text,
-            let linkedIN = linkedIn.text,
-            let email = emailTxtField.text,
-            let phone = phoneNumber.text,
-            let sessionCity = sessionCity.titleLabel?.text,
-            let sessionProgram = selectProgram.titleLabel?.text,
-            let hobbies = hobbies.text,
-            let project = projects.text,
-            let password = passwordTextField.text else {return}
-        if logReg.selectedSegmentIndex == 1 {
+    
+    //picker view config
+    
+
+    
+  
+    
+    
+    
+    
+        func handleRegister()
+        {
             
-            Auth.auth().createUser(withEmail: email, password: password, completion:
-                { [weak self]  (user, error)   in
-                    if error != nil
-                    {
-                        self?.registerFail()
-                        
-                        print(error as Any)
-                        
-                        return
-                    }
-                    guard let uid = user?.uid else {
-                        return
-                    }
-                    
-                    
-                 let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
-                    let userReference = ref.child("students").child(uid)
-                    let user = ["name": "\(firstName) \(lastName)",
-                        "email": email,
-                        "linkedIn": linkedIN,
-                        "phone": phone,
-                        "session": "\(sessionCity): \(sessionProgram)",
-                        "hobby": hobbies,
-                        "projects": project]
-                    userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
-                        if err != nil
+            guard let firstName = firstName.text,
+                let lastName = lastName.text,
+                let linkedIN = linkedIn.text,
+                let email = emailTxtField.text,
+                let phone = phoneNumber.text,
+                let sessionCity = sessionCity.titleLabel?.text,
+                let sessionProgram = selectProgram.titleLabel?.text,
+                let hobbies = hobbies.text,
+                let project = projects.text,
+                let password = passwordTextField.text else {return}
+            if logRegister.selectedSegmentIndex == 1 {
+                
+                Auth.auth().createUser(withEmail: email, password: password, completion:
+                    { [weak self]  (user, error)   in
+                        if error != nil
                         {
-                            print(err as Any)
+                            self?.registerFail()
+                            
+                            print(error as Any)
                             
                             return
                         }
-                        print("\n User Saved Succesfully \n")
-
-                    })
-
-                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
-                    //success
-            })
-        } else  if logReg.selectedSegmentIndex == 0 {
-            Auth.auth().signIn(withEmail: email, password: password, completion:
-                { [weak self] (user, error)  in
-                    if error != nil
-                    {
-                        self?.registerFail()
-                        print(error as Any)
-                        return
-                    }
-                    
-                    if self?.rememberMeButton.isSelected == true {
+                        guard let uid = user?.uid else {
+                            return
+                        }
                         
                         
-                
-                    } else {
+                        let ref = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
+                        let profileURL = "https://firebasestorage.googleapis.com/v0/b/di-app-14896.appspot.com/o/instagram-icon3.png"
+                        let userReference = ref.child("students").child(uid)
+                        let user = ["name": "\(firstName) \(lastName)",
+                            "email": email,
+                            "linkedIn": linkedIN,
+                            "phone": phone,
+                            "session": "\(sessionCity): \(sessionProgram)",
+                            "hobby": hobbies,
+                            "projects": project,
+                            "Courses" : sessionProgram,
+                            "profilePic": profileURL]
+                        userReference.updateChildValues(user, withCompletionBlock: { (err, ref) in
+                            if err != nil
+                            {
+                                print(err as Any)
+                                
+                                return
+                            }
+                            print("\n User Saved Succesfully \n")
+                            
+                        })
                         
+                        self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                        //success
+                })
+            } else  if logRegister.selectedSegmentIndex == 0 {
+                Auth.auth().signIn(withEmail: email, password: password, completion:
+                    { [weak self] (user, error)  in
+                        if error != nil
+                        {
+                            self?.registerFail()
+                            print(error as Any)
+                            return
+                        }
                         
-                    }
-                    self?.performSegue(withIdentifier: "firstSignIn", sender: self)
-                    
-                    //success
-            })
+                        self?.performSegue(withIdentifier: "FirstSignIN", sender: self)
+                        
+                        //success
+                })
+            }
+            
         }
-        
-    }
     
-   @IBAction func textFieldAppearing()
+ 
+    
+    @IBAction func textFieldAppearing()
     {
-        let title = logReg.titleForSegment(at: logReg.selectedSegmentIndex)
-        if logReg.selectedSegmentIndex == 0
+        let title = logRegister.titleForSegment
+        
+        if logRegister.selectedSegmentIndex == 0
         {
             goIn.setTitle(title, for: .normal)
-            
+            print(goIn.titleLabel?.text)
            firstName.isHidden = true
             lastName.isHidden = true
             linkedIn.isHidden = true
@@ -177,9 +181,10 @@ class Login: BaseViewController {
             
             theySeeMeScrolling()
             
-        } else if logReg.selectedSegmentIndex == 1
+        } else if logRegister.selectedSegmentIndex == 1
         {
             goIn.setTitle(title, for: .normal)
+            print(goIn.titleLabel?.text)
             firstName.isHidden = false
             lastName.isHidden = false
             linkedIn.isHidden = false
@@ -214,14 +219,14 @@ class Login: BaseViewController {
     }
     
     override func viewDidLoad() {
+        
+      
         super.viewDidLoad()
         
         var ref: DatabaseReference! = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
         
         textFieldAppearing()
         
-        rememberMeButton.layer.borderWidth = 1
-        rememberMeButton.layer.borderColor = UIColor.black.cgColor
         self.containerView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
         
      theySeeMeScrolling()
@@ -265,6 +270,7 @@ class Login: BaseViewController {
         hobbies.text = ""
         projects.text = ""
         passwordTextField.text = ""
+        passwordForgotten.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: time) {
              self.youFailHard()
         }
@@ -283,6 +289,26 @@ class Login: BaseViewController {
         }
     }
     
+    @IBAction func iForgotMyPassword(_ sender: UIButton)
+    {
+        guard let email = emailTxtField.text else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error != nil {
+            let alertView = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alertView.addAction(okAction)
+            
+            
+            self.present(alertView, animated: true, completion: nil)
+            }
+            }
+    }
+    
+    
+    
+    
     enum DICourses: String
     {
         case webDev = "Web Development"
@@ -292,6 +318,12 @@ class Login: BaseViewController {
     
     @IBAction func selectProgram(_ sender: UIButton)
     {
+        
+        
+        
+        
+        
+        
         guard let title = sender.currentTitle,
             let progList = DICourses(rawValue: title)  else {
                 return
@@ -351,20 +383,21 @@ class Login: BaseViewController {
     
     
     @IBAction func cityTapped(_ sender: UIButton)
+    
     {
         guard let title = sender.currentTitle,
             let citiesList = citys(rawValue: title)  else {
             return
         }
-        
+
         switch citiesList{
         case .telAviv:
-            
-            
+
+
             guard sessionCity.currentTitle != "Tel-Aviv" else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
                 })
@@ -372,12 +405,12 @@ class Login: BaseViewController {
             sessionCity.setTitle(title, for: .normal)
 
         case.jerusalem:
-            
-          
+
+
             guard sessionCity.currentTitle != "Jerusalem" else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
                 })
@@ -385,19 +418,23 @@ class Login: BaseViewController {
               sessionCity.setTitle(title, for: .normal)
 
         default:
-                
+
             guard sender.currentTitle != nil else {return}
             CitiesButton.forEach { (button) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    
+
                     button.isHidden = !button.isHidden
-                    
+
                     self.view.layoutIfNeeded()
                 })
         }
-        
+
     }
     }
+    
+    
+    
+    
     
 
 }
