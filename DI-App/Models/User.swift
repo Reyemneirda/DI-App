@@ -34,7 +34,7 @@ class User: NSObject
         {
             self.hobby = hobby
         }
-        if let linkedIn : String = dict["name"] as? String
+        if let linkedIn : String = dict["linkedIn"] as? String
         {
             self.linkedIn = linkedIn
         }
