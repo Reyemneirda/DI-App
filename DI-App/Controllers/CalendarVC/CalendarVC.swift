@@ -25,12 +25,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     var databaeHandler: DatabaseHandle?
     
     var courses : [Courses] = []
-    
-//    {
-//        "2018-01-22": [c1, c2, ...],
-//        "2018-01-23": [c3, c2, ...],
-//
-//    }
+
     
     var eventDictionary = [Date: [Courses]].self
     
@@ -62,14 +57,6 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 
             return 0
         }
-    
-//    func addEvents() {
-//        if self.eventDictionary[events.date] == nil {
-//            self.eventDictionary[events.date] = []
-//        }
-//        self.eventDictionary[events.date].append(events)
-//    }
-    
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
    
