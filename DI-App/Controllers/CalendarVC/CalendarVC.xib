@@ -15,7 +15,7 @@
                 <outlet property="SideMenuButton" destination="aFD-n9-JEc" id="HVg-mP-8bN"/>
                 <outlet property="daysLabel" destination="qsh-Ae-qsE" id="b9I-KH-70C"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="tVy-BE-jZq"/>
-                <outlet property="tableView" destination="MJW-u2-zns" id="Dg4-D0-agk"/>
+                <outlet property="tableViewCLasses" destination="MJW-u2-zns" id="PJH-sD-xSw"/>
                 <outlet property="userCalendar" destination="ChP-wa-Y94" id="u18-ur-Iu1"/>
             </connections>
         </placeholder>
@@ -72,24 +72,31 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJW-u2-zns">
-                    <rect key="frame" x="16" y="437" width="343" height="230"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJW-u2-zns" userLabel="tableViewCLasses">
+                    <rect key="frame" x="0.0" y="437" width="375" height="230"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Bqb-9j-sQs"/>
+                        <outlet property="delegate" destination="-1" id="DsK-Iw-pJC"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="MJW-u2-zns" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0K7-Wb-PBQ"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="46y-5H-WXn"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4WN-jj-uBj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qsh-Ae-qsE" secondAttribute="trailing" constant="53" id="ExO-jt-gSF"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="top" secondItem="tRO-XX-nzd" secondAttribute="bottom" constant="18" id="S9V-Hc-2VQ"/>
                 <constraint firstAttribute="bottom" secondItem="qsh-Ae-qsE" secondAttribute="bottom" constant="248" id="X7M-dA-uVn"/>
                 <constraint firstItem="qsh-Ae-qsE" firstAttribute="top" secondItem="ChP-wa-Y94" secondAttribute="bottom" constant="22" id="ZQi-E1-Fza"/>
+                <constraint firstItem="MJW-u2-zns" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="eGH-QR-2vH"/>
                 <constraint firstItem="ChP-wa-Y94" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="hn0-ah-5iJ"/>
+                <constraint firstItem="MJW-u2-zns" firstAttribute="top" secondItem="qsh-Ae-qsE" secondAttribute="bottom" constant="18" id="jVV-8a-Fm8"/>
                 <constraint firstItem="qsh-Ae-qsE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="52" id="kXY-a2-Cfg"/>
                 <constraint firstItem="qsh-Ae-qsE" firstAttribute="centerX" secondItem="tRO-XX-nzd" secondAttribute="centerX" id="lHI-rR-O8z"/>
                 <constraint firstItem="tRO-XX-nzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rbA-Ee-rb9"/>
+                <constraint firstItem="MJW-u2-zns" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="sAf-F0-SMN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ChP-wa-Y94" secondAttribute="trailing" constant="16" id="t6Q-TX-axS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarTVCell" rowHeight="62" id="zDI-li-gFV" customClass="CalendarTVCell" customModule="DI_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zDI-li-gFV" id="qcv-0b-iq8">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-55-kTg" userLabel="Title">
+                        <rect key="frame" x="0.0" y="6" width="174" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkC-OS-eUD" userLabel="Descritpion ">
+                        <rect key="frame" x="168" y="33" width="203" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="203" id="H6b-Xa-YD4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U8-hS-IbS" userLabel="Teacher">
+                        <rect key="frame" x="4" y="39" width="133" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CkC-OS-eUD" firstAttribute="bottom" secondItem="qcv-0b-iq8" secondAttribute="bottomMargin" constant="6" id="10y-rX-tH9"/>
+                    <constraint firstItem="dmE-55-kTg" firstAttribute="top" secondItem="qcv-0b-iq8" secondAttribute="topMargin" constant="-5" id="75s-Ff-uZj"/>
+                    <constraint firstItem="CkC-OS-eUD" firstAttribute="leading" secondItem="dmE-55-kTg" secondAttribute="trailing" constant="-6" id="S4A-Z9-d26"/>
+                    <constraint firstAttribute="trailing" secondItem="CkC-OS-eUD" secondAttribute="trailing" constant="4" id="UvR-te-MOH"/>
+                    <constraint firstItem="6U8-hS-IbS" firstAttribute="top" secondItem="dmE-55-kTg" secondAttribute="bottom" constant="12" id="WAa-5A-31x"/>
+                    <constraint firstItem="dmE-55-kTg" firstAttribute="leading" secondItem="qcv-0b-iq8" secondAttribute="leadingMargin" constant="-16" id="rR1-Xg-w9n"/>
+                    <constraint firstItem="dmE-55-kTg" firstAttribute="leading" secondItem="6U8-hS-IbS" secondAttribute="leading" constant="-4" id="sqX-4u-E6t"/>
+                    <constraint firstItem="CkC-OS-eUD" firstAttribute="leading" secondItem="6U8-hS-IbS" secondAttribute="trailing" constant="31" id="xMa-zq-9UD"/>
+                    <constraint firstItem="CkC-OS-eUD" firstAttribute="top" secondItem="qcv-0b-iq8" secondAttribute="topMargin" constant="22" id="z5A-cX-E2q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coursesDescription" destination="CkC-OS-eUD" id="yVU-4h-Lqd"/>
+                <outlet property="teacher" destination="6U8-hS-IbS" id="Ia2-l9-Hsg"/>
+                <outlet property="title" destination="dmE-55-kTg" id="tFU-df-cpp"/>
+            </connections>
+            <point key="canvasLocation" x="-18.5" y="-65"/>
+        </tableViewCell>
+    </objects>
+</document>

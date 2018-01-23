@@ -15,13 +15,12 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var classes : [Courses] = []
     
-    
-    
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "ClassesCell", bundle: Bundle.main), forCellReuseIdentifier: "ClassesCell")
+        
         loadClasses()
         
         tableView.reloadData()
@@ -46,6 +45,8 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+   
+    
     func loadClasses() {
         
         
@@ -61,7 +62,7 @@ class Classes: BaseViewController, UITableViewDelegate, UITableViewDataSource {
                     print(ref)
                     ref.observe(.childAdded, with: { snapshot in
                         if let dict = snapshot.value as? [String:AnyObject] {
-                            
+                            var classe: Courses?
                             let classes = Courses(dict: dict)
                             self.classes.append(classes)
                             self.tableView.reloadData()

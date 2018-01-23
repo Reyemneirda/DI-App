@@ -12,15 +12,15 @@ import FSCalendar
 import FirebaseDatabase
 import SideMenu
 
-class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate {
+class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var classesView: UIScrollView!
     
  
     @IBOutlet weak var daysLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewCLasses: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+    
     var ref: DatabaseReference?
     var databaeHandler: DatabaseHandle?
     
@@ -77,13 +77,61 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsin()
+        self.tableViewCLasses.register(UINib(nibName: "CalendarTVCell", bundle: Bundle.main), forCellReuseIdentifier: "CalendarTVCell")
+        
+        tableViewCLasses.reloadData()
         userCalendar.dataSource = self
         userCalendar.delegate = self
-        
+        tableViewCLasses.delegate = self
 
     }
     
-
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        let cell : CalendarTVCell = (tableViewCLasses.dequeueReusableCell(withIdentifier: "CalendarTVCell", for: indexPath) as? CalendarTVCell)!
+//        
+//        let cellHeight = cell.frame.height
+//        print(cellHeight)
+//        
+//        return cellHeight
+//        
+//    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.courses.count
+    }
+    
+    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return [2,20][section]
+    ////        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
+    //    }
+    //
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //        if indexPath.section == 0
+        //        {
+        ////            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]
+        //
+        //            let identifier = ["cell_month", "cell_week"][indexPath.row]
+        //            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
+        //            return cell
+        //        } else {
+        //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        //            return cell
+        //        }
+        
+        
+        let cell : CalendarTVCell = (tableViewCLasses.dequeueReusableCell(withIdentifier: "CalendarTVCell", for: indexPath) as? CalendarTVCell)!
+        
+        let classe : Courses = self.courses[indexPath.row]
+        
+        cell.updateCourses(classes: classe)
+        
+        return cell
+    }
+    
     
     
     deinit {
@@ -93,12 +141,13 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
         
+        print(date)
+        
+        
         let actualDate = calendar.selectedDate
         let fomatter = DateFormatter()
         fomatter.dateFormat = "EEEE, MMM d"
         let stringDate = fomatter.string(from: actualDate!)
-        
-        
         let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
 //        print("selected dates is \(selectedDates)")
         
@@ -109,8 +158,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }
     
     func loadClasses() {
-        
-        
+     
         let uid = Auth.auth().currentUser?.uid
         var ref = Database.database().reference()
         
@@ -123,11 +171,12 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
                     print(ref)
                     ref.observe(.childAdded, with: { snapshot in
                         if let dict = snapshot.value as? [String:AnyObject] {
-                            
                             let classes = Courses(dict: dict)
                             self.courses.append(classes)
-                            self.tableView.reloadData()
-                        }
+                            }
+                        DispatchQueue.main.async {
+                            self.tableViewCLasses.reloadData() }
+                        
                     })
                     
                     
@@ -139,7 +188,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
                             let classes = Courses(dict: dict)
                             self.courses.append(classes)
                             print(classes)
-                            self.tableView.reloadData()
+                            self.tableViewCLasses.reloadData()
                         }
                     })
                 }
@@ -157,38 +206,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
 
     
     // MARK:- UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        //return 2
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2,20][section]
-//        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0
-        {
-//            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]
-            
-            let identifier = ["cell_month", "cell_week"][indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-            return cell
-        }
-    }
-    
-    
-   
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
-    }
-    
+  
     
 //    var classCell: [ClassCell] =
 //        [ClassCell(name: "class1", time: Date.description("2017-12-25 10:00:00")), ClassCell(name: "class2", time: "2017-12-25 12:00:00")

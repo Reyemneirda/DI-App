@@ -17,6 +17,12 @@ class Courses: NSObject
     var descritpion: String?
     var time: String?
   
+    init(name: String?, teacher:String?, descritpion: String?, time: String?) {
+        self.name = name
+        self.teacher = teacher
+        self.descritpion = descritpion
+        self.time = time
+    }
     init(dict:[String:AnyObject])
     {
         if let name : String = dict["name"] as? String

@@ -38,6 +38,8 @@
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
 		E958D5A91FEA88E3006F5D7D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E958D5AA1FEA88E3006F5D7D /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E9A6A99620161D440093EDC0 /* CalendarTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */; };
+		E9A6A99820161E420093EDC0 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
 		E9C505331FEBD9660000FF39 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */; };
 		E9C505381FEBEE400000FF39 /* classCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C505371FEBEE400000FF39 /* classCell.swift */; };
@@ -80,6 +82,8 @@
 		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
 		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
+		E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTVCell.xib; sourceTree = "<group>"; };
+		E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVCell.swift; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		E9C505321FEBD9660000FF39 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		E9C505371FEBEE400000FF39 /* classCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCell.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */,
+				E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */,
+				E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */,
 				E948C0FA20149663004E2801 /* Events.swift */,
 				E9C505301FEBB81C0000FF39 /* CalendarVC.xib */,
 			);
@@ -316,6 +322,7 @@
 				85C08B372003A91700C8671D /* ClassesCell.xib in Resources */,
 				E958D5AA1FEA88E3006F5D7D /* (null) in Resources */,
 				851114351FEA50C900924B87 /* Assets.xcassets in Resources */,
+				E9A6A99620161D440093EDC0 /* CalendarTVCell.xib in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
 				851114331FEA50C900924B87 /* Main.storyboard in Resources */,
@@ -399,6 +406,7 @@
 				85C08B2D20037F6000C8671D /* DatabaseManager.swift in Sources */,
 				85C08B2C20037F5D00C8671D /* Sessions.swift in Sources */,
 				85C08B2B20037F5900C8671D /* Courses.swift in Sources */,
+				E9A6A99820161E420093EDC0 /* CalendarTVCell.swift in Sources */,
 				E948C0FB20149663004E2801 /* Events.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				85C08B302003A89A00C8671D /* Classes.swift in Sources */,
