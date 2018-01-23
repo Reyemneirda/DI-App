@@ -87,41 +87,14 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }
     
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        let cell : CalendarTVCell = (tableViewCLasses.dequeueReusableCell(withIdentifier: "CalendarTVCell", for: indexPath) as? CalendarTVCell)!
-//        
-//        let cellHeight = cell.frame.height
-//        print(cellHeight)
-//        
-//        return cellHeight
-//        
-//    }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.courses.count
     }
+   
     
-    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        return [2,20][section]
-    ////        return self.eventDictionary[self.userCalendar.selectedDate!]!.count
-    //    }
-    //
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        if indexPath.section == 0
-        //        {
-        ////            let obj = self.eventDictionary[self.userCalendar.selectedDate!]![indexPath.row]
-        //
-        //            let identifier = ["cell_month", "cell_week"][indexPath.row]
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
-        //            return cell
-        //        } else {
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        //            return cell
-        //        }
-        
         
         let cell : CalendarTVCell = (tableViewCLasses.dequeueReusableCell(withIdentifier: "CalendarTVCell", for: indexPath) as? CalendarTVCell)!
         
@@ -142,6 +115,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         print("did select date \(self.dateFormatter.string(from: date))")
         
         print(date)
+        print(date)
         
         
         let actualDate = calendar.selectedDate
@@ -155,10 +129,16 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+        let funcFormat = DateFormatter()
+        funcFormat.dateFormat = "yyyy-MM-dd"
+        let funcStringDate = funcFormat.string(from: date)
+        loadClasses(funcStringDate)
     }
     
-    func loadClasses() {
+    
+    func loadClasses(_ date: String) {
      
+        courses = []
         let uid = Auth.auth().currentUser?.uid
         var ref = Database.database().reference()
         
@@ -168,11 +148,17 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
                 if (dictionnary["Courses"]!)  == "Mobile Development" {
                     
                     ref =  Database.database().reference(fromURL:"https://di-app-14896.firebaseio.com/Courses/Mobile Development")
-                    print(ref)
+                    
                     ref.observe(.childAdded, with: { snapshot in
                         if let dict = snapshot.value as? [String:AnyObject] {
-                            let classes = Courses(dict: dict)
-                            self.courses.append(classes)
+                            if let courseTime = dict["time"] as? String {
+                                if courseTime == date {
+                                    let classes = Courses(dict: dict)
+                                    self.courses.append(classes)
+                                }
+                            }
+ 
+                            
                             }
                         DispatchQueue.main.async {
                             self.tableViewCLasses.reloadData() }
