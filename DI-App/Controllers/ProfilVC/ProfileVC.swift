@@ -14,7 +14,7 @@ import FirebaseStorage
 
 
 class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var uploadindicator: UIActivityIndicatorView!
+    
     
     let storageRef = Storage.storage().reference(forURL: "gs://di-app-14896.appspot.com/")
     
@@ -105,7 +105,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
         
         tapTheImage.delegate = self
-        self.uploadindicator.isHidden = true
         self.profilePic.isUserInteractionEnabled = true
         self.profilePic.addGestureRecognizer(tapTheImage)
         displayProfile()
@@ -120,14 +119,30 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         Database.database().reference().child("students").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject]
             {
-                self.fullNameTxt.text = dict["name"] as! String
-                self.emailTxt.text = dict["email"] as! String
-                self.phoneNumberTxt.text = dict["phone"] as! String
-                self.sessionTxt.text = dict["session"] as! String
-                self.linkedinTxt.text = dict["linkedIn"] as! String
-                if let imageUrl = dict["profilePic"] as? String {
-                    self.downloadImage(url: URL(fileURLWithPath: imageUrl))
+                let user = User(dict: dict)
+                
+                self.fullNameTxt.text = user.name
+                self.emailTxt.text = user.email
+                self.phoneNumberTxt.text = user.phone
+                self.sessionTxt.text = user.session
+                self.linkedinTxt.text = user.linkedIn
+                if let profileImageUrl = user.profilePic {
+                    let url = URL(string: profileImageUrl)
+                    URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if error != nil {
+                            print(error)
+                        }
+                        DispatchQueue.main.async {
+                            self.profilePic.image = UIImage(data: data!)
+
+                        }
+                        
+                    }).resume()
                 }
+//                
+//                if let imageUrl = dict["profilePic"] as? String {
+//                    self.downloadImage(url: URL(fileURLWithPath: imageUrl))
+//                }
                 
             }
         }, withCancel: nil)
@@ -148,8 +163,7 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                     return
                     
                 }
-                self.uploadindicator.isHidden = false
-                 self.uploadindicator.startAnimating()
+
                 let profileURL = metadata?.downloadURL()
                 if let profileImage = metadata?.downloadURL()?.absoluteString {
                     let uid = Auth.auth().currentUser?.uid
@@ -166,7 +180,7 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                     self.downloadImage(url: profileURL!)
                     
                 }
-                self.uploadindicator.stopAnimating()
+                
             })
         }
             
@@ -190,7 +204,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         }
     }
     
-   
 //    func defaultImage() {
 //        let uid = Auth.auth().currentUser?.uid
 //        let ref = Database.database().reference()

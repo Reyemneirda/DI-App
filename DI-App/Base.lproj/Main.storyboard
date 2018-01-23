@@ -50,7 +50,7 @@
         <!--HandBook-->
         <scene sceneID="gQ4-Ba-Trg">
             <objects>
-                <viewController id="q8Y-bH-Lbc" sceneMemberID="viewController">
+                <viewController id="q8Y-bH-Lbc" customClass="CoursesTVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BvA-uE-gie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
         <!--Assignments-->
         <scene sceneID="yMR-V6-Egl">
             <objects>
-                <viewController id="bpu-l0-hzM" sceneMemberID="viewController">
+                <viewController id="bpu-l0-hzM" customClass="AssignmentVC" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bO5-KJ-pKH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

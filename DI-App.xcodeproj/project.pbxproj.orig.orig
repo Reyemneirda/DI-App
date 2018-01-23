@@ -19,6 +19,9 @@
 		851114351FEA50C900924B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851114341FEA50C900924B87 /* Assets.xcassets */; };
 		851114381FEA50C900924B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851114361FEA50C900924B87 /* LaunchScreen.storyboard */; };
 <<<<<<< HEAD
+		E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */; };
+=======
+<<<<<<< HEAD
 		856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BBD721FFCD1C8008CD86A /* Sessions.swift */; };
 		858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A40FD1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift */; };
 		85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */; };
@@ -30,6 +33,7 @@
 =======
 		E942C48920024E9E008A5CC3 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */; };
 >>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
+>>>>>>> f538d9b2bfbb9b2c8931a8d18e52d1ee1525379a
 		E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5811FEA5A05006F5D7D /* BaseViewController.swift */; };
 		E958D59D1FEA88A5006F5D7D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */; };
 		E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */; };
@@ -64,6 +68,9 @@
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
 <<<<<<< HEAD
+		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+=======
+<<<<<<< HEAD
 		B425AB9B20037BB7008EB236 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
 		B425AB9C20037BB7008EB236 /* CoursesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesTableViewCell.xib; sourceTree = "<group>"; };
 		B4F080C0200252B300C34A48 /* CoursesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTVC.swift; sourceTree = "<group>"; };
@@ -72,6 +79,7 @@
 =======
 		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 >>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
+>>>>>>> f538d9b2bfbb9b2c8931a8d18e52d1ee1525379a
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E958D59C1FEA88A5006F5D7D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -130,11 +138,21 @@
 				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
 				E958D5901FEA6C40006F5D7D /* CalendarVC */,
 <<<<<<< HEAD
+				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
+				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
+				850C74A21FEA6D8E00E10F0B /* login */,
+				E958D59A1FEA6CA8006F5D7D /* ProfileVC */,
+				E958D5951FEA6C69006F5D7D /* AssignmentsVC */,
+				E958D5901FEA6C40006F5D7D /* CalendarVC */,
+				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
+=======
+<<<<<<< HEAD
 				B4F080BF2002526800C34A48 /* CoursesVC */,
 =======
 				E958D58B1FEA6C00006F5D7D /* ClassesVC */,
 				850C74A61FEA7F7A00E10F0B /* TabBar.swift */,
 >>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
+>>>>>>> f538d9b2bfbb9b2c8931a8d18e52d1ee1525379a
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,6 +420,10 @@
 				B425AB9D20037BB7008EB236 /* CoursesTableViewCell.swift in Sources */,
 				E9C505381FEBEE400000FF39 /* classCell.swift in Sources */,
 <<<<<<< HEAD
+				851114301FEA50C900924B87 /* Login.swift in Sources */,
+				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
+=======
+<<<<<<< HEAD
 				856BBD731FFCD1C8008CD86A /* Sessions.swift in Sources */,
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				B4F080C1200252B300C34A48 /* CoursesTVC.swift in Sources */,
@@ -409,6 +431,7 @@
 				851114301FEA50C900924B87 /* Login.swift in Sources */,
 				E958D5A91FEA88E3006F5D7D /* (null) in Sources */,
 >>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
+>>>>>>> f538d9b2bfbb9b2c8931a8d18e52d1ee1525379a
 				850C74AC1FEBD72C00E10F0B /* OnsenfoutViewController.swift in Sources */,
 				8511142E1FEA50C900924B87 /* AppDelegate.swift in Sources */,
 				E958D5A11FEA88C0006F5D7D /* AssignmentVC.swift in Sources */,
@@ -417,11 +440,14 @@
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 				B4F080C5200259D500C34A48 /* CoursesCell.swift in Sources */,
 				85DABE7D1FF4D67B0071419D /* DatabaseManager.swift in Sources */,
 				858A40FE1FEFB9F600AF97A2 /* UIStackView+StackExtension.swift in Sources */,
 =======
 >>>>>>> 1b3a4023ebfc197331d19cf47a6a185f221ba159
+>>>>>>> f538d9b2bfbb9b2c8931a8d18e52d1ee1525379a
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
