@@ -127,17 +127,7 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
                 self.sessionTxt.text = user.session
                 self.linkedinTxt.text = user.linkedIn
                 if let profileImageUrl = user.profilePic {
-                    let url = URL(string: profileImageUrl)
-                    URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                        if error != nil {
-                            print(error)
-                        }
-                        DispatchQueue.main.async {
-                            self.profilePic.image = UIImage(data: data!)
-
-                        }
-                        
-                    }).resume()
+                   self.profilePic.loadImageCachedwithURLString(urlString: profileImageUrl)
                 }
 //                
 //                if let imageUrl = dict["profilePic"] as? String {
