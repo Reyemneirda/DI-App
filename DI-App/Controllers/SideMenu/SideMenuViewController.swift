@@ -62,10 +62,12 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
                 return
             }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+            let vc = storyboard.instantiateViewController(withIdentifier: "Landpage")
             
             self.dismiss(animated: true, completion: {
+                
                 self.navigationController!.pushViewController(vc, animated: true)
+                
                 presenter.dismiss(animated: true, completion: nil)
                 
             })

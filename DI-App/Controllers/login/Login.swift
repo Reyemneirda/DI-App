@@ -20,8 +20,9 @@ class Login: BaseViewController {
     
     let setting = FirebaseConfiguration()
 
+let meganne = SimpleSound(named: "h")
 
-
+    @IBOutlet var helloBeautifulPeople: UITapGestureRecognizer!
     @IBOutlet weak var logRegister: CustomSegmentedControl!
     
     @IBOutlet weak var passwordForgotten: UIButton!
@@ -54,7 +55,10 @@ class Login: BaseViewController {
     
     var listCities = ["Jerusalem","Tel-Aviv"]
     
-    
+    @IBAction func iconSound() {
+        print("pressed")
+        meganne.play()
+    }
     
     @IBAction func IseePass(_ sender: UIButton)
     {
