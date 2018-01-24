@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Landpage-->
         <scene sceneID="by2-aL-5dG">
             <objects>
-                <viewController id="KkT-bp-gB2" customClass="Landpage" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Landpage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KkT-bp-gB2" customClass="Landpage" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UrY-nX-TIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,16 +13,22 @@ class Landpage: BaseViewController {
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getEventsForCalendar()
-
-        userIsConnected()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "loggedOut"), object: nil, queue: nil) { (notif)  in
+            self.loadOptions()
+        }
+        loadOptions()
+        
         // Do any additional setup after loading the view.
         
     }
     
+    
+    func loadOptions() {
+        getEventsForCalendar()
+        userIsConnected()
+    }
     func userIsConnected()
     {
         if Auth.auth().currentUser?.uid != nil

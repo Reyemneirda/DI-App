@@ -141,9 +141,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
                                     self.courses.append(classes)
                                 }
                             }
-                            
-                            
-                        }
+                       }
                         DispatchQueue.main.async {
                             self.tableViewCLasses.reloadData()
                             self.userCalendar.reloadData()

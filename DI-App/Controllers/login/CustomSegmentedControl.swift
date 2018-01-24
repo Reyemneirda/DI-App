@@ -94,10 +94,7 @@ class CustomSegmentedControl: UIControl {
         sv.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         sv.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         sv.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        
-        
-        
-        
+    
     }
     
     

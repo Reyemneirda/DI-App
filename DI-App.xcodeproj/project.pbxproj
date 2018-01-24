@@ -88,6 +88,7 @@
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
 		E98D39AA20176F9400D1D594 /* SimpleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSound.swift; sourceTree = "<group>"; };
 		E98D39AE2017721E00D1D594 /* h.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = h.m4a; sourceTree = "<group>"; };
+		E98D39B02018C87B00D1D594 /* DI-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DI-App.entitlements"; sourceTree = "<group>"; };
 		E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTVCell.xib; sourceTree = "<group>"; };
 		E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVCell.swift; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		8511142C1FEA50C900924B87 /* DI-App */ = {
 			isa = PBXGroup;
 			children = (
+				E98D39B02018C87B00D1D594 /* DI-App.entitlements */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
 				E98D39AE2017721E00D1D594 /* h.m4a */,
 				E9C505361FEBEE260000FF39 /* Models */,
@@ -292,6 +294,9 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
 							com.apple.Wallet = {
 								enabled = 0;
 							};
@@ -575,6 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -592,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
