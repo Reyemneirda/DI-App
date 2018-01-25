@@ -40,7 +40,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <items>
                         <navigationItem id="mPP-vq-zZd">
-                            <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger-icon" id="0bx-Mz-R8Y">
+                            <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-50" id="0bx-Mz-R8Y">
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="menu:" destination="-1" id="JGt-cQ-6Rs"/>
@@ -95,7 +95,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="tel"/>
                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alV-I8-Ivj">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alV-I8-Ivj">
                     <rect key="frame" x="16" y="421" width="343" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -172,7 +172,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="hamburger-icon" width="50" height="50"/>
+        <image name="icons8-menu-50" width="25" height="25"/>
         <image name="instagram-icon3" width="2253" height="2253"/>
     </resources>
 </document>
