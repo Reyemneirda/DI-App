@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class Login: BaseViewController {
+class Login: BaseViewController, UITextFieldDelegate {
     
     
     
@@ -20,8 +20,9 @@ class Login: BaseViewController {
     
     let setting = FirebaseConfiguration()
 
+let meganne = SimpleSound(named: "h")
 
-
+    @IBOutlet var helloBeautifulPeople: UITapGestureRecognizer!
     @IBOutlet weak var logRegister: CustomSegmentedControl!
     
     @IBOutlet weak var passwordForgotten: UIButton!
@@ -54,7 +55,10 @@ class Login: BaseViewController {
     
     var listCities = ["Jerusalem","Tel-Aviv"]
     
-    
+    @IBAction func iconSound() {
+        print("pressed")
+        meganne.play()
+    }
     
     @IBAction func IseePass(_ sender: UIButton)
     {
@@ -72,11 +76,6 @@ class Login: BaseViewController {
     //picker view config
     
 
-    
-  
-    
-    
-    
     
         func handleRegister()
         {
@@ -218,10 +217,20 @@ class Login: BaseViewController {
         
     }
     
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
     override func viewDidLoad() {
         
       
         super.viewDidLoad()
+        
+        self.passwordTextField.delegate = self
+        textFieldShouldReturn(passwordTextField)
+        textFieldShouldReturn(emailTxtField)
         
         var ref: DatabaseReference! = Database.database().reference(fromURL: "https://di-app-14896.firebaseio.com/")
         
@@ -431,16 +440,8 @@ class Login: BaseViewController {
 
     }
     }
-    
-    
-    
-    
-    
 
 }
-
-
-
 
 extension UIStackView
 {

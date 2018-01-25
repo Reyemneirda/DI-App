@@ -50,9 +50,9 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
             {
                 try Auth.auth().signOut()
                 
-            } catch let logOutError
+            } catch let logOutError as NSError
             {
-                print(logOutError)
+                print ("Error signing out: %@", logOutError)
             }
             
             guard let presenter : UIViewController = self.presentingViewController
@@ -61,16 +61,13 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
                 self.dismiss(animated: true, completion: nil)
                 return
             }
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Login")
             
             self.dismiss(animated: true, completion: {
-                self.navigationController!.pushViewController(vc, animated: true)
-                presenter.dismiss(animated: true, completion: nil)
                 
+                presenter.dismiss(animated: true, completion: {
+                    NotificationCenter.default.post(name: NSNotification.Name("loggedOut"), object: nil)
+                })
             })
-           
-
         }
         else
         {
@@ -96,9 +93,7 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
     
     @IBAction func logMeOut(_ sender: Any)
     {
-        
         handleLogOut()
-        
     }
     
     @IBAction func goToMyClandar(_ sender: UIButton)

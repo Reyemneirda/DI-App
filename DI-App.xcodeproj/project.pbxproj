@@ -40,6 +40,8 @@
 		E958D5A51FEA88D0006F5D7D /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */; };
 		E958D5A91FEA88E3006F5D7D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E958D5AA1FEA88E3006F5D7D /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E98D39AB20176F9400D1D594 /* SimpleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D39AA20176F9400D1D594 /* SimpleSound.swift */; };
+		E98D39AF2017734A00D1D594 /* h.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E98D39AE2017721E00D1D594 /* h.m4a */; };
 		E9A6A99620161D440093EDC0 /* CalendarTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */; };
 		E9A6A99820161E420093EDC0 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */; };
 		E9C505311FEBB81C0000FF39 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C505301FEBB81C0000FF39 /* CalendarVC.xib */; };
@@ -77,7 +79,7 @@
 		85C36EEE201886A900B17B7E /* ImageCachedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachedExtension.swift; sourceTree = "<group>"; };
 		85DABE7C1FF4D67B0071419D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8D9B3A0312039E4FE15ED7EF /* Pods-DI-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-DI-App/Pods-DI-App.release.xcconfig"; sourceTree = "<group>"; };
-		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/AdrienMeyer/Documents/Xcode Projects/DI-App/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
+		E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = "/Users/gabrieldrai/projects/AppDI/DI-App/Controllers/login/CustomSegmentedControl.swift"; sourceTree = "<absolute>"; };
 		E948C0FA20149663004E2801 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		E958D5811FEA5A05006F5D7D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E958D59B1FEA88A5006F5D7D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -86,6 +88,9 @@
 		E958D5A01FEA88C0006F5D7D /* AssignmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
 		E958D5A31FEA88D0006F5D7D /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		E958D5AB1FEAA14E006F5D7D /* Di-App_Bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Di-App_Bridge_Header.h"; sourceTree = "<group>"; };
+		E98D39AA20176F9400D1D594 /* SimpleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSound.swift; sourceTree = "<group>"; };
+		E98D39AE2017721E00D1D594 /* h.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = h.m4a; sourceTree = "<group>"; };
+		E98D39B02018C87B00D1D594 /* DI-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DI-App.entitlements"; sourceTree = "<group>"; };
 		E9A6A99520161D440093EDC0 /* CalendarTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTVCell.xib; sourceTree = "<group>"; };
 		E9A6A99720161E420093EDC0 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVCell.swift; sourceTree = "<group>"; };
 		E9C505301FEBB81C0000FF39 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		850C74A21FEA6D8E00E10F0B /* login */ = {
 			isa = PBXGroup;
 			children = (
+				E98D39AA20176F9400D1D594 /* SimpleSound.swift */,
 				E942C48820024E9E008A5CC3 /* CustomSegmentedControl.swift */,
 				8511142F1FEA50C900924B87 /* Login.swift */,
 				850C74A31FEA6DBE00E10F0B /* Login.xib */,
@@ -165,7 +171,9 @@
 		8511142C1FEA50C900924B87 /* DI-App */ = {
 			isa = PBXGroup;
 			children = (
+				E98D39B02018C87B00D1D594 /* DI-App.entitlements */,
 				8511142D1FEA50C900924B87 /* AppDelegate.swift */,
+				E98D39AE2017721E00D1D594 /* h.m4a */,
 				E9C505361FEBEE260000FF39 /* Models */,
 				850C74A51FEA7F4D00E10F0B /* Controllers */,
 				850C74AA1FEBD72C00E10F0B /* OnsenfoutViewController.swift */,
@@ -289,6 +297,9 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
 							com.apple.Wallet = {
 								enabled = 0;
 							};
@@ -332,6 +343,7 @@
 				E9A6A99620161D440093EDC0 /* CalendarTVCell.xib in Resources */,
 				E958D5A21FEA88C0006F5D7D /* AssignmentVC.xib in Resources */,
 				E958D59E1FEA88A5006F5D7D /* ProfileVC.xib in Resources */,
+				E98D39AF2017734A00D1D594 /* h.m4a in Resources */,
 				851114331FEA50C900924B87 /* Main.storyboard in Resources */,
 				8560AD4B2004A7A8009E7B13 /* Landpage.xib in Resources */,
 			);
@@ -431,6 +443,7 @@
 				850C74A71FEA7F7A00E10F0B /* TabBar.swift in Sources */,
 				E9C5055F1FEF93240000FF39 /* SideMenuViewController.swift in Sources */,
 				E958D5821FEA5A05006F5D7D /* BaseViewController.swift in Sources */,
+				E98D39AB20176F9400D1D594 /* SimpleSound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,6 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 768P4J4WYN;
 				INFOPLIST_FILE = "DI-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Institute.developer.DI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";

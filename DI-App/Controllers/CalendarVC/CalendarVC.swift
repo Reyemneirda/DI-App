@@ -15,7 +15,7 @@ import SideMenu
 class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate,UITableViewDataSource {
     
     
- 
+    
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var tableViewCLasses: UITableView!
     @IBOutlet weak var userCalendar: FSCalendar!
@@ -25,15 +25,14 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     var databaeHandler: DatabaseHandle?
     
     var courses : [Courses] = []
-
+    
     
     var eventDictionary = [Date: [Courses]].self
     
-    var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
-
-    var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
     
-//    var eventDictionary : [Date : [Any] ] = Dictionary()
+    
+    
+    //    var eventDictionary : [Date : [Any] ] = Dictionary()
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -41,25 +40,23 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         return formatter
     }()
     
-  
-
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-
-            let dateString = self.dateFormatter.string(from: date)
-
-            if self.datesWithEvent.contains(dateString) {
-                return courses.count
-            }
-
-            if self.datesWithMultipleEvents.contains(dateString) {
-                return 3
-            }
-
-            return 0
-        }
+    
+    
+    //    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    //
+    //        if courses.count < 0 {
+    //
+    //                return courses.count
+    //        }
+    //        else{ return 0}
+    //
+    //        }
+    
+    
+    
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +67,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         userCalendar.dataSource = self
         userCalendar.delegate = self
         tableViewCLasses.delegate = self
-
+        
     }
     
     
@@ -78,7 +75,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     {
         return self.courses.count
     }
-   
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,7 +107,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
         fomatter.dateFormat = "EEEE, MMM d"
         let stringDate = fomatter.string(from: actualDate!)
         let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
-//        print("selected dates is \(selectedDates)")
+        //        print("selected dates is \(selectedDates)")
         
         self.daysLabel.text = "\(stringDate)"
         if monthPosition == .next || monthPosition == .previous {
@@ -124,7 +121,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     
     func loadClasses(_ date: String) {
-     
+        
         courses = []
         let uid = Auth.auth().currentUser?.uid
         var ref = Database.database().reference()
@@ -144,11 +141,11 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
                                     self.courses.append(classes)
                                 }
                             }
- 
-                            
-                            }
+                       }
                         DispatchQueue.main.async {
-                            self.tableViewCLasses.reloadData() }
+                            self.tableViewCLasses.reloadData()
+                            self.userCalendar.reloadData()
+                        }
                         
                     })
                     
@@ -172,21 +169,21 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     
     
     
-
-//    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-//        print("\(self.dateFormatter.string(from: calendar.currentPage))")
-//    }
-
+    
+    //    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+    //        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+    //    }
+    
     
     // MARK:- UITableViewDataSource
-  
-    
-//    var classCell: [ClassCell] =
-//        [ClassCell(name: "class1", time: Date.description("2017-12-25 10:00:00")), ClassCell(name: "class2", time: "2017-12-25 12:00:00")
-//    ]
     
     
-
+    //    var classCell: [ClassCell] =
+    //        [ClassCell(name: "class1", time: Date.description("2017-12-25 10:00:00")), ClassCell(name: "class2", time: "2017-12-25 12:00:00")
+    //    ]
+    
+    
+    
     fileprivate var theme: Int = 0 {
         didSet {
             switch (theme) {
@@ -224,16 +221,7 @@ class CalendarVC: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, 
     }
     
     
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int
-//    {
-//        let day: Int! = self.gregorian.component(.day, from: date)
-//        return day % 5 == 0 ? day/5 : 0;
-//        
-//        
-//        
-////        return self.eventDictionary[date]!.count
-//    }
-
- 
-  
+    
+    
+    
 }

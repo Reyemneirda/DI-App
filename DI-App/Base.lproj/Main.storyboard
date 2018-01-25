@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Landpage-->
         <scene sceneID="by2-aL-5dG">
             <objects>
-                <viewController id="KkT-bp-gB2" customClass="Landpage" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Landpage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KkT-bp-gB2" customClass="Landpage" customModule="DI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UrY-nX-TIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,15 +73,15 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="iYq-ZJ-pvb"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="HZH-Lw-Z4P" appends="YES" id="zZ1-cm-eh0"/>
+                            <outletCollection property="gestureRecognizers" destination="e7x-SQ-cU7" appends="YES" id="S3f-20-MLp"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Classes" image="icons8-ereader-100" id="4Dy-4V-y9z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8B-50-2EY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="HZH-Lw-Z4P">
+                <swipeGestureRecognizer direction="right" id="e7x-SQ-cU7">
                     <connections>
-                        <action selector="swipeHandler:" destination="U4q-vh-qTn" id="kz4-Xi-9B6"/>
+                        <action selector="swipeHandler:" destination="U4q-vh-qTn" id="HOa-ve-IqJ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -205,10 +204,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Pap-b6-yvv"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HZH-Lw-Z4P" appends="YES" id="xhK-5Z-Csh"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="icons8-customer-100" id="9vF-tf-Gje"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caY-j9-bwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="HZH-Lw-Z4P">
+                    <connections>
+                        <action selector="swipeHandler:" destination="BUF-LW-yI5" id="pCN-iG-Vwr"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2414" y="403"/>
         </scene>
