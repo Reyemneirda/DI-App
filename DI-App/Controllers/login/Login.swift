@@ -216,18 +216,14 @@ let meganne = SimpleSound(named: "h")
         handleRegister()
         
     }
-    
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
+
     
     
     override func viewDidLoad() {
         
       
         super.viewDidLoad()
-        
+        self.hobbies.delegate = self
         self.passwordTextField.delegate = self
         textFieldShouldReturn(passwordTextField)
         textFieldShouldReturn(emailTxtField)
@@ -487,6 +483,11 @@ let meganne = SimpleSound(named: "h")
         }
 
     }
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 
 }
