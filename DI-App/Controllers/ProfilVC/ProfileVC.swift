@@ -29,9 +29,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
     
     @IBOutlet weak var profilePic: UIImageView!
     
-    
-    
-    
     @IBOutlet weak var actionSheetButton: UIButton!
     
     @IBAction func takePhoto(_ sender: Any?) {
@@ -46,7 +43,6 @@ class ProfileVC: BaseViewController, UIActionSheetDelegate, UIImagePickerControl
         
         let picker : UIImagePickerController = UIImagePickerController()
         picker.delegate = self
-        
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
        
