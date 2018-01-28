@@ -274,7 +274,7 @@
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="handeProgramSelection:" destination="-1" eventType="touchUpInside" id="Rvy-wY-qvV"/>
+                                        <action selector="selectProgram:" destination="-1" eventType="touchUpInside" id="J5f-xO-oks"/>
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZB-t8-xWs">

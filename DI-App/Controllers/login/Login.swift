@@ -329,56 +329,104 @@ let meganne = SimpleSound(named: "h")
     {
         
         
+        let actionSheet = UIAlertController(title: "Select a Program", message: "Pick an option", preferredStyle: .actionSheet)
+        
+        
+        
+        let selectProgramMobile = UIAlertAction(title: "Mobile Development", style: .default, handler: {
+            (action) in
+            self.selectProgram.setTitle("Mobile Development", for: .normal)
+        })
+        
+        actionSheet.addAction(selectProgramMobile)
+        
+        let selectProgramWeb = UIAlertAction(title: "Web Development", style: .default, handler: {
+            (action) in
+            self.selectProgram.setTitle("Web Development", for: .normal)
+        })
+        
+        actionSheet.addAction(selectProgramWeb)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
         
         
         
         
-        guard let title = sender.currentTitle,
-            let progList = DICourses(rawValue: title)  else {
-                return
-        }
-        
-        switch progList{
-        case .webDev:
-            guard sessionCity.currentTitle != "Web Development" else {return}
-            programsButtons.forEach { (button) in
-                UIView.animate(withDuration: 0.3, animations: {
-                    
-                    button.isHidden = !button.isHidden
-                    self.view.layoutIfNeeded()
-                })
-                
-            }
-            selectProgram.setTitle(title, for: .normal)
-        case .mobileDev:
-            guard sessionCity.currentTitle != "Mobile Development" else {return}
-            programsButtons.forEach { (button) in
-                UIView.animate(withDuration: 0.3, animations: {
-                    
-                    button.isHidden = !button.isHidden
-                    self.view.layoutIfNeeded()
-                })
-                
-            }
-            selectProgram.setTitle(title, for: .normal)
-        default:
-            selectProgram.titleLabel?.text = title
-        }
+//
+//        guard let title = sender.currentTitle,
+//            let progList = DICourses(rawValue: title)  else {
+//                return
+//        }
+//
+//        switch progList{
+//        case .webDev:
+//            guard sessionCity.currentTitle != "Web Development" else {return}
+//            programsButtons.forEach { (button) in
+//                UIView.animate(withDuration: 0.3, animations: {
+//
+//                    button.isHidden = !button.isHidden
+//                    self.view.layoutIfNeeded()
+//                })
+//
+//            }
+//            selectProgram.setTitle(title, for: .normal)
+//        case .mobileDev:
+//            guard sessionCity.currentTitle != "Mobile Development" else {return}
+//            programsButtons.forEach { (button) in
+//                UIView.animate(withDuration: 0.3, animations: {
+//
+//                    button.isHidden = !button.isHidden
+//                    self.view.layoutIfNeeded()
+//                })
+//
+//            }
+//            selectProgram.setTitle(title, for: .normal)
+//        default:
+//            selectProgram.titleLabel?.text = title
+//        }
     }
     
     
     @IBAction func handleSelection(_ sender: UIButton)
     {
-        guard let title = sender.currentTitle else {return}
-        CitiesButton.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                
-                button.isHidden = !button.isHidden
-                
-                self.view.layoutIfNeeded()
-            })
-            
-        }
+        
+        let actionSheet = UIAlertController(title: "Select a City", message: "Pick an option", preferredStyle: .actionSheet)
+        
+        
+        
+        let selectCityTlv = UIAlertAction(title: "Tel Aviv", style: .default, handler: {
+            (action) in
+            self.sessionCity.setTitle("Tel-Aviv", for: .normal)
+        })
+        
+        actionSheet.addAction(selectCityTlv)
+        
+        let selectCityJerusalem = UIAlertAction(title: "Jerusalem", style: .default, handler: {
+            (action) in
+            self.sessionCity.setTitle("Jerusalem", for: .normal)
+        })
+        
+        actionSheet.addAction(selectCityJerusalem)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+    
+        
+        
+//        guard let title = sender.currentTitle else {return}
+//        CitiesButton.forEach { (button) in
+//            UIView.animate(withDuration: 0.3, animations: {
+//
+//                button.isHidden = !button.isHidden
+//
+//                self.view.layoutIfNeeded()
+//            })
+//
+//        }
         
     }
     
