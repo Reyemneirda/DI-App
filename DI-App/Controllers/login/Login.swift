@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class Login: BaseViewController, UITextFieldDelegate {
+class Login: BaseViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
     
@@ -489,7 +489,14 @@ let meganne = SimpleSound(named: "h")
         self.view.endEditing(true)
         return true
     }
-
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }
 
 extension UIStackView
