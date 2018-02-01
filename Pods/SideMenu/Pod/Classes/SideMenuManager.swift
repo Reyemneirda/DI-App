@@ -672,6 +672,7 @@ extension SideMenuManager {
             `default`.menuEnableSwipeGestures = newValue
         }
     }
+    
     @available(*, deprecated, renamed: "default.menuAddScreenEdgePanGesturesToPresent", message: "SideMenuManager class methods deprecated.")
     @discardableResult open class func menuAddScreenEdgePanGesturesToPresent(toView: UIView, forMenu:UIRectEdge? = nil) -> [UIScreenEdgePanGestureRecognizer] {
         return `default`.menuAddScreenEdgePanGesturesToPresent(toView: toView, forMenu: forMenu)

@@ -56,7 +56,7 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
             }
             
             guard let presenter : UIViewController = self.presentingViewController
-            else
+                else
             {
                 self.dismiss(animated: true, completion: nil)
                 return
@@ -75,7 +75,7 @@ class SideMenuViewController: UIViewController,UISideMenuNavigationControllerDel
         }
     }
     
-
+    
     
     func checkIfUserIsin()
     {
